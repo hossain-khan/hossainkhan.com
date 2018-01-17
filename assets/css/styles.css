@@ -450,6 +450,9 @@ iframe {
 .languages .item .fa {
   color: #79d19a;
 }
+.languages .item .fa-language {
+  color: #999;
+}
 /* Blog Section */
 .blog .item {
   margin-bottom: 30px;
