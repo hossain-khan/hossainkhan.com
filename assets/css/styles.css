@@ -126,6 +126,7 @@ iframe {
 }
 .header .profile-image {
   margin-right: 30px;
+  border-radius: 50%; /*add rounded corners to an image. 50% will make the image circular*/
 }
 .header .profile-content .name {
   color: #49515a;
