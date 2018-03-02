@@ -50,6 +50,11 @@ a.btn {
   padding: 8px 16px;
   font-weight: bold;
 }
+
+a.dimmed-link {
+color: #778492;
+}
+
 .btn .fa,
 a.btn .fa {
   margin-right: 5px;
