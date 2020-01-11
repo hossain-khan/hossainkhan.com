@@ -1,0 +1,34 @@
+name: Jekyll site CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
+    # Validates HTML file
+    # https://github.com/marketplace/actions/html5-validator
+    - name: HTML5 Validator
+      uses: Cyb3r-Jak3/html5validator-action@v0.3
+      with:
+        # Path of the files to test - default is .
+        root: .
+        # Additional arguments to pass to html5validator
+        extra: index.html
+        # Format for logging output. Valid values: gnu,xml,json,text
+        format: text
+        # Logging Level. Valid values: DEBUG, INFO, WARNING. Default: WARNING
+        log_level: DEBUG
+        # Checks css as well - optional
+        css: false
+        # Flag that increase verbose output only used for troubleshooting the action.
+        #action_debug: # optional
