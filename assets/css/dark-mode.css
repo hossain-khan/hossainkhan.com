@@ -1,0 +1,168 @@
+/**
+ * Styles for dark mode ^_^
+ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: #ddd;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #b3c7dd;
+  }
+
+  a {
+    color: rgb(98, 175, 128);
+  }
+
+  a:hover {
+    color: #4e8a65;
+  }
+
+  a.dimmed-link {
+    color: #a8c5e6;
+  }
+
+  .text-muted {
+    color: #999;
+  }
+
+
+  /* ======= Header ======= */
+  .header {
+    background: #2c2c2c;
+    border-top: 10px solid #4b5055;
+  }
+
+  .header .profile-content .social a {
+    background: #43494e;
+    color: #fff;
+  }
+
+  .header .profile-content .name {
+    color: #afc0d4;
+  }
+
+  .header .profile-content .desc {
+    color: #b8d2ec;
+  }
+
+  .header .profile-content .social a:hover {
+    background: #3a424b;
+  }
+
+  .header .profile-image {
+    background-color: rgb(65, 65, 65);
+  }
+
+  /* ======= Sections======= */
+  .section .section-inner {
+    background: rgb(56, 56, 56);
+  }
+
+  .section .heading {
+    color: #afc7e0;
+  }
+
+  .latest .item .title a {
+    color: #afc7e0;
+  }
+
+  .latest .item .title a:hover {
+    color: #afc7e0;
+  }
+
+  /* Projects Section */
+  .projects .item .title a {
+    color: #b1c1d4;
+  }
+
+  .projects .item .title a:hover {
+    color: #a1b9d1;
+  }
+
+  /* Work Section */
+  .experience .item .title .place {
+    color: rgb(189, 187, 187);
+  }
+
+  .experience .item .title .place a {
+    color: rgb(190, 190, 190);
+  }
+
+  .experience .item .title .place a:hover {
+    color: #b1b1b1;
+  }
+
+  .experience .item .title .year {
+    color: rgb(173, 173, 173);
+  }
+
+  /* Blog Section */
+  .blog .item .title a {
+    color: #9eadbe;
+  }
+
+  .blog .item .title a:hover {
+    color: #adc3da;
+  }
+
+  /* List section */
+  .list ul li a {
+    color: #9eb4cc;
+  }
+
+  .list ul li a:hover {
+    color: #a9c8ec;
+  }
+
+
+  /* Testimonials section */
+  .testimonials .item .quote {
+    color: rgb(187, 205, 221);
+    border-left-color: #9fdeb7;
+  }
+
+  .testimonials .item .quote .fa {
+    color: #79d19a;
+  }
+
+  .testimonials .item .source .name {
+    color: #b6c5d4;
+  }
+
+  .testimonials .item .source .title {
+    color: rgb(199, 199, 199);
+  }
+
+  /* Education section */
+  .education .item .university {
+    color: rgb(196, 196, 196);
+  }
+
+  .education .item .university .year {
+    color: #ccd2d8;
+  }
+
+  /* Language Section */
+  .languages .item .title {
+    color: #b6cde5;
+  }
+
+  .languages .item .level {
+    color: rgb(209, 205, 205);
+  }
+
+  .languages .item .fa {
+    color: #9deebc;
+  }
+
+  .languages .item .fa-language {
+    color: rgb(211, 209, 209);
+  }
+}
