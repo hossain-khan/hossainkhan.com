@@ -35,7 +35,7 @@
 
   /* ======= Header ======= */
   .header {
-    background: #2c2c2c;
+    background: #1c1c1c;
     border-top: 10px solid #4b5055;
   }
 
@@ -62,7 +62,7 @@
 
   /* ======= Sections======= */
   .section .section-inner {
-    background: rgb(56, 56, 56);
+    background: rgb(33, 33, 33);
   }
 
   .section .heading {
