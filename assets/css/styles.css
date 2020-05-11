@@ -371,7 +371,7 @@ iframe {
   font-size: 16px;
   position: relative;
   margin-top: 0;
-  margin-bottom: 10;
+  margin-bottom: 10px;
 }
 .skills .skillset .level-title .level-label {
   color: #ccd1d6;

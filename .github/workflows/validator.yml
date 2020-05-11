@@ -1,5 +1,6 @@
-# Validates HTML using "html-validate" node module.
+# Validates HTML and CSS using "html-validate" & "csstree-validator" node module.
 # https://www.npmjs.com/package/html-validate
+# https://www.npmjs.com/package/csstree-validator
 name: Validate
 
 on:
@@ -14,11 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - run: npm -v
-    - run: npm install -g html-validate
-    - run: html-validate index.html
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm -v
+
+      - name: Install HTML Validator
+        run: npm install -g html-validate@2.21.0
+      - name: Validate INDEX html
+        run: html-validate index.html
+
+      - name: Install CSS Validator
+        run: npm install -g csstree-validator@1.5.1
+      - name: Validate all CSS
+        run: csstree-validator assets/css/
