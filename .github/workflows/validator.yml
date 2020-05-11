@@ -1,0 +1,24 @@
+# Validates HTML using "html-validate" node module.
+# https://www.npmjs.com/package/html-validate
+name: Validate
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm -v
+    - run: npm install -g html-validate
+    - run: html-validate index.html
