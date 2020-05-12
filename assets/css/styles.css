@@ -543,10 +543,6 @@ iframe {
   .project-image {
     margin-bottom: 15px;
   }
-  a.btn-cta-primary, .btn-cta-primary {
-    /* Adds bit of spacing when multiple CTA buttons are stacked together */
-    margin-top: 8px;
-  }
 }
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
@@ -555,5 +551,17 @@ iframe {
 @media (min-width: 1400px) {
   .container {
     width: 1360px;
+  }
+}
+
+
+/**
+* Targeting small phones.
+* Ref: http://cssmediaqueries.com/overview.html
+*/
+@media screen and (min-width : 320px) {
+  a.btn-cta-primary, .btn-cta-primary {
+    /* Adds bit of spacing when multiple CTA buttons are stacked together */
+    margin-top: 8px;
   }
 }
