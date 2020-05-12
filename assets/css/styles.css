@@ -543,6 +543,10 @@ iframe {
   .project-image {
     margin-bottom: 15px;
   }
+  a.btn-cta-primary, .btn-cta-primary {
+    /* Adds bit of spacing when multiple CTA buttons are stacked together */
+    margin-top: 8px;
+  }
 }
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
