@@ -165,4 +165,8 @@
   .languages .item .fa-language {
     color: rgb(211, 209, 209);
   }
+
+  .contrib-number {
+    color: #ddd;
+  }
 }
