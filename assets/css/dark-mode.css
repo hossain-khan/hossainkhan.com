@@ -166,7 +166,29 @@
     color: rgb(211, 209, 209);
   }
 
+  code {
+      background-color: #141414;
+  }
+
+  .skills .skillset .level-bar {
+      background: #585858;
+  }
+
+  .latest .featured-image .ribbon .text {
+      background-color: #397896cc;
+  }
+
+  a.btn-cta-secondary, .btn-cta-secondary {
+      background: #266786;
+      border: 1px solid #3183a9;
+  }
+
   .contrib-number {
-    color: #ddd;
+    color: #ddd !important;
+  }
+
+  /* Github activity graph override */
+  .graph-before-activity-overview {
+    filter: invert(0.7) !important;
   }
 }
