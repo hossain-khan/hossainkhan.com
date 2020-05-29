@@ -25,7 +25,7 @@ jobs:
       - name: Install HTML Validator
         run: npm install -g html-validate@2.21.0
       - name: Validate INDEX html
-        run: html-validate index.html
+        run: html-validate index.html _template.html
 
       - name: Install CSS Validator
         run: npm install -g csstree-validator@1.5.1
