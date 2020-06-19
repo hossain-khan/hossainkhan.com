@@ -13,6 +13,12 @@ Here is a quick writeup I did on how you can use custom domain for your Github p
  - [Using custom domain for GitHub pages @ Medium.com](https://medium.com/@hossainkhan/using-custom-domain-for-github-pages-86b303d3918a)
 
 
+## Tip
+Use following to run local server for development.
+```
+python -m SimpleHTTPServer 8000
+```
+
 ----
 
 ## Site Preview - Screenshot
