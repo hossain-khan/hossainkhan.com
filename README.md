@@ -25,4 +25,4 @@ python -m SimpleHTTPServer 8000
 
 This is a snapshot of the website showcasing light and dark mode :last_quarter_moon:
 
-[![hk-website-screenshot@0 5x](https://user-images.githubusercontent.com/99822/83168985-5a84ea00-a0e0-11ea-895b-e2023a345082.jpg)](https://user-images.githubusercontent.com/99822/83168987-5b1d8080-a0e0-11ea-9fe8-18273f6f5bd4.jpg)
+[![hk-website-screenshot@0 5x](https://user-images.githubusercontent.com/99822/85166833-daacf400-b235-11ea-8268-4066fe1f0ef0.jpg)](https://user-images.githubusercontent.com/99822/85166823-d7196d00-b235-11ea-87f9-35a6f2c04dbb.jpg)
