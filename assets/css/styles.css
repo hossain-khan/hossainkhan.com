@@ -553,8 +553,25 @@ iframe {
     width: 1360px;
   }
 }
-
-
+/* CSS for Scroll to Top button */
+html{
+    scroll-behavior: smooth;
+}
+.topbtn{
+    float: right;
+    color: #dae3e7;
+    background-color: #32383e;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+}
+.topbtn:hover{
+    color: #32383e;
+    background-color: #dae3e7;
+}
+/********************************/
 /**
 * Targeting small phones.
 * Ref: http://cssmediaqueries.com/overview.html
