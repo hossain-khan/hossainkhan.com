@@ -58,7 +58,4 @@ jQuery(document).ready(function($) {
         
         }
     );
-    
-    /* Github Calendar - https://github.com/IonicaBizau/github-calendar or https://github.com/Bloggify/github-calendar/tree/1.3.4 */
-    GitHubCalendar("#github-graph", "amardeshbd", { responsive: true });
 });
