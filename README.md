@@ -1,4 +1,4 @@
-[![Validated HTML5 and CSS](https://github.com/amardeshbd/hossainkhan.com/workflows/Validate/badge.svg)](https://github.com/amardeshbd/hossainkhan.com/actions)
+[![Validated HTML5 and CSS](https://github.com/hossain-khan/hossainkhan.com/workflows/Validate/badge.svg)](https://github.com/hossain-khan/hossainkhan.com/actions)
 
 # hossainkhan.com
 Static site for [hossainkhan.com](http://hossainkhan.com/)
