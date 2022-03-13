@@ -1,0 +1,78 @@
+.m-square-list{list-style:none;margin-left:0;padding-left:0}
+.m-square-list>li:not(.c-stat){padding-left:30px}
+.m-square-list>li:not(.c-stat)::before{font-family:arial,helvetica,sans-serif;position:relative;float:left;color:var(--theme-bullet-color);text-indent:-30px;speak:none;content:'\25A0';top:-3px}
+.o-hero .o-hero__background.download-background{background-image:url(/80588/spacesuit/source/images/backgrounds/bg-halftone-black-20p.png);background-size:1300px 700px;background-repeat:repeat}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.o-hero .o-hero__background.download-background{background-image:url(/80588/spacesuit/source/images/backgrounds/bg-halftone-black-20p@2x.png)}
+}
+@media only print{.o-hero .o-hero__background.download-background{background-color:transparent;background-image:none}
+}
+.download-header .c-shadowbox{box-shadow:0 0 2rem rgba(0,0,0,.1);display:inline-block;background-color:transparent;margin-bottom:-16rem;padding:0;width:auto}
+.download-header+.stay-in-sync{margin-top:16rem}
+@media screen and (min-width:0px) and (max-width:767px){.download-header .c-shadowbox{box-shadow:none;max-width:initial;margin-left:-1.5rem;width:800px}
+}
+.download_screenshot__android,.download_screenshot__ios,.download_screenshot__winphone{vertical-align:bottom}
+.download-header__download-desktop-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+@media screen and (min-width:48rem){.download-header__download-desktop-links{margin-bottom:-.5rem}
+.download-header__download-desktop-links .c-button{margin-bottom:.5rem}
+}
+.download-header__download-mobile-links{display:flex;justify-content:center}
+.download-meta{font-weight:400;line-height:1.4286;letter-spacing:normal;font-size:.875rem;margin-bottom:1rem;font-family:inherit;margin-top:1rem;flex-basis:100%}
+@media screen and (min-width:25rem){.download-meta{font-size:calc(.875rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta{font-size:.875rem}
+}
+.download-meta:lang(ja){font-family:Slack-Tazugane,Tahoma,Slack-Larsseit,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;font-weight:400;letter-spacing:normal;font-size:1rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(ja){font-size:calc(1rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(ja){font-size:1rem}
+}
+.download-meta:lang(de){font-family:Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;font-weight:400;line-height:1.4286;letter-spacing:normal;font-size:.875rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(de){font-size:calc(.875rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(de){font-size:.875rem}
+}
+.download-meta:lang(ko){font-family:NotoSansKR,Slack-Lato,appleLogo,sans-serif;font-weight:400;line-height:1.2;letter-spacing:normal;font-size:1rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(ko){font-size:calc(1rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(ko){font-size:1rem}
+}
+.download-meta:lang(zh-TW){font-family:NotoSansTC,Slack-Lato,appleLogo,sans-serif;font-weight:400;line-height:1.2;letter-spacing:normal;font-size:1rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(zh-TW){font-size:calc(1rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(zh-TW){font-size:1rem}
+}
+.download-meta:lang(zh-CN){font-family:NotoSansSC,Slack-Lato,appleLogo,sans-serif;font-weight:400;line-height:1.2;letter-spacing:normal;font-size:1rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(zh-CN){font-size:calc(1rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(zh-CN){font-size:1rem}
+}
+.download-meta:lang(ru){font-family:Circular-Cyrillic,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;font-weight:400;line-height:1.2;letter-spacing:normal;font-size:1rem;margin-bottom:1rem}
+@media screen and (min-width:25rem){.download-meta:lang(ru){font-size:calc(1rem + (0 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-meta:lang(ru){font-size:1rem}
+}
+.download-meta:lang(ja){line-height:2}
+.were-on-desktop{text-align:center}
+.were-on-desktop .c-button,.were-on-desktop .c-form__input{margin-bottom:1rem;flex-basis:100%}
+.stay-in-sync{margin-top:5rem;margin-bottom:5rem;border-top:0}
+.stay-in-sync__form{margin-bottom:1.5rem}
+@media screen and (min-width:48rem){.were-on-desktop .c-form__container{justify-content:stretch}
+.were-on-desktop .c-button{flex-basis:30%;flex-grow:1}
+.were-on-desktop .c-form__input{flex-basis:auto;flex-grow:3;margin-right:.5rem}
+.stay-in-sync__form{margin-bottom:0}
+}
+.stay-in-sync .c-button.v--primary,.stay-in-sync .c-form__input,.stay-in-sync .c-select{margin-bottom:1rem;flex-basis:100%;min-width:160px}
+@media screen and (min-width:48rem){.stay-in-sync .c-button.v--primary,.stay-in-sync .c-form__input,.stay-in-sync .c-select{margin-bottom:0}
+.stay-in-sync .c-form__container{margin:-1rem -.25rem 1.5rem;flex-wrap:wrap;justify-content:stretch}
+.stay-in-sync .c-select{margin:1rem .25rem 0;flex-basis:165px;flex-grow:1}
+.stay-in-sync .c-form__input{margin:1rem .25rem 0;flex-basis:auto;flex-grow:2}
+.stay-in-sync .c-button.v--primary{margin:1rem .25rem 0;flex-basis:auto}
+}
+.download-beta-badge{color:#611f69;background-color:#fff;border-radius:4px;font-size:.6rem;padding:.34em 1em;vertical-align:super}
+.download-beta-badge,.download-beta-badge:lang(de),.download-beta-badge:lang(ja),.download-beta-badge:lang(ko),.download-beta-badge:lang(ru),.download-beta-badge:lang(zh-CN),.download-beta-badge:lang(zh-TW){font-family:Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;text-transform:uppercase;font-weight:900;letter-spacing:.9px}
+@media screen and (min-width:25rem){.download-beta-badge{font-size:calc(.6rem + (2.4000000000000004 * (100vw - 400px)/ 624))}
+}
+@media screen and (min-width:64rem){.download-beta-badge{font-size:.75rem}
+}
+.download_confirmation,.download_prod_reminder{transition:all 420ms cubic-bezier(.165,.84,.44,1);padding-top:1rem}
+.download-beta-hero .o-hero__header__headline{max-width:44rem}
