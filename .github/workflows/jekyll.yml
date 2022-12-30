@@ -18,12 +18,10 @@ jobs:
     # Validates HTML file
     # https://github.com/marketplace/actions/html5-validator
     - name: HTML5 Validator
-      uses: Cyb3r-Jak3/html5validator-action@v0.4.4
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
       with:
         # Path of the files to test - default is .
-        root: .
-        # Additional arguments to pass to html5validator
-        extra: index.html
+        root: ./
         # Format for logging output. Valid values: gnu,xml,json,text
         format: text
         # Logging Level. Valid values: DEBUG, INFO, WARNING. Default: WARNING
@@ -32,3 +30,11 @@ jobs:
         css: false
         # Flag that increase verbose output only used for troubleshooting the action.
         #action_debug: # optional
+        # The names of files or directories to blacklist. These are not full paths.
+        blacklist: archive assets
+
+    # Save log file
+    - uses: actions/upload-artifact@v3
+      with:
+        name: log
+        path: log.log
