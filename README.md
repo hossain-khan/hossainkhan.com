@@ -14,7 +14,7 @@ Here is a quick writeup I did on how you can use custom domain for your Github p
 
 
 ## Tip
-Use following to run local server for development.
+Use following to run local server for development from macOS.
 ```
 python -m SimpleHTTPServer 8000
 
@@ -22,6 +22,15 @@ python -m SimpleHTTPServer 8000
 python3 -m http.server
 
 Then visit: http://localhost:8000/
+```
+
+### Run locally from *NIX
+
+Alternative universal way to run it from Windows, MacOS or Linux using npm module.
+
+```
+npm install --global http-server
+http-server ./ -a 127.0.0.1 --port 80 --cors
 ```
 
 ----
