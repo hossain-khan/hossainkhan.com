@@ -32,14 +32,16 @@ jobs:
 
       - run: npm -v
 
+      # https://www.npmjs.com/package/html-validate
       - name: Install HTML Validator
-        run: npm install -g html-validate@2.21.0
+        run: npm install -g html-validate@8.21.0
       
       - name: Validate HTML Files
         run: find . -name "*.html" -print0 | xargs -0 html-validate
 
+      # https://www.npmjs.com/package/csstree-validator
       - name: Install CSS Validator
-        run: npm install -g csstree-validator@1.5.1
+        run: npm install -g csstree-validator@3.0.0
       
       - name: Validate CSS Files
         run: find assets/css/ -name "*.css" -print0 | xargs -0 csstree-validator
