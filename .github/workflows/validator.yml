@@ -5,9 +5,9 @@ name: Validate
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -15,19 +15,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16.x
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - run: npm -v
 
+      # https://www.npmjs.com/package/html-validate
       - name: Install HTML Validator
-        run: npm install -g html-validate@2.21.0
-      - name: Validate INDEX html
+        run: npm install -g html-validate@8.21.0
+      
+      - name: Validate HTML Files
         run: html-validate index.html _template.html
 
+      # https://www.npmjs.com/package/csstree-validator
       - name: Install CSS Validator
-        run: npm install -g csstree-validator@1.5.1
-      - name: Validate all CSS
+        run: npm install -g csstree-validator@3.0.0
+      
+      - name: Validate CSS Files
         run: csstree-validator assets/css/
