@@ -37,7 +37,7 @@ jobs:
         run: npm install -g html-validate@8.21.0
       
       - name: Validate HTML Files
-        run: html-validate index.html _template.html
+        run: find . -name "*.html" -print0 | xargs -0 html-validate
 
       # https://www.npmjs.com/package/csstree-validator
       - name: Install CSS Validator
