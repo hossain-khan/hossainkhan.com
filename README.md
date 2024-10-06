@@ -39,4 +39,4 @@ http-server ./ -a 127.0.0.1 --port 80 --cors
 
 This is a snapshot of the website showcasing light and dark mode :last_quarter_moon:
 
-[![hk-website-screenshot@0 5x](https://user-images.githubusercontent.com/99822/85169190-71c77b00-b239-11ea-88c6-e559e2cbe3e8.jpg)](https://user-images.githubusercontent.com/99822/85169187-712ee480-b239-11ea-8871-55b0af487356.jpg)
+[![hk-website-screenshot](archive/hk.com-snapshot/snapshot-2024-10-small.png)
