@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "prefer-native-element": "off"
+  }
+}
