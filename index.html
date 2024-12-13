@@ -12,64 +12,83 @@
     <meta name="yandex-verification" content="ae39ae8136c501e6">
     <meta name="theme-color" content="#78909c">
 
+    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!--Plugins CSS - load all Font Awesome styles | https://fontawesome.com/v5/search -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome-5.15.4/css/all.min.css">
+
+    <!-- github calendar css -->
+    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar-responsive.css">
+    <!-- github activity css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    <link id="theme-style-dark" rel="stylesheet" href="assets/css/dark-mode.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1394009-14"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-1394009-14');
+        gtag('config', 'UA-1394009-14');
 
     </script>
-
 </head>
 
 <body>
     <!-- ******HEADER****** -->
-    <header class="header" aria-label="Site Header">
+    <header class="header">
         <div class="container">
-            <img class="profile-image img-responsive pull-left" src="assets/images/profile_cartoon.png" alt="Hossain Khan - Portrait">
-            <div class="profile-content pull-left">
-                <h1 class="name">Hossain Khan</h1>
-                <h2 class="desc">Software Engineer</h2>
-                <ul class="social list-inline">
-                    <li><a href="https://x.com/hossainkhan" target="_blank" aria-label="Twitter [X] Profile"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://androiddev.social/@hossainkhan" target="_blank" aria-label="Mastodon Profile"><i class="fab fa-mastodon"></i></a></li>
-                    <li><a href="https://medium.com/@hossainkhan" target="_blank" aria-label="Blog on Medium.com"><i class="fab fa-medium"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/hossain" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://github.com/hossain-khan" target="_blank" aria-label="Github Profile"><i class="fab fa-github-alt"></i></a></li>
-<!--                     <li><a href="https://stackoverflow.com/users/132121/hossain-khan" target="_blank" aria-label="StackOverflow Profile"><i class="fab fa-stack-overflow"></i></a></li> -->
-<!--                     <li><a href="https://vision.hossainkhan.com/" target="_blank" aria-label="Photography Profile"><i class="fas fa-camera-retro"></i></a></li> -->
-                    <li class="last-item"><a href="https://www.instagram.com/hossainkhan/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="mailto:hello@hossain.dev?Subject=Hello%20Hossain"><i class="far fa-paper-plane"></i> Contact Me</a>
+            <div class="row align-items-center">
+                <div class="col">
+                    <img class="profile-image img-fluid float-start rounded-circle" src="assets/images/profile_cartoon.png" alt="Hossain Khan - Portrait" />
+                    <div class="profile-content">
+                        <h1 class="name">Hossain Khan</h1>
+                        <h2 class="desc">Software Engineer</h2>
+                        <ul class="social list-inline">
+                            <li class="list-inline-item"><a href="https://x.com/hossainkhan" target="_blank" aria-label="Twitter [X] Profile"><i class="fab fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://androiddev.social/@hossainkhan" target="_blank" aria-label="Mastodon Profile"><i class="fab fa-mastodon"></i></a></li>
+                            <li class="list-inline-item"><a href="https://medium.com/@hossainkhan" target="_blank" aria-label="Blog on Medium.com"><i class="fab fa-medium"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hossain" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/hossain-khan" target="_blank" aria-label="Github Profile"><i class="fab fa-github-alt"></i></a></li>
+                            <!-- <li class="list-inline-item"><a href="https://stackoverflow.com/users/132121/hossain-khan" target="_blank" aria-label="StackOverflow Profile"><i class="fab fa-stack-overflow"></i></a></li> -->
+                            <!-- <li class="list-inline-item"><a href="https://vision.hossainkhan.com/" target="_blank" aria-label="Photography Profile"><i class="fas fa-camera-retro"></i></a></li> -->
+                            <li class="list-inline-item last-item"><a href="https://www.instagram.com/hossainkhan/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div><!--//profile-->
+                </div><!--//col-->
+                <div class="col-12 col-md-auto">
+                    <div class="dark-mode-switch d-flex">
+                        <div class="form-check form-switch mx-auto mx-md-0">
+                            <input type="checkbox" class="form-check-input me-2" id="darkSwitch" />
+                            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                        </div>
+                    </div><!--//dark-mode-switch-->
+                    <a class="btn btn-cta-primary" href="mailto:hello@hossain.dev?Subject=Hello%20Hossain"><i class="far fa-paper-plane"></i> Say Hello 👋</a>
+                </div><!--//col-->
+            </div><!--//row-->
         </div><!--//container-->
     </header><!--//header-->
 
-    <div class="container sections-wrapper">
+    <div class="container sections-wrapper py-5">
         <div class="row">
-            <div class="primary col-md-8 col-sm-12 col-xs-12">
+            <div class="primary col-lg-8 col-12">
                 <section class="about section">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">About Me</h2>
                         <div class="content">
                             <p>I'm a passionate developer who always enjoys interesting projects and challenges. I love to work on the web, mobile, and related technologies. For the past decade, I have been working on various Android projects, from Streaming Media to e-Shopping to hardware integration for Smart Connected devices.</p>
@@ -77,29 +96,28 @@
                             <p>I’m always eager to learn and try new things and often take advantage of interesting or challenging opportunities that come my way. My recent projects include an app featuring police brutality reports in light of the 2020 Black Lives Matter protests as well as the Muzei wallpaper plugin app for my photography site.</p>
 
                             <p>Feel free to reach out to me for mentorship or consultation for any project or even non-project work.</p>
-
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
                 <section class="latest section">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Latest Projects</h2>
                         <div class="content">
 
                             <div class="item featured text-center"><!-- featured item-->
-                                <h3 class="title"><a href="https://github.com/hossain-khan/android-keep-alive" target="_blank"><i class="fab fa-android"></i> Android Keep Alive <em>(Experimental)</em></a></h3>
+                                <h3 class="title mb-3"><a href="https://github.com/hossain-khan/android-keep-alive" target="_blank"><i class="fab fa-android"></i> Android Keep Alive <em>(Experimental)</em></a></h3>
                                 <p class="summary">A simple app to keep specific apps alive by checking if they are running. If not, they will be started for you.</p>
-                                <div class="featured-image">
+                                <div class="featured-image has-ribbon">
                                     <a href="https://github.com/hossain-khan/android-keep-alive" target="_blank">
-                                        <img class="img-responsive project-image" src="assets/images/projects/keep-alive-banner-art.png" alt="Android Keep Alive Project Banner Image">
+                                        <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/keep-alive-banner-art.png" alt="Android Keep Alive Project Banner Image" />
                                     </a>
                                     <div class="ribbon">
                                         <div class="text">Alpha</div>
                                     </div>
                                 </div>
 
-                                <div class="desc text-left">
+                                <div class="desc text-start">
                                     <p>
                                         This app is designed with a very specific use case in mind. It is important to understand what this app does and how.
                                     </p>
@@ -113,24 +131,25 @@
                                 </div><!--//desc-->
                                 <a class="btn btn-cta-secondary" href="https://github.com/hossain-khan/android-keep-alive/releases" target="_blank"><i class="fas fa-pie-chart"></i> Test drive</a>
                                 <a class="btn btn-cta-secondary" href="https://github.com/hossain-khan/android-keep-alive" target="_blank"><i class="fab fa-github"></i> Learn More</a>
-                            </div><!--//featured item-->
+                            </div><!--//item-->
 
                             <div class="item featured text-center"><!-- featured item-->
-                                <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.hossainkhan.vision" target="_blank"><i class="fas fa-tv"></i> H.K. Vision Plugin for Muzei</a></h3>
+                                <h3 class="title mb-3"><a href="https://play.google.com/store/apps/details?id=com.hossainkhan.vision" target="_blank"><i class="fas fa-tv"></i> H.K. Vision Plugin for Muzei</a></h3>
                                 <p class="summary">A simple Muzei Live Wallpaper plugin for my H.K. Vision photography site.</p>
-                                <div class="featured-image">
+
+                                <div class="featured-image has-ribbon">
                                     <a href="https://play.google.com/store/apps/details?id=com.hossainkhan.vision"
                                        target="_blank">
-                                        <img class="img-responsive project-image"
+                                        <img class="img-fluid project-image rounded shadow-sm"
                                              src="assets/images/projects/android-muzei-plugin-feature-graphic.png"
                                              alt="H.K. Vision Muzei Plugin for Android">
                                     </a>
                                     <div class="ribbon">
                                         <div class="text">Beta</div>
                                     </div>
-                                </div><!--//featured-image-->
+                                </div>
 
-                                <div class="desc text-left">
+                                <div class="desc text-start">
                                     <p>&quot;Vision Muzei Plugin&quot; is an Android plugin for my <b>H.K. Vision</b> <i class="fas fa-camera-retro" aria-hidden="true"></i> <a href="https://vision.hossainkhan.com/" class="dimmed-link">photography site</a>.
                                         The plugin app allows users to use the featured photos as background wallpaper on their Android phone that automatically changes over time.</p>
                                     <p>Get get advantage of this plugin, you <b>must</b> install the <a href="https://play.google.com/store/apps/details?id=net.nurik.roman.muzei">Muzei Live Wallpaper</a> app on you phone.
@@ -138,10 +157,10 @@
                                     </p>
                                     <p>Here is an example, where it shows how the H.K. Vision image source shows inside the <a href="https://play.google.com/store/apps/details?id=net.nurik.roman.muzei">Muzei app</a>
                                         &amp; how you can select photo and customize it:</p>
-                                    <div class="featured-image">
+                                    <div class="featured-image has-ribbon">
                                         <a href="assets/images/projects/android-muzei-plugin-demo-large.png"
                                            target="_blank">
-                                            <img class="img-responsive project-image"
+                                            <img class="img-fluid project-image"
                                                  src="assets/images/projects/android-muzei-plugin-demo-large-small.png"
                                                  alt="H.K. Vision Muzei Plugin for Android Demo Screenshots">
                                         </a>
@@ -157,62 +176,32 @@
                                 <a class="btn btn-cta-secondary"
                                    href="https://medium.com/@hossainkhan/hackathon-creating-the-simplest-muzei-wallpaper-plugin-for-android-9d080dbb4bf" target="_blank"><i
                                         class="fa fa-book"></i> Read more on Medium</a>
-
-                            </div><!--//featured item-->
-
-
-                            <!-- ========================================================================= -->
-                            <!-- Example for fully featured project with links -->
-                            <!-- Keeping this example as latest feature project can't have links -->
-                            <!-- ========================================================================= -->
-
-                            <!--<div class="item featured text-center">&lt;!&ndash; featured item&ndash;&gt;-->
-                                <!--<h3 class="title"><a href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank"><i class="fas fa-tv"></i> Daily Headlines</a></h3>-->
-                                <!--<p class="summary">An Android&trade; TV application to skim through news headlines.</p>-->
-                                <!--<div class="featured-image">-->
-                                    <!--<a href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank">-->
-                                        <!--<img class="img-responsive project-image" src="assets/images/projects/news_headlines_tv_banner.png" alt="Daily Headlines - Android TV">-->
-                                    <!--</a>-->
-                                    <!--<div class="ribbon">-->
-                                        <!--<div class="text">New</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-                                <!--<div class="desc text-left">-->
-                                    <!--<p>&quot;Daily Headlines&quot; was created as result of personal need to check daily news headlines on <i class="fas fa-tv"></i> TV rather than watching video clips from YouTube or other different source. This was also a personal experiment on creating Android TV application which is somewhat different than what Android TV applications are meant to be.</p>-->
-                                    <!--<p>The application is Open Source and available in <i class="fab fa-github-alt"></i> Github</p>-->
-                                <!--</div>&lt;!&ndash;//desc&ndash;&gt;-->
-                                <!--<a class="btn btn-cta-secondary" href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank"><i class="fas fa-download"></i> Get it from Google Play&trade;</a>-->
-                                <!--<a class="btn btn-cta-secondary" href="https://github.com/hossain-khan/android-daily-headlines" target="_blank"><i class="fab fa-github"></i> Clone from Github</a>-->
-                            <!--</div>&lt;!&ndash;//featured item&ndash;&gt;-->
+                            </div><!--//item-->
 
 
                             <!-- ========================================================================= -->
-                            <hr class="divider"><!-- divider between featured and non-featured items -->
+                            <hr class="divider" /><!-- divider between featured and non-featured items -->
                             <!-- ========================================================================= -->
 
                             <!-- Non feature item (smaller size) -->
                             <!--<div class="item row">-->
-                            <!--    <a class="col-md-4 col-sm-4 col-xs-12" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">-->
-                            <!--        <img class="img-responsive project-image" src="assets/images/projects/project-5.png" alt="project name">-->
+                            <!--    <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">-->
+                            <!--    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-1.png" alt="project name" />-->
                             <!--    </a>-->
-                            <!--    <div class="desc col-md-8 col-sm-8 col-xs-12">-->
-                            <!--        <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">Atom - Designed for Mobile Apps</a></h3>-->
-                            <!--        <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>-->
-                            <!--        <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank"><i class="fas fa-external-link-alt"></i> Find out more</a></p>-->
-                            <!--    </div>&lt;!&ndash;//desc&ndash;&gt;-->
+                            <!--    <div class="desc col-md-8 col-12">-->
+                            <!--        <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">CoderPro - Boootstrap Startup Template For Software Projects</a></h3>-->
+                            <!--        <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>-->
+                            <!--        <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>-->
+                            <!--    </div>&lt;!&ndash;//desc&ndash;&gt;                          -->
                             <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/hossain-khan/kgeo-timeline" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/kgeo-timeline.jpg" alt="KGeoTimeline Project Banner Image">
+                                <a class="col-md-4 col-12" href="https://github.com/hossain-khan/kgeo-timeline" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/kgeo-timeline.jpg" alt="KGeoTimeline Project Banner Image">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/hossain-khan/kgeo-timeline" target="_blank"><i class="fas fa-map-marker-alt"></i> KGeoTimeline <em>(Kotlin Library)</em></a></h3>
                                     <p class="summary">Kotlin library for parsing Google Location History (Timeline) data.</p>
-                                    <p>
-                                        The `KGeoTimeline` library allows you to parse and analyze Google Location History data. It provides a sample app to demonstrate its capabilities.
-                                    </p>
+                                    <p>The `KGeoTimeline` library allows you to parse and analyze Google Location History data. It provides a sample app to demonstrate its capabilities.</p>
                                     <ul>
                                         <li>Run the sample app in IntelliJ IDEA by opening the `sample/src/main/kotlin/Main.kt` file.</li>
                                         <li>Read instructions in the `Main.kt` file on where to add the unzipped Google Location History data.</li>
@@ -227,15 +216,13 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/hossain-khan/github-stats#github-stats-" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/github-stats-banner.png" alt="GitHub PR Stats Project Banner Image">
+                                <a class="col-md-4 col-12" href="https://github.com/hossain-khan/github-stats#github-stats-" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/github-stats-banner.png" alt="GitHub PR Stats Project Banner Image">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/hossain-khan/github-stats" target="_blank"><i class="fab fa-github-alt"></i> Github PR Stats <em>(Experimental)</em></a></h3>
                                     <p class="summary">An experimentation using GitHub APIs to visualize PR stats for individual contributor and other team members.</p>
-                                    <p>
-                                        The stats tool is created using Kotlin and leverages different GitHub API to collect information about Pull-Request (PR) made by author or PRs reviewed by the reviewer.
-                                    </p>
+                                    <p>The stats tool is created using Kotlin and leverages different GitHub API to collect information about Pull-Request (PR) made by author or PRs reviewed by the reviewer.</p>
                                     <ul>
                                         <li>Able to show you PR statistics for PRs created by specific author/contributor of a repository</li>
                                         <li>Able to generate CSV for the PR stats which can be used in Google Sheets or alike to generate charts</li>
@@ -249,15 +236,13 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/hossain-khan/android-police-brutality-incidents#google-play-submission-update" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/2020pb-android-app.png" alt="2020 Police Brutality Incidents during the 2020 George Floyd protests">
+                                <a class="col-md-4 col-12" href="https://github.com/hossain-khan/android-police-brutality-incidents#google-play-submission-update" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/2020pb-android-app.png" alt="2020 Police Brutality Incidents during the 2020 George Floyd protests">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/hossain-khan/android-police-brutality-incidents#google-play-submission-update" target="_blank"><i class="fas fa-users"></i> 2020 Police Brutality Incidents</a></h3>
                                     <p class="summary">An Android&trade; app that allows users to browse reported police brutality incidents during the protests of 2020 following the murder of George Floyd.</p>
-                                    <p>The &quot;2020PB&quot; app was created to share awareness of <code>#BlackLivesMatter</code> and <code>#JusticeForJeorgeFloyd</code> by surfacing all the incidents reported by the community
-                                        that happened during peaceful protests for George Floyd's murder by law enforcement personnel.</p>
-
+                                    <p>The &quot;2020PB&quot; app was created to share awareness of <code>#BlackLivesMatter</code> and <code>#JusticeForJeorgeFloyd</code> by surfacing all the incidents reported by the community that happened during peaceful protests for George Floyd's murder by law enforcement personnel.</p>
                                     <blockquote>All the community reported incidents are collected via <a href="https://github.com/2020PB/police-brutality" target="_blank">2020PB/police-brutality</a> GitHub repository. The community is driven by <i class="fab fa-reddit-alien" aria-hidden="true"></i> <a href="https://www.reddit.com/r/2020PoliceBrutality/" target="_blank">r/2020PoliceBrutality/</a> reddit community.</blockquote>
                                     <p>
                                         <a class="more-link" href="https://github.com/hossain-khan/android-police-brutality-incidents#google-play-submission-update" target="_blank"><i class="fas fa-external-link-alt"></i> Test drive the app <i class="fas fa-download"></i></a> &nbsp;&nbsp;
@@ -267,37 +252,29 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="#">
-                                    <img class="img-responsive project-image" src="assets/images/projects/android-music-app-banner-small.jpg" alt="Music Discovery Smart Speaker Control">
+                                <a class="col-md-4 col-12" href="#">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/android-music-app-banner-small.jpg" alt="Music Discovery Smart Speaker Control">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><i class="fas fa-music"></i> Smart home speaker companion app with modern all-in-one music discovery.</h3>
-                                    <p>Built a smart speaker companion application which allows user to fully control the smart speaker using
-                                        any Android phone or tablet. The app also provides one stop content discovery and playback solution using
-                                        popular music services like <i class="fab fa-spotify" aria-hidden="true"></i> Spotify&reg;,
-                                        <i class="fab fa-amazon" aria-hidden="true"></i> Amazon Music, Deezer, <i class="fas fa-headphones"></i> Pandora®, SiriusXM, iHeartRadio™, TuneIn and so on.</p>
+                                    <p>Built a smart speaker companion application which allows user to fully control the smart speaker using any Android phone or tablet. The app also provides one stop content discovery and playback solution using popular music services like <i class="fab fa-spotify" aria-hidden="true"></i> Spotify&reg;, <i class="fab fa-amazon" aria-hidden="true"></i> Amazon Music, Deezer, <i class="fas fa-headphones"></i> Pandora®, SiriusXM, iHeartRadio™, TuneIn and so on.</p>
                                     <p>The application is available internationally supporting 24 different languages <i class="fas fa-language"></i></p>
-
                                     <p>Some of the key feature of the app includes:</p>
                                     <ul>
                                         <li>Control an manage one or more smart speakers in your <i class="fas fa-home" aria-hidden="true"></i> home.</li>
                                         <li>Allow multiple smart speakers to be grouped together for enhanced multi-room audio experience.</li>
-                                        <li>Add/remove popular music services like <i class="fab fa-spotify" aria-hidden="true"></i> Spotify&reg;,
-                                            <i class="fab fa-amazon" aria-hidden="true"></i> Amazon Music, Deezer, <i class="fas fa-headphones"></i> Pandora®, SiriusXM, iHeartRadio™, TuneIn and so on using one single app.
-                                        </li>
+                                        <li>Add/remove popular music services like <i class="fab fa-spotify" aria-hidden="true"></i> Spotify&reg;, <i class="fab fa-amazon" aria-hidden="true"></i> Amazon Music, Deezer, <i class="fas fa-headphones"></i> Pandora®, SiriusXM, iHeartRadio™, TuneIn and so on using one single app.</li>
                                         <li>Integrates with cloud services to provide personalized and persistent services across multiple device form factors.</li>
                                     </ul>
-                                    <p>
-                                        <i class="fas fa-info-circle"></i> <i><u class="dimmed-link">NOTE: Specific details is not available due to NDA <i class="fas fa-lock"></i></u></i>
-                                    </p>
+                                    <p><i class="fas fa-info-circle"></i> <i><u class="dimmed-link">NOTE: Specific details is not available due to NDA <i class="fas fa-lock"></i></u></i></p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/hossain-khan/android-barebone" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/barebone-banner-new.jpg" alt="Barebone Skeleton App Banner">
+                                <a class="col-md-4 col-12" href="https://github.com/hossain-khan/android-barebone" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/barebone-banner-new.jpg" alt="Barebone Skeleton App Banner">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://github.com/hossain-khan/android-barebone" target="_blank"><i class="fas fa-cogs"></i> Android Barebone App</a></h3>
                                     <p>A barebone MVVM Android project with some essential tools configured the right way for 2019 ^_^</p>
                                     <p>The application is Open Source and available in <i class="fab fa-github-alt"></i> Github</p>
@@ -307,12 +284,11 @@
                                 </div><!--//desc-->
                             </div><!--//item-->
 
-
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://play.google.com/store/apps/details?id=com.hossainkhan.android.constraintlayout" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/android-ConstraintLayout-app-banner.jpg" alt="ConstraintLayout Demo App">
+                                <a class="col-md-4 col-12" href="https://play.google.com/store/apps/details?id=com.hossainkhan.android.constraintlayout" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/android-ConstraintLayout-app-banner.jpg" alt="ConstraintLayout Demo App">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.hossainkhan.android.constraintlayout" target="_blank"><i class="fas fa-th-list"></i> ConstraintLayout Demo</a></h3>
                                     <p>A demo application for Android ConstraintLayout with various usage with sample code.</p>
                                     <p>The application is Open Source and available in <i class="fab fa-github-alt"></i> Github</p>
@@ -324,13 +300,12 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/news_headlines_tv_banner.jpg" alt="Daily Headlines - Android TV">
+                                <a class="col-md-4 col-12" href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/news_headlines_tv_banner.jpg" alt="Daily Headlines - Android TV">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines" target="_blank"><i class="fas fa-tv"></i> Daily Headlines</a></h3>
-                                    <p>&quot;Daily Headlines&quot; was created as result of personal need to check daily news headlines on <i class="fas fa-tv"></i> TV rather than watching video clips from YouTube or other different source. This was also a personal experiment on creating Android TV application which is somewhat different than what Android TV applications
-                                        are meant to be.</p>
+                                    <p>&quot;Daily Headlines&quot; was created as result of personal need to check daily news headlines on <i class="fas fa-tv"></i> TV rather than watching video clips from YouTube or other different source. This was also a personal experiment on creating Android TV application which is somewhat different than what Android TV applications are meant to be.</p>
                                     <p>The application is Open Source and available in <i class="fab fa-github-alt"></i> Github</p>
                                     <p>
                                         <a class="more-link" href="https://github.com/hossain-khan/android-daily-headlines" target="_blank"><i class="fas fa-external-link-alt"></i> Clone from Github</a>
@@ -340,25 +315,25 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="archive/dubdub/dubcandy%20–%20Apps%20on%20Google%20Play.html" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/dubdub_2.0_BUMPER_1280x720.jpg" alt="dubcandy&trade; - Companion app for video influencers.">
+                                <a class="col-md-4 col-12" href="archive/dubdub/dubcandy%20–%20Apps%20on%20Google%20Play.html" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/dubdub_2.0_BUMPER_1280x720.jpg" alt="dubcandy&trade; - Companion app for video influencers.">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="archive/dubdub/dubcandy%20–%20Apps%20on%20Google%20Play.html" target="_blank">dubcandy&trade; - Companion app for video influencers.</a></h3>
                                     <p>With dubcandy you can turn your videos into content that your viewers can buy from directly. When they buy, you earn revenue.</p>
                                     <p>That is the power of shoppable videos and dubcandy gives you that right from your mobile.</p>
                                     <p><i class="fas fa-info-circle"></i> <i>UPDATE: The app has been taken offline, a snapshot of Google Play is available below.</i></p>
                                     <p><a class="more-link" href="archive/dubdub/dubcandy%20–%20Apps%20on%20Google%20Play.html" target="_blank"><i class="fas fa-external-link-alt"></i> Google Play&trade; (Historic Snapshot)</a>
-                                       &nbsp;&nbsp; <a class="more-link" href="archive/dubdub/video-preview.html"><i class="fas fa-external-link-alt"></i> See App Demo Video</a>
+                                        &nbsp;&nbsp; <a class="more-link" href="archive/dubdub/video-preview.html"><i class="fas fa-external-link-alt"></i> See App Demo Video</a>
                                     </p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://play.google.com/store/apps/details?id=tv.hooq.android&hl=en" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/hooq_banner.jpg" alt="HOOQ.tv">
+                                <a class="col-md-4 col-12" href="https://play.google.com/store/apps/details?id=tv.hooq.android&hl=en" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/hooq_banner.jpg" alt="HOOQ.tv">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://play.google.com/store/apps/details?id=tv.hooq.android&hl=en" target="_blank">HOOQ&trade; TV</a></h3>
                                     <p>HOOQ is a video on demand streaming service. HOOQ is Asia's first premium video-on-demand service to launch across the South East Asia and India.</p>
                                     <p>HOOQ Android app allows you to watch over 10,000 movies and TV series ranging from the top Hollywood blockbusters, local box office hits and TV series same day as US telecast! </p>
@@ -367,10 +342,10 @@
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://play.google.com/store/apps/details?id=com.optiktv&hl=en" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/optik_tv_app_banner.png" alt="Optik TV®">
+                                <a class="col-md-4 col-12" href="https://play.google.com/store/apps/details?id=com.optiktv&hl=en" target="_blank">
+                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/optik_tv_app_banner.png" alt="Optik TV®">
                                 </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <div class="desc col-md-8 col-12">
                                     <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.optiktv&hl=en" target="_blank">Optik TV®</a></h3>
                                     <p>Optik TV® android app allows you to watch live and On Demand shows and movies on the go using your smartphone or tablet.</p>
                                     <p>Some of the key feature of the app includes:</p>
@@ -389,9 +364,8 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-
                 <section class="projects section">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading"><i class="fab fa-github"></i>pen Source and Other Projects</h2>
                         <div class="content">
                             <div class="item">
@@ -456,11 +430,6 @@
                                 <ul>
                                     <li>Reported Issue: Selecting image from `BrowseProviderFragment` only sets the wallpaper once  <a href="https://github.com/romannurik/muzei/issues/673">#673</a></li>
                                 </ul>
-
-                                <!--<p class="summary"><i class="fab fa-github"></i> <b>XYZ</b> - XYZ</p>
-                                <ul>
-                                    <li>XYZ <a href="XYZ">XYZ</a></li>
-                                </ul>-->
                             </div><!--//item-->
 
                             <!-- Button to take to github profile page -->
@@ -471,7 +440,7 @@
                 </section><!--//section-->
 
                 <section class="experience section">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Work Experience</h2>
                         <div class="content">
 
@@ -708,10 +677,29 @@
                         </div><!--//experience content-->
                     </div><!--//experience section-inner-->
                 </section><!--//experience section-->
+
+                <section class="github section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">My GitHub</h2>
+                        <p>You can embed your GitHub contribution graph calendar using IonicaBizau's <a href="https://github.com/hossain-khan" target="_blank">GitHub Calendar</a> widget.
+
+                        <div id="github-graph" class="github-graph">
+
+                        </div><!--//github-graph-->
+
+                        <p>You can also embed your GitHub activities using Casey Scarborough's <a href="https://github.com/hossain-khan/github-activity" target="_blank">GitHub Activity Stream</a> widget.
+                            <!--//Usage: https://caseyscarborough.com/projects/github-activity/ -->
+                        <div id="ghfeed" class="ghfeed">
+                        </div><!--//ghfeed-->
+
+                    </div><!--//secton-inner-->
+                </section><!--//section-->
+
             </div><!--//primary-->
-            <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                <aside class="info aside section" aria-label="Basic Info">
-                    <div class="section-inner">
+
+            <div class="secondary col-lg-4 col-12">
+                <aside class="info aside section">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
                             <ul class="list-unstyled">
@@ -725,8 +713,8 @@
                     </div><!--//section-inner-->
                 </aside><!--//aside-->
 
-                <aside class="skills aside section" aria-label="Technical Skills">
-                    <div class="section-inner">
+                <aside class="skills aside section">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <p class="intro">
@@ -737,91 +725,101 @@
 
                                 <div class="item">
                                     <h3 class="level-title">Android Development<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
-                                            title="Native android development for different form factors. Familiar with material design, data binding, android support-lib and popular 3rd party library like Dagger, Retrofit, Picasso, OkHttp, Room and so on."><i class="fas fa-info-circle"></i> Pro</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="61%">
-                                        </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
+                                            title="Native android development for different form factors. Familiar with material design, data binding, android support-lib and popular 3rd party library like Dagger, Retrofit, Picasso, OkHttp, Room and so on."><i
+                                            class="fas fa-info-circle"></i> Pro</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 61%" aria-valuenow="61" aria-valuemin="0" aria-valuemax="61"></div>
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
                                     <h3 class="level-title">Android Architectures<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
-                                            title="Actively used well established android architectures like MVVM, MVP in recent projects"><i class="fas fa-info-circle"></i> Semi-Pro</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="45%">
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
+                                            title="Actively used well established android architectures like MVVM, MVP in recent projects"><i
+                                            class="fas fa-info-circle"></i> Semi-Pro</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
                                     <h3 class="level-title">Android Jetpack<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
                                             title="Actively trying to learn different Jetpack components. Recently worked with AppCompat, Android KTX, Multidex, Test, Data Binding, Lifecycles,
-                                            Paging, ViewModel, Media & playback, Notifications, Permissions, Preferences, Animation & transitions, Layout, Room, Navigation, TV"><i class="fas fa-info-circle"></i> Intermediate</span>
+                                                Paging, ViewModel, Media & playback, Notifications, Permissions, Preferences, Animation & transitions, Layout, Room, Navigation, TV"><i
+                                            class="fas fa-info-circle"></i> Intermediate</span>
                                     </h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="45%">
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
-                                    <h3 class="level-title">Jetpack Compose<span class="level-label" data-toggle="tooltip" data-placement="left"
-                                            data-animation="true" title="Currently learning Jetpack Compose for building native UI in Android."><i class="fas fa-info-circle"></i> Beginner</span>
+                                    <h3 class="level-title">Jetpack Compose<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left"
+                                                                                 data-animation="true"
+                                                                                 title="Currently learning Jetpack Compose for building native UI in Android."><i
+                                            class="fas fa-info-circle"></i> Beginner</span>
                                     </h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="10%">
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
                                     <h3 class="level-title">Java<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
-                                            title="6+ years of experience using Java in Android. However, last 7+ years have been Kotlin only. So, I might have forgotten most of Java by now."><i class="fas fa-info-circle"></i> Intermediate</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="27%">
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
+                                            title="6+ years of experience using Java in Android. However, last 7+ years have been Kotlin only. So, I might have forgotten most of Java by now."><i
+                                            class="fas fa-info-circle"></i> Intermediate</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 27%" aria-valuenow="27" aria-valuemin="0" aria-valuemax="27">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
                                     <h3 class="level-title">Kotlin<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
-                                            title="Started working on kotlin since it's official support announced at Google I/O 2017. However, I haven't been able to leverage all the new Kotlin features that were released recently."><i class="fas fa-info-circle"></i> Intermediate</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="44%">
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
+                                            title="Started working on kotlin since it's official support announced at Google I/O 2017. However, I haven't been able to leverage all the new Kotlin features that were released recently."><i
+                                            class="fas fa-info-circle"></i> Intermediate</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 44%" aria-valuenow="44" aria-valuemin="0" aria-valuemax="44">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
-                                    <h3 class="level-title">Tools/IDE<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="Proficient in Android Studio, Github, Git Fork, Debugger, Postman, Charles and so on."><i class="fas fa-info-circle"></i> Pro</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="65%">
+                                    <h3 class="level-title">Tools/IDE<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left"
+                                                                           data-animation="true"
+                                                                           title="Proficient in Android Studio, Github, Git Fork, Debugger, Postman, Charles and so on."><i
+                                            class="fas fa-info-circle"></i> Pro</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                                 <div class="item">
                                     <h3 class="level-title">CI/CD<span
-                                            class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true"
-                                            title="I have experience over working with Jenkins Piplelines, Github Actions, Circle CI, Travis CI, Microsoft AppCenter."><i class="fas fa-info-circle"></i> Intermediate</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="24%">
+                                            class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-animation="true"
+                                            title="I have experience over working with Jenkins Piplelines, Github Actions, Circle CI, Travis CI, Microsoft AppCenter."><i
+                                            class="fas fa-info-circle"></i> Intermediate</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: 24%" aria-valuenow="24" aria-valuemin="0" aria-valuemax="24">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                                    </div><!--//skill-level-bar-->
+                                </div><!--//skill-item-->
 
                             </div>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
 
-                <aside class="testimonials aside section" aria-label="Testimonials">
-                    <div class="section-inner">
+                <aside class="testimonials aside section">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Testimonials</h2>
                         <div class="content">
                             <div class="item">
@@ -831,12 +829,15 @@
                                 </blockquote>
                                 <p class="source"><span class="name">Doug Doe</span><br><span class="title">VP of Engineering at STAGE TEN</span></p>
                             </div><!--//item-->
+
+                            <!--//item-->
                             <!--<div class="item">-->
                             <!--<blockquote class="quote">-->
                             <!--<p><i class="fas fa-quote-left"></i>Hossain was quick and expert in developing apps and working face to face with customers to gather and clarify requirements. Hossain worked well with other team members and even with difficult customers. He was always calm and respectful and was able to quickly develop new apps with complicated features, like eMBMS, LTE-B video and file delivery, 3rd party plug-ins for DRM and custom players, as well as work on other developers' code bases to fix bugs and extend new features. Hossain wrote very clean code which other developers readily accepted and leveraged. Hossain was a good multitasked and worked on multiple projects in parallel. I believe Hossain is a great individual contributor and has potential to be a team lead and manager. I'd work with Hossain again.</p>-->
                             <!--</blockquote>-->
                             <!--<p class="source"><span class="name">Dan Witmer</span><br /><span class="title">AT&T Entertainment Group Global Partnerships</span></p>-->
                             <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
+
                             <div class="item">
                                 <blockquote class="quote">
                                     <p><i class="fas fa-quote-left"></i>I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are
@@ -844,33 +845,36 @@
                                 </blockquote>
                                 <p class="source"><span class="name">Sebastian Jakubowski</span><br><span class="title">Associate Director, Software Engineering at AT&amp;T</span></p>
                             </div><!--//item-->
+
+                            <!--//item-->
                             <!--<div class="item">-->
                             <!--<blockquote class="quote">-->
                             <!--<p><i class="fas fa-quote-left"></i>At QuickPlay, I have had the pleasure to work with Hossain on multiple Android projects. Hossain is excellent at breaking down complex problems into actionable pieces. He is reliable, detail-oriented and committed to delivering quality products that fulfill beyond the functional requirements. In the design process, he gives a lot of thought on how a product may evolve in the future, and produces an appropriate amount of useful documentation. In addition to his work ethics, Hossain brings to our team in-depth knowledge about the platform API and experience in application design. He has my full recommendation as a software engineer, in mobile development and otherwise.</p>-->
                             <!--</blockquote>-->
                             <!--<p class="source"><span class="name">Benedict Lau</span><br /><span class="title">Senior Software Engineer</span></p>-->
                             <!--</div>&lt;!&ndash;//item&ndash;&gt;-->
-                            <p><a class="more-link" href="https://www.linkedin.com/in/hossain/"><i class="fas fa-external-link-alt"></i> More on Linkedin</a></p>
 
-                        </div><!--//content-->
+                            <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p>
+
+                        </div><!--//testimonials-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//testimonials-section-->
 
                 <aside class="education aside section" aria-label="Education">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Education</h2>
                         <div class="content">
                             <div class="item">
                                 <h3 class="title"><i class="fas fa-graduation-cap"></i> BSc Computer Science</h3>
                                 <h4 class="university">University of Windsor <span class="year">(2005-2008)</span></h4>
                             </div><!--//item-->
-                        </div><!--//content-->
+                        </div><!--//education-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//education-section-->
 
-                <aside class="education aside section" aria-label="Certifactions">
-                    <div class="section-inner">
-                        <h2 class="heading">Certification</h2>
+                <aside class="education aside section" aria-label="Certifications">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Education</h2>
                         <div class="content">
                             <div class="item">
                                 <h3 class="title"><i class="fas fa-graduation-cap"></i>Associate Android Developer</h3>
@@ -884,40 +888,40 @@
                                 <p><a href="https://www.codementor.io/@hossainkhan" rel="noopener" target="_blank"><img class="img-responsive university" src="assets/images/cmx-dev-badge.svg" alt="CodementorX Certified Developer Badge" width="230" height="92"></a></p>
                                 <p><a class="more-link" href="https://www.codementor.io/@hossainkhan" rel="noopener" target="_blank"><i class="fas fa-external-link-alt"></i>See Profile &amp; Reserve</a></p>
                             </div><!--//item-->
-                        </div><!--//content-->
+                        </div><!--//certification-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//certification-section-->
 
                 <aside class="languages aside section" aria-label="Spoken Language">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Languages</h2>
                         <div class="content">
                             <ul class="list-unstyled">
                                 <li class="item">
                                     <i class="fas fa-language"></i> <span class="title"><strong>Bengali:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-xs"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span>
+                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></span>
                                 </li><!--//item-->
                                 <li class="item">
                                     <i class="fas fa-language"></i> <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i></span>
+                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i></span>
                                 </li><!--//item-->
                             </ul>
-                        </div><!--//content-->
+                        </div><!--//languages-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//languages-section-->
 
                 <aside class="blog aside section" aria-label="Blog Posts">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Latest Blog Posts</h2>
                         <p>My random thoughts...</p>
                         <div id="rss-feeds" class="content">
                             <!-- feed content loaded via ajax -->
-                        </div><!--//content-->
+                        </div><!--//blog-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//blog-section-->
 
                 <aside class="list music aside section" aria-label="My Favourite Music">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Favourite coding music</h2>
                         <div class="content">
                             <p>I <i class="fas fa-heart"></i> ambient music while working. Following are some of the artists I listen to when I work on my projects.</p>
@@ -927,12 +931,12 @@
                                 <li><i class="fas fa-headphones"></i> <a href="https://www.youtube.com/watch?v=as9BCiK16d0" target="_blank">Max Payne Theme Songs</a></li>
                                 <li><i class="fas fa-headphones"></i> <a href="https://www.last.fm/music/Yanni" target="_blank">Yanni</a></li>
                             </ul>
-                        </div><!--//content-->
+                        </div><!--//music-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//music-section-->
 
                 <aside class="list music hobby aside section" aria-label="Hobby">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Hobby and activities</h2>
                         <div class="content">
                             <p>When I am not working, I enjoy various activities both indoor and outdoor.</p>
@@ -943,12 +947,12 @@
                                 <li><i class="fas fa-cutlery"></i> Try out food from different restaurants</li>
                                 <li><i class="fas fa-camera-retro"></i> Take lots of pictures</li>
                             </ul>
-                        </div><!--//content-->
+                        </div><!--//hobby-content-->
                     </div><!--//section-inner-->
-                </aside><!--//section-->
+                </aside><!--//hobby-section-->
 
                 <aside class="list conferences aside section" aria-label="List of conferences attended">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Conferences</h2>
                         <div class="content">
                             <ul class="list-unstyled">
@@ -974,27 +978,30 @@
                     </div><!--//section-inner-->
                 </aside><!--//section-->
 
-
             </div><!--//secondary-->
         </div><!--//row-->
-        <a href="#top" class="topbtn" aria-label="Scroll to top"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a>
+        <!--        <a href="#top" class="topbtn" aria-label="Scroll to top"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a>-->
     </div><!--//masonry-->
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
         </div><!--//container-->
     </footer><!--//footer-->
 
     <!-- Javascript -->
-    <script src="assets/plugins/jquery-1.11.3.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
-    <!-- custom js - initializes RSS, Github Calendar, Skills and so on -->
-    <script src="assets/js/main.js"></script>
-</body>
+    <script type="text/javascript" src="assets/plugins/popper.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
+    <!-- github calendar plugin -->
+    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+    <!-- github activity plugin -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
+    <!-- custom js - initializes RSS, GitHub Calendar, Skills and so on -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
 </html>
