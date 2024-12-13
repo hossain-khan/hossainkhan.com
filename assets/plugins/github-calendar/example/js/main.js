@@ -1,1 +1,4 @@
-GitHubCalendar(".calendar", "IonicaBizau");
+GitHubCalendar(".calendar", "IonicaBizau", {
+    responsive: true,
+    tooltips: true
+});

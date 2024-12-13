@@ -1,8 +1,8 @@
 var config = {
   dist: 'dist',
-  bower: 'bower_components',
+  node_modules: 'node_modules',
   src: 'src',
-  banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - Copyright 2015 <%= pkg.author %> */\n'
+  banner: '/* Github Activity Stream - v<%= pkg.version %> \n * https://github.com/caseyscarborough/github-activity \n *\n * Copyright 2015-<%= grunt.template.today("yyyy") %> <%= pkg.author %> \n * MIT License\n */\n'
 };
 
 var pkg = require('./package.json');
@@ -11,47 +11,18 @@ module.exports = function(grunt) {
   grunt.initConfig({
     config: config,
     pkg: pkg,
-    copy: {
-      dist: {
-        files: [{
-            expand: true,
-            cwd: '<%= config.bower %>/octicons/octicons',
-            src: 'octicons.ttf',
-            dest: '<%= config.dist %>/octicons'
-          },
-          {
-            expand: true,
-            cwd: '<%= config.bower %>/octicons/octicons',
-            src: 'octicons.woff',
-            dest: '<%= config.dist %>/octicons'
-          },
-          {
-            expand: true,
-            cwd: '<%= config.bower %>/octicons/octicons',
-            src: 'octicons.eot',
-            dest: '<%= config.dist %>/octicons'
-          },
-          {
-            expand: true,
-            cwd: '<%= config.bower %>/octicons/octicons',
-            src: 'octicons.svg',
-            dest: '<%= config.dist %>/octicons'
-          }
-        ]
-      }
-    },
     cssmin: {
       add_banner: {
         options: {
           banner: config.banner
         },
         files: {
-          '<%= config.dist %>/github-activity-<%= pkg.version %>.min.css': [
+          '<%= config.dist %>/github-activity.min.css': [
             '<%= config.src %>/github-activity.css'
           ],
-          '<%= config.dist %>/octicons/octicons.min.css': [
-            '<%= config.bower %>/octicons/octicons/octicons.css'
-          ]
+          '<%= config.dist %>/github-activity.dark.min.css': [
+            '<%= config.src %>/github-activity.dark.css'
+          ],
         }
       }
     },
@@ -61,12 +32,9 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= config.dist %>/github-activity-<%= pkg.version %>.min.js': [
+          '<%= config.dist %>/github-activity.min.js': [
             '<%= config.src %>/github-activity.js'
           ],
-          '<%= config.dist %>/mustache/mustache.min.js': [
-            '<%= config.bower %>/mustache/mustache.js'
-          ]
         }
       }
     },
@@ -83,5 +51,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask( "wipe", [ "clean" ])
-  grunt.registerTask( "default", [ "copy", "cssmin", "uglify:dist" ] );
+  grunt.registerTask( "default", [ "cssmin", "uglify:dist" ] );
 };

@@ -12,6 +12,8 @@ var GitHubActivity = (function() {
 
   var obj = {};
 
+  var config = {};
+
   var methods = {
     renderLink: function(url, title, cssClass) {
       if (!title) { title = url; }
@@ -56,7 +58,7 @@ var GitHubActivity = (function() {
           }
           if (i < 2) {
             d.shaLink = methods.renderGitHubLink(data.repo.name + '/commit/' + d.sha, d.sha.substring(0, 6), 'gha-sha');
-            d.committerGravatar = Mustache.render('<img class="gha-gravatar-commit" src="https://gravatar.com/avatar/{{hash}}?s=30&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="16" />', { hash: md5(d.author.email) });
+            d.committerGravatar = Mustache.render('<img class="gha-gravatar-commit" src="https://gravatar.com/avatar/{{hash}}" width="16" />', { hash: md5(d.author.email.trim().toLowerCase()) });
           } else {
             // Delete the rest of the commits after the first 2, and then break out of the each loop.
             p.commits.splice(2, p.size);
@@ -83,16 +85,28 @@ var GitHubActivity = (function() {
 
         // If this was a merge, set the merge message.
         if (p.pull_request.merged) {
-          p.action = "merged";
+          data.eventType = "merged";
           var message = '{{c}} ' + pluralize('commit', pr.commits) + ' with {{a}} ' + pluralize('addition', pr.additions) + ' and {{d}} ' + pluralize('deletion', pr.deletions);
           data.mergeMessage = Mustache.render('<br><small class="gha-message-merge">' + message + '</small>', { c: pr.commits, a: pr.additions, d: pr.deletions });
+        } else {
+          data.eventType = "closed";
+        }
+
+        if (data.type === 'PullRequestReviewEvent') {
+          if (p.review.state === "commented") {
+            data.eventType = "commented on";
+          } else if (p.review.state === "changes_requested") {
+            data.eventType = "requested changes on";
+          } else if (p.review.state === "approved") {
+            data.pullRequestEventType = "approved";
+          }
         }
       }
 
       // Get the link if this is a PullRequestReviewCommentEvent
       if (p.comment && p.comment.pull_request_url) {
         var title = data.repo.name + "#" + p.comment.pull_request_url.split('/').pop();
-        data.pullRequestLink = methods.renderGitHubLink(p.comment.pull_request_url, title);
+        data.pullRequestLink = methods.renderLink(p.comment.html_url, title);
       }
 
       // Get the comment if one exists, and trim it to 150 characters.
@@ -136,6 +150,8 @@ var GitHubActivity = (function() {
       if (data.type == 'CreateEvent' && (['repository', 'branch', 'tag'].indexOf(p.ref_type) >= 0)) {
         // Display separate icons depending on type of create event.
         icon = icons[data.type + '_' + p.ref_type];
+      } else if (data.type === 'PullRequestReviewEvent') {
+        icon = icons[data.type + '_' + p.review.state];
       } else {
         icon = icons[data.type]
       }
@@ -154,7 +170,6 @@ var GitHubActivity = (function() {
       }
       data.userLink = methods.renderLink(data.html_url, data.login);
       data.gravatarLink = methods.renderLink(data.html_url, '<img src="' + data.avatar_url + '">');
-
       return Mustache.render(templates.UserHeader, data);
     },
     getActivityHTML: function(data, limit) {
@@ -178,6 +193,9 @@ var GitHubActivity = (function() {
       var request = new XMLHttpRequest();
       request.open('GET', url);
       request.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+      if (config.credentials && config.credentials.username && config.credentials.personalAccessToken) {
+        request.setRequestHeader('Authorization', 'Basic ' + btoa(config.credentials.username + ':' + config.credentials.personalAccessToken));
+      }
 
       request.onreadystatechange = function() {
         if (request.readyState === 4) {
@@ -215,6 +233,7 @@ var GitHubActivity = (function() {
   };
 
   obj.feed = function(options) {
+    config = options;
     if (!options.username || !options.selector) {
       throw "You must specify the username and selector options for the activity stream.";
       return false;
@@ -228,12 +247,6 @@ var GitHubActivity = (function() {
 
     if (!!options.repository){
       eventsUrl = 'https://api.github.com/repos/' + options.username + '/' + options.repository + '/events';
-    }
-
-    if (options.clientId && options.clientSecret) {
-      var authString = '?client_id=' + options.clientId + '&client_secret=' + options.clientSecret;
-      userUrl   += authString;
-      eventsUrl += authString;
     }
 
     if (!!options.eventsUrl){
@@ -317,13 +330,13 @@ function md5cycle(f,h){var g=f[0],e=f[1],j=f[2],i=f[3];g=ff(g,e,j,i,h[0],7,-6808
 var templates = {
   Stream: '<div class="gha-feed">{{{text}}}<div class="gha-push-small"></div>{{{footer}}}</div>',
   Activity: '<div id="{{id}}" class="gha-activity">\
-               <div class="gha-activity-icon"><span class="octicon octicon-{{icon}}"></span></div>\
+               <div class="gha-activity-icon"><span class="octicon mega-octicon octicon-{{icon}}"></span></div>\
                <div class="gha-message"><div class="gha-time">{{{timeString}}}</div>{{{userLink}}} {{{message}}}</div>\
                <div class="gha-clear"></div>\
              </div>',
   SingleLineActivity: '<div class="gha-activity gha-small">\
                          <div class="gha-activity-icon"><span class="octicon octicon-{{icon}}"></span></div>\
-                         <div class="gha-message">{{{userLink}}} {{{message}}}</div><div class="gha-time">{{{timeString}}}</div>\
+                         <div class="gha-message"><div class="gha-time">{{{timeString}}}</div>{{{userLink}}} {{{message}}}</div>\
                          <div class="gha-clear"></div>\
                        </div>',
   UserHeader: '<div class="gha-header">\
@@ -332,7 +345,7 @@ var templates = {
                  <div class="gha-gravatar">{{{gravatarLink}}}</div>\
                </div><div class="gha-push"></div>',
   Footer: '<div class="gha-footer">Public Activity <a href="https://github.com/caseyscarborough/github-activity" target="_blank">GitHub Activity Stream</a>',
-  NoActivity: '<div class="gha-info">This user does not have any public activity yet.</div>',
+  NoActivity: '<div class="gha-info">This user does not have any recent public activity.</div>',
   UserNotFound: '<div class="gha-info">User {{username}} wasn\'t found.</div>',
   EventsNotFound: '<div class="gha-info">Events for user {{username}} not found.</div>',
   CommitCommentEvent: 'commented on commit {{{commentLink}}}<br>{{{userGravatar}}}<small>{{comment}}</small>',
@@ -346,7 +359,8 @@ var templates = {
   IssuesEvent: '{{payload.action}} issue {{{issueLink}}}<br>{{{userGravatar}}}<small>{{payload.issue.title}}</small>',
   MemberEvent: 'added {{{memberLink}}} to {{{repoLink}}}',
   PublicEvent: 'open sourced {{{repoLink}}}',
-  PullRequestEvent: '{{payload.action}} pull request {{{pullRequestLink}}}<br>{{{userGravatar}}}<small>{{payload.pull_request.title}}</small>{{{mergeMessage}}}',
+  PullRequestEvent: '{{eventType}} pull request {{{pullRequestLink}}}<br>{{{userGravatar}}}<small>{{payload.pull_request.title}}</small>{{{mergeMessage}}}',
+  PullRequestReviewEvent: '{{eventType}} pull request {{{pullRequestLink}}}.<br>{{{userGravatar}}}<small>{{payload.review.body}}</small>',
   PullRequestReviewCommentEvent: 'commented on pull request {{{pullRequestLink}}}<br>{{{userGravatar}}}<small>{{comment}}</small>',
   PushEvent: 'pushed to {{{branchLink}}}{{{repoLink}}}<br>\
                 <ul class="gha-commits">{{#payload.commits}}<li><small>{{{committerGravatar}}} {{{shaLink}}} {{message}}</small></li>{{/payload.commits}}</ul>\
@@ -358,7 +372,7 @@ var templates = {
 icons = {
   CommitCommentEvent: 'comment-discussion',
   CreateEvent_repository: 'repo-create',
-  CreateEvent_tag: 'tag-add',
+  CreateEvent_tag: 'tag',
   CreateEvent_branch: 'git-branch-create',
   DeleteEvent: 'repo-delete',
   FollowEvent: 'person-follow',
@@ -370,9 +384,12 @@ icons = {
   MemberEvent: 'person',
   PublicEvent: 'globe',
   PullRequestEvent: 'git-pull-request',
+  PullRequestReviewEvent_approved: 'check',
+  PullRequestReviewEvent_commented: 'comment-discussion',
+  PullRequestReviewEvent_changes_requested: 'alert',
   PullRequestReviewCommentEvent: 'comment-discussion',
   PushEvent: 'git-commit',
-  ReleaseEvent: 'tag-add',
+  ReleaseEvent: 'tag',
   WatchEvent: 'star'
 },
 

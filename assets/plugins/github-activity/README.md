@@ -2,40 +2,62 @@
 
 This is a small Javascript plugin that creates a stream of your recent GitHub activity. It displays the user's name, username, photo, and a list of each individual activity type. Click [here](https://caseyscarborough.github.io/github-activity) for a demo.
 
-A sample image of the activity stream is shown below:
+### Light Theme
 
-![](https://raw.githubusercontent.com/caseyscarborough/github-activity/gh-pages/images/matz.png)
+![](https://raw.githubusercontent.com/caseyscarborough/github-activity/gh-pages/images/light.png)
+
+### Dark Theme
+
+![](https://raw.githubusercontent.com/caseyscarborough/github-activity/gh-pages/images/dark.png)
 
 ## Dependencies
 
 The two dependencies for the plugin are the [Mustache](https://github.com/janl/mustache.js/) templating library and [Octicons](https://octicons.github.com/) (if you want the icons to show). You can include these along with the scripts for the plugin in the head of your page with the following HTML:
 
-```html
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-<link rel="stylesheet" href="github-activity-0.1.4.min.css">
+### Using CDN
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-<script type="text/javascript" src="github-activity-0.1.4.min.js"></script>
+```html
+<link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
+<link rel="stylesheet" href="https://unpkg.com/github-activity-feed@latest/dist/github-activity.min.css">
+
+<script type="text/javascript" src="https://unpkg.com/mustache@4.2.0/mustache.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/github-activity-feed@latest/dist/github-activity.min.js"></script>
+
+<!-- if using dark theme add this in addition to the main CSS file -->
+<link rel="stylesheet" href="https://unpkg.com/github-activity-feed@latest/dist/github-activity.dark.min.css">
 ```
 
-The files can be downloaded from the [releases page](https://github.com/caseyscarborough/github-activity/releases).
+### Using npm
+
+Install the library:
+
+```bash
+npm install --save github-activity-feed
+```
+
+Add the files to your webpage:
+
+```html
+<link rel="stylesheet" href="node_modules/octicons/build/font/octicons.css">
+<link rel="stylesheet" href="node_modules/github-activity-feed/dist/github-activity.min.css">
+
+<script type="text/javascript" src="node_modules/mustache/mustache.min.js"></script>
+<script type="text/javascript" src="node_modules/github-activity-feed/dist/github-activity.min.js"></script>
+
+<!-- if using dark theme add this in addition to the main CSS file -->
+<link rel="stylesheet" href="node_modules/github-activity-feed/dist/github-activity.dark.min.css">
+```
+
+## Building
 
 If you'd like to build the files yourself:
 
 ```bash
-# Ensure you have grunt and bower installed
-npm install bower
-npm install grunt-cli
-
-# Clone the repository
-git clone https://github.com/caseyscarborough/github-activity.git
-cd github-activity
-
 # Install dependencies
-bower install
+npm install
 
 # Build dist
-grunt
+npx grunt
 ```
 
 ## Usage
@@ -50,10 +72,10 @@ Then call the feed method via Javascript:
 
 ```js
 GitHubActivity.feed({
-	username: "your-username",
-	repository: "your-repo", // optional
-	selector: "#feed",
-	limit: 20 // optional
+  username: "your-username",
+  repository: "your-repo", // optional
+  selector: "#feed",
+  limit: 20, // optional
 });
 ```
 
