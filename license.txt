@@ -1,30 +1,29 @@
-Responsive HTML5 website template for developers
+Bootstrap 5 Portfolio Theme for Developers
 
 Theme name:
 =======================================================================
-Developer
+Developer 
 
 Theme version:
 =======================================================================
-v1.5
+Bootstrap 5 v3.1
 
 Release Date:
 =======================================================================
-07 Jan 2016
+2023-06-26
 
 Author: 
 =======================================================================
-Xiaoying Riley at 3rd Wave Media (http://themes.3rdwavemedia.com/)
+Xiaoying Riley at 3rd Wave Media (https://themes.3rdwavemedia.com/)
 
 Contact:
 =======================================================================
-Web: http://themes.3rdwavemedia.com/
-Email: hello@3rdwavemedia.com
+Web: https://themes.3rdwavemedia.com/
+Email: themes@3rdwavemedia.com
 Twitter: @3rdwave_themes
 
 License: 
 =======================================================================
-This template is free under the Creative Commons Attribution 3.0 License.
-https://creativecommons.org/licenses/by/3.0/
+This template is 100% FREE as long as you keep the footer attribution link. You do not have the rights to resell, sublicense or redistribute (even for free) the template on its own or as a separate attachment from any of your work.
 
-If you'd like to use the template without the attribution, you can check out other license options via our website: http://themes.3rdwavemedia.com/
+If you’d like to use this template without the footer attribution link, you can buy the commercial license - https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/
