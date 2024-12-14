@@ -800,6 +800,10 @@ body[data-theme="dark"] .text-muted {
   color: rgba(255, 255, 255, 0.6);
 }
 
+body[data-theme="dark"] .skills .skillset .level-bar {
+  background: #99aa9a;
+}
+
 @media (max-width: 767.98px) {
   .header {
     text-align: center;
