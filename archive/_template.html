@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Hossain Khan | Portfolio</title>
     <!-- Meta -->
@@ -12,31 +13,34 @@
     <meta name="yandex-verification" content="ae39ae8136c501e6">
     <meta name="theme-color" content="#78909c">
 
+    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet"
+        type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- FontAwesome JS -->
+    <script defer src="/assets/fontawesome/js/all.js"></script>
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!--Plugins CSS - load all Font Awesome styles | https://fontawesome.com/v5/search -->
-    <link rel="stylesheet" href="/assets/plugins/fontawesome-5.15.4/css/all.min.css">
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="/assets/css/styles.css">
-    <link id="theme-style-dark" rel="stylesheet" href="/assets/css/dark-mode.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1394009-14"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'UA-1394009-14');
+        gtag('config', 'UA-1394009-14');
 
     </script>
 
@@ -44,41 +48,68 @@
 <!--
     NOTE: This is stripped down placeholder template paged created from `index.html`
 -->
+
 <body>
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container">
-            <img class="profile-image img-responsive pull-left" src="/assets/images/profile_cartoon.png" alt="Hossain Khan - Portrait">
-            <div class="profile-content pull-left">
-                <h1 class="name">Hossain Khan</h1>
-                <h2 class="desc">Software Engineer</h2>
-                <ul class="social list-inline">
-                    <li><a href="https://x.com/hossainkhan" target="_blank" aria-label="Twitter [X] Profile"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://androiddev.social/@hossainkhan" target="_blank" aria-label="Mastodon Profile"><i class="fab fa-mastodon"></i></a></li>
-                    <li><a href="https://medium.com/@hossainkhan" target="_blank" aria-label="Blog on Medium.com"><i class="fab fa-medium"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/hossain" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://github.com/hossain-khan" target="_blank" aria-label="Github Profile"><i class="fab fa-github-alt"></i></a></li>
-                    <li><a href="https://stackoverflow.com/users/132121/hossain-khan" target="_blank" aria-label="StackOverflow Profile"><i class="fab fa-stack-overflow"></i></a></li>
-                    <li><a href="https://vision.hossainkhan.com/" target="_blank" aria-label="Photography Profile"><i class="fas fa-camera-retro"></i></a></li>
-                    <li class="last-item"><a href="https://www.instagram.com/hossainkhan/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="mailto:hello@hossain.dev?Subject=Hello%20Hossain"><i class="far fa-paper-plane"></i> Contact Me</a>
+            <div class="row align-items-center">
+                <div class="col">
+                    <img class="profile-image img-fluid float-start rounded-circle"
+                        src="/assets/images/profile_cartoon.png" alt="Hossain Khan - Portrait">
+                    <div class="profile-content">
+                        <h1 class="name">Hossain Khan</h1>
+                        <h2 class="desc">Software Engineer</h2>
+                        <ul class="social list-inline">
+                            <li class="list-inline-item"><a href="https://bsky.app/profile/hossain.dev" target="_blank"
+                                    aria-label="Bluesky 🦋 Profile"><i class="fa-brands fa-bluesky"></i></a></li>
+                            <!-- <li class="list-inline-item"><a href="https://x.com/hossainkhan" target="_blank" aria-label="Twitter [X] Profile"><i class="fab fa-twitter"></i></a></li> -->
+                            <li class="list-inline-item"><a href="https://androiddev.social/@hossainkhan"
+                                    target="_blank" aria-label="Mastodon Profile"><i class="fab fa-mastodon"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="https://medium.com/@hossainkhan" target="_blank"
+                                    aria-label="Blog on Medium.com"><i class="fab fa-medium"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hossain" target="_blank"
+                                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/hossain-khan" target="_blank"
+                                    aria-label="Github Profile"><i class="fab fa-github-alt"></i></a></li>
+                            <!-- <li class="list-inline-item"><a href="https://stackoverflow.com/users/132121/hossain-khan" target="_blank" aria-label="StackOverflow Profile"><i class="fab fa-stack-overflow"></i></a></li> -->
+                            <!-- <li class="list-inline-item"><a href="https://vision.hossainkhan.com/" target="_blank" aria-label="Photography Profile"><i class="fas fa-camera-retro"></i></a></li> -->
+                            <li class="list-inline-item last-item"><a href="https://www.instagram.com/hossainkhan/"
+                                    target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div><!--//profile-->
+                </div><!--//col-->
+                <div class="col-12 col-md-auto">
+                    <div class="dark-mode-switch d-flex">
+                        <div class="form-check form-switch mx-auto mx-md-0">
+                            <input type="checkbox" class="form-check-input me-2" id="darkSwitch">
+                            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                        </div>
+                    </div><!--//dark-mode-switch-->
+                    <a class="btn btn-cta-primary" href="mailto:hello@hossain.dev?Subject=Hello%20Hossain"><i
+                            class="far fa-paper-plane"></i> Say Hello!</a>
+                </div><!--//col-->
+            </div><!--//row-->
         </div><!--//container-->
     </header><!--//header-->
 
-    <div class="container sections-wrapper">
+    <div class="container sections-wrapper py-5">
         <div class="row">
-            <div class="primary col-md-8 col-sm-12 col-xs-12">
+            <div class="primary col-lg-8 col-12">
                 <section class="about section">
-                    <div class="section-inner">
-                        <p>Main Content</p>
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Main Content</h2>
+                        <div class="content">
+                            <p>Main Content</p>
+                        </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
             </div><!--//primary-->
-            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+            <div class="secondary col-lg-4 col-12">
                 <aside class="info aside section">
-                    <div class="section-inner">
+                    <div class="section-inner shadow-sm rounded">
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
                             <p>Side Content</p>
@@ -88,19 +119,24 @@
 
             </div><!--//secondary-->
         </div><!--//row-->
-    </div><!--//masonry-->
+    </div><!--//sections-wrapper-->
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project.
-            Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a
+                    href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
         </div><!--//container-->
     </footer><!--//footer-->
 
     <!-- Javascript -->
-    <script src="/assets/plugins/jquery-1.11.3.min.js"></script>
+    <script src="/assets/plugins/popper.min.js"></script>
     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/vanilla-rss/dist/rss.global.min.js"></script>
+    <script src="/assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
+    <!-- custom js - initializes RSS, GitHub Calendar, Skills and so on -->
+    <script src="/assets/js/main.js"></script>
 </body>
+
 </html>
