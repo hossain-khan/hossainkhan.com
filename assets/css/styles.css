@@ -829,3 +829,17 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     max-width: inherit;
   }
 }
+
+
+/*
+* Custom CSS for Font Awesome Icons
+*/
+.font-awesome-custom-icon {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    margin-bottom: 3px !important;
+    filter: invert(1) brightness(2);
+}
