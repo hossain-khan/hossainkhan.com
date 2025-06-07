@@ -8,7 +8,7 @@
 */
 body {
   font-family: 'Lato', arial, sans-serif;
-  color: #434343;
+  color: #333333;
   background: #DAE3E7;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #3AAA64;
+  color: #277745;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -147,7 +147,7 @@ a.dotted-link:hover {
 }
 
 .header .profile-content .social a {
-  background: #b0b7bf;
+  background: #778492;
   width: 36px;
   height: 36px;
   display: inline-block;
@@ -238,7 +238,7 @@ a.dotted-link:hover {
 
 .latest .featured .summary {
   margin-bottom: 30px;
-  color: #778492;
+  color: #5a6570;
 }
 
 .latest .featured img {
@@ -381,7 +381,7 @@ a.dotted-link:hover {
 /* Info Section */
 .info .svg-inline--fa {
   margin-right: 15px;
-  color: #ccd1d6;
+  color: #545e69;
 }
 
 .info .svg-inline--fa.fa-envelope-o {
@@ -417,7 +417,7 @@ a.dotted-link:hover {
 }
 
 .skills .skillset .level-title .level-label {
-  color: #ccd1d6;
+  color: #545e69;
   font-size: 14px;
   font-weight: 400;
   font-family: "Lato", arial, sans-serif;
@@ -425,6 +425,7 @@ a.dotted-link:hover {
   right: 0;
   top: 0;
 }
+span.level-label:focus { outline: 2px solid #3AAA64; }
 
 .skills .skillset .level-bar {
   height: 15px;
@@ -475,12 +476,12 @@ a.dotted-link:hover {
 }
 
 .testimonials .item .source .name {
-  color: #939ea9;
+  color: #555555;
   font-weight: 600;
 }
 
 .testimonials .item .source .title {
-  color: #999;
+  color: #555555;
 }
 
 /* Education section */
@@ -500,7 +501,7 @@ a.dotted-link:hover {
 .education .item .university {
   font-family: "Lato", arial, sans-serif;
   font-size: 13px;
-  color: #999;
+  color: #555555;
   font-weight: 600;
   padding-left: 25px;
 }
@@ -520,7 +521,7 @@ a.dotted-link:hover {
 }
 
 .languages .item .level {
-  color: #999;
+  color: #555555;
 }
 
 .languages .item:last-child {
@@ -615,7 +616,7 @@ a.dotted-link:hover {
 
 .footer .copyright {
   line-height: 1.6;
-  color: #a1aab4;
+  color: #a8b0b9;
   font-size: 14px;
 }
 
@@ -659,6 +660,10 @@ body[data-theme="dark"] {
   background: #17191c;
   /* Github Activity Dark Mode */
   /* Github activity */
+}
+
+body[data-theme="dark"] a {
+  color: #66DE93;
 }
 
 body[data-theme="dark"] a:hover {
@@ -799,8 +804,9 @@ body[data-theme="dark"] .text-muted {
 }
 
 body[data-theme="dark"] .skills .skillset .level-bar {
-  background: #99aa9a;
+  background: #404a40;
 }
+body[data-theme="dark"] span.level-label:focus { outline: 2px solid #66DE93; }
 
 @media (max-width: 767.98px) {
   .header {

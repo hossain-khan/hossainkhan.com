@@ -33,7 +33,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 			// inner template for each entry
 			// default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
 			// valid values: any string
-			entryTemplate: '<div class="item"><h3 class="title"><a href="{url}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}</p><a class="more-link" href="{url}" target="_blank"><i class="fas fa-external-link-alt"></i>Read more</a></div></div>',
+			entryTemplate: '<div class="item"><h3 class="title"><a href="{url}" target="_blank" rel="noopener noreferrer">{title}<span class="sr-only"> (opens in new tab)</span></a></h3><div><p>{shortBodyPlain}</p><a class="more-link" href="{url}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i>Read more<span class="sr-only"> (opens in new tab)</span></a></div></div>',
 		    
 	    }
 	);
