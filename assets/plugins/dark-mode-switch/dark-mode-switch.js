@@ -28,12 +28,18 @@ window.addEventListener("load", function () {
 function initTheme() {
   var dt = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null,
    ds=localStorage.getItem("darkSwitch"),
-   darkThemeSelected =
-    ds !== "light" &&
-    ds === "dark";
-  if(ds === null && dt !== null){
-    darkThemeSelected=dt.matches;
+   darkThemeSelected;
+  
+  // Default to dark mode unless user explicitly chose light mode
+  if(ds === "light"){
+    darkThemeSelected = false;
+  } else if(ds === "dark"){
+    darkThemeSelected = true;
+  } else {
+    // No preference stored - default to dark mode
+    darkThemeSelected = true;
   }
+  
   darkSwitch.checked = darkThemeSelected;
   darkThemeSelected
     ? document.body.setAttribute("data-theme", "dark")
