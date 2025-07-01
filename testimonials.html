@@ -122,6 +122,22 @@
             background: #0056b3;
             transform: translateY(-2px);
         }
+        
+        /* Dark mode fixes */
+        [data-bs-theme="dark"] .text-muted,
+        .dark-theme .text-muted {
+            color: #adb5bd !important;
+        }
+        
+        /* Ensure dates are visible in both themes */
+        .source small.text-muted {
+            color: #6c757d !important;
+        }
+        
+        [data-bs-theme="dark"] .source small.text-muted,
+        .dark-theme .source small.text-muted {
+            color: #adb5bd !important;
+        }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
