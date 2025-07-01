@@ -843,3 +843,160 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     margin-bottom: 3px !important;
     filter: invert(1) brightness(2);
 }
+
+/*
+* Testimonials Page Custom Styles
+*/
+.testimonials-page .group-heading {
+    margin-bottom: 2rem !important;
+}
+
+/* Custom class for bigger quote icons */
+.testimonials-page .big-quote-icon {
+    font-size: 2.8rem !important;
+    float: left !important;
+    margin-right: 0.75rem !important;
+    margin-top: 0.2rem !important;
+    line-height: 1 !important;
+    color: #6c757d !important;
+    opacity: 0.7 !important;
+}
+
+.testimonials-page .quote p {
+    margin: 0 !important;
+    line-height: 1.6 !important;
+    overflow: hidden !important;
+    text-align: justify !important;
+}
+
+/* Enhanced blockquote styling */
+.testimonials-page .quote {
+    background: rgba(58, 170, 100, 0.05) !important;
+    border-left: 4px solid #3AAA64 !important;
+    padding: 1.25rem !important;
+    margin: 0 0 1rem 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+
+/* Dark mode blockquote styling */
+[data-bs-theme="dark"] .testimonials-page .quote,
+.dark-theme .testimonials-page .quote {
+    background: rgba(58, 170, 100, 0.1) !important;
+    border-left: 4px solid #3AAA64 !important;
+}
+
+/* Name styling */
+.testimonials-page .source .name {
+    font-weight: 600 !important;
+    color: #3AAA64 !important;
+}
+
+/* Company title styling */
+.testimonials-page .source .title {
+    font-style: italic !important;
+    color: #6c757d !important;
+}
+
+/* Hover effects */
+.testimonials-page .item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+}
+
+.testimonials-page .item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode hover effects */
+[data-bs-theme="dark"] .testimonials-page .item:hover,
+.dark-theme .testimonials-page .item:hover {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+}
+
+.testimonials-page .item:hover .big-quote-icon {
+    color: #3AAA64 !important;
+    opacity: 1 !important;
+}
+
+/* Scroll to top button */
+.testimonials-page .scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #3AAA64;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials-page .scroll-to-top.visible {
+    opacity: 1;
+}
+
+.testimonials-page .scroll-to-top:hover {
+    background: #2d844e;
+    transform: translateY(-2px);
+}
+
+/* Dark mode scroll-to-top button */
+[data-bs-theme="dark"] .testimonials-page .scroll-to-top,
+.dark-theme .testimonials-page .scroll-to-top {
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .testimonials-page .scroll-to-top:hover,
+.dark-theme .testimonials-page .scroll-to-top:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* Dark mode fixes */
+[data-bs-theme="dark"] .testimonials-page .text-muted,
+.dark-theme .testimonials-page .text-muted {
+    color: #adb5bd !important;
+}
+
+/* Ensure dates are visible in both themes */
+.testimonials-page .source small.text-muted {
+    color: #6c757d !important;
+}
+
+[data-bs-theme="dark"] .testimonials-page .source small.text-muted,
+.dark-theme .testimonials-page .source small.text-muted {
+    color: #adb5bd !important;
+}
+
+/* Custom button styling to match site theme */
+.testimonials-page .btn-primary {
+    background-color: #3AAA64 !important;
+    border-color: #3AAA64 !important;
+}
+
+.testimonials-page .btn-primary:hover,
+.testimonials-page .btn-primary:focus,
+.testimonials-page .btn-primary:active {
+    background-color: #2d844e !important;
+    border-color: #2d844e !important;
+}
+
+.testimonials-page .btn-outline-primary {
+    color: #3AAA64 !important;
+    border-color: #3AAA64 !important;
+}
+
+.testimonials-page .btn-outline-primary:hover,
+.testimonials-page .btn-outline-primary:focus,
+.testimonials-page .btn-outline-primary:active {
+    background-color: #3AAA64 !important;
+    border-color: #3AAA64 !important;
+    color: white !important;
+}
