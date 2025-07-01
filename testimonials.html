@@ -59,11 +59,18 @@
         
         /* Enhanced blockquote styling */
         .quote {
-            background: rgba(0, 123, 255, 0.05) !important;
+            background: rgba(58, 170, 100, 0.05) !important;
             border-left: 4px solid #3AAA64 !important;
             padding: 1.25rem !important;
             margin: 0 0 1rem 0 !important;
             border-radius: 0 8px 8px 0 !important;
+        }
+        
+        /* Dark mode blockquote styling */
+        [data-bs-theme="dark"] .quote,
+        .dark-theme .quote {
+            background: rgba(58, 170, 100, 0.1) !important;
+            border-left: 4px solid #3AAA64 !important;
         }
         
         /* Name styling */
@@ -88,6 +95,12 @@
         .item:hover {
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* Dark mode hover effects */
+        [data-bs-theme="dark"] .item:hover,
+        .dark-theme .item:hover {
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
         }
         
         .item:hover .big-quote-icon {
@@ -123,9 +136,15 @@
             transform: translateY(-2px);
         }
         
-        .scroll-to-top:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
+        /* Dark mode scroll-to-top button */
+        [data-bs-theme="dark"] .scroll-to-top,
+        .dark-theme .scroll-to-top {
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-bs-theme="dark"] .scroll-to-top:hover,
+        .dark-theme .scroll-to-top:hover {
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
         }
         
         /* Dark mode fixes */
