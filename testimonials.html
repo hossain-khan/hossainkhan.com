@@ -46,6 +46,8 @@
             margin-right: 0.75rem !important;
             margin-top: 0.2rem !important;
             line-height: 1 !important;
+            color: #6c757d !important;
+            opacity: 0.7 !important;
         }
         
         .quote p {
@@ -53,6 +55,72 @@
             line-height: 1.6 !important;
             overflow: hidden !important;
             text-align: justify !important;
+        }
+        
+        /* Enhanced blockquote styling */
+        .quote {
+            background: rgba(0, 123, 255, 0.05) !important;
+            border-left: 4px solid #007bff !important;
+            padding: 1.25rem !important;
+            margin: 0 0 1rem 0 !important;
+            border-radius: 0 8px 8px 0 !important;
+        }
+        
+        /* Name styling */
+        .source .name {
+            font-weight: 600 !important;
+            color: #007bff !important;
+        }
+        
+        /* Company title styling */
+        .source .title {
+            font-style: italic !important;
+            color: #6c757d !important;
+        }
+        
+        /* Hover effects */
+        .item {
+            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+            border-radius: 8px !important;
+            padding: 0.5rem !important;
+        }
+        
+        .item:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .item:hover .big-quote-icon {
+            color: #007bff !important;
+            opacity: 1 !important;
+        }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+        
+        .scroll-to-top:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
         }
     </style>
 
@@ -446,6 +514,11 @@
         </div><!--//row-->
     </div><!--//sections-wrapper-->
 
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
@@ -471,6 +544,26 @@
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 
