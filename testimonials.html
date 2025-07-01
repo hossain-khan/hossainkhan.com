@@ -32,6 +32,163 @@
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Custom CSS for testimonials page -->
+    <style>
+        .group-heading {
+            margin-bottom: 2rem !important;
+        }
+        
+        /* Custom class for bigger quote icons */
+        .big-quote-icon {
+            font-size: 2.8rem !important;
+            float: left !important;
+            margin-right: 0.75rem !important;
+            margin-top: 0.2rem !important;
+            line-height: 1 !important;
+            color: #6c757d !important;
+            opacity: 0.7 !important;
+        }
+        
+        .quote p {
+            margin: 0 !important;
+            line-height: 1.6 !important;
+            overflow: hidden !important;
+            text-align: justify !important;
+        }
+        
+        /* Enhanced blockquote styling */
+        .quote {
+            background: rgba(58, 170, 100, 0.05) !important;
+            border-left: 4px solid #3AAA64 !important;
+            padding: 1.25rem !important;
+            margin: 0 0 1rem 0 !important;
+            border-radius: 0 8px 8px 0 !important;
+        }
+        
+        /* Dark mode blockquote styling */
+        [data-bs-theme="dark"] .quote,
+        .dark-theme .quote {
+            background: rgba(58, 170, 100, 0.1) !important;
+            border-left: 4px solid #3AAA64 !important;
+        }
+        
+        /* Name styling */
+        .source .name {
+            font-weight: 600 !important;
+            color: #3AAA64 !important;
+        }
+        
+        /* Company title styling */
+        .source .title {
+            font-style: italic !important;
+            color: #6c757d !important;
+        }
+        
+        /* Hover effects */
+        .item {
+            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+            border-radius: 8px !important;
+            padding: 0.5rem !important;
+        }
+        
+        .item:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* Dark mode hover effects */
+        [data-bs-theme="dark"] .item:hover,
+        .dark-theme .item:hover {
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        .item:hover .big-quote-icon {
+            color: #3AAA64 !important;
+            opacity: 1 !important;
+        }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #3AAA64;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+        
+        .scroll-to-top:hover {
+            background: #2d844e;
+            transform: translateY(-2px);
+        }
+        
+        /* Dark mode scroll-to-top button */
+        [data-bs-theme="dark"] .scroll-to-top,
+        .dark-theme .scroll-to-top {
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-bs-theme="dark"] .scroll-to-top:hover,
+        .dark-theme .scroll-to-top:hover {
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Dark mode fixes */
+        [data-bs-theme="dark"] .text-muted,
+        .dark-theme .text-muted {
+            color: #adb5bd !important;
+        }
+        
+        /* Ensure dates are visible in both themes */
+        .source small.text-muted {
+            color: #6c757d !important;
+        }
+        
+        [data-bs-theme="dark"] .source small.text-muted,
+        .dark-theme .source small.text-muted {
+            color: #adb5bd !important;
+        }
+        
+        /* Custom button styling to match site theme */
+        .btn-primary {
+            background-color: #3AAA64 !important;
+            border-color: #3AAA64 !important;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            background-color: #2d844e !important;
+            border-color: #2d844e !important;
+        }
+        
+        .btn-outline-primary {
+            color: #3AAA64 !important;
+            border-color: #3AAA64 !important;
+        }
+        
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus,
+        .btn-outline-primary:active {
+            background-color: #3AAA64 !important;
+            border-color: #3AAA64 !important;
+            color: white !important;
+        }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1394009-14"></script>
@@ -108,7 +265,7 @@
                                 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Endlessly impressed with the work Hossain has done in the Slack Android repo to improve our docsite and make contributing easy. Even down to setting up an auto-approving bot for any PR that _only_ updates docs.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Endlessly impressed with the work Hossain has done in the Slack Android repo to improve our docsite and make contributing easy. Even down to setting up an auto-approving bot for any PR that _only_ updates docs.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Zac Sweers</span><br>
@@ -119,7 +276,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Kudos to Hossain for including not one, not two, not three, not four, not five, not six, not seven, not eight, but NINE videos with a PR verifying a change. Be more like Hossain. Verify your changes with videos. Thanks for going the extra mile</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Kudos to Hossain for including not one, not two, not three, not four, not five, not six, not seven, not eight, but NINE videos with a PR verifying a change. Be more like Hossain. Verify your changes with videos. Thanks for going the extra mile</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Martin Klapetek</span><br>
@@ -130,7 +287,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Special Kudos to Hossain for going on the extra mile on the weekend to find issues and then report in such detail to our core capabilities mobile team and trying to fix the issue himself. Even though he couldn't solve it, he collaborated with us and didn't just throw it to us to do the work. This is what I love about working at Slack, its this collaboration and camaraderie.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Special Kudos to Hossain for going on the extra mile on the weekend to find issues and then report in such detail to our core capabilities mobile team and trying to fix the issue himself. Even though he couldn't solve it, he collaborated with us and didn't just throw it to us to do the work. This is what I love about working at Slack, its this collaboration and camaraderie.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Simon Tse</span><br>
@@ -141,7 +298,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Your work motivates me. So happy you did add this little but very useful feature so quickly.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Your work motivates me. So happy you did add this little but very useful feature so quickly.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Simon Tse</span><br>
@@ -152,7 +309,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I had the privilege of working with Hossain for 3 years at Slack on a team focused on developing the next generation of Slack's Platform—a broad, multi-year initiative. Hossain brings technical expertise, creativity, and contagious positivity to every project. Whenever we faced challenges outside our mobile domain, he tackled them head-on, eagerly learning and problem-solving across various areas. His proactive approach inspires others to step out of their comfort zones and tackle project challenges. During difficult moments with external stakeholders, Hossain was critical in helping us navigate and build both technical and interpersonal alignment. I truly hope we have the opportunity to work together again in the future!</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I had the privilege of working with Hossain for 3 years at Slack on a team focused on developing the next generation of Slack's Platform—a broad, multi-year initiative. Hossain brings technical expertise, creativity, and contagious positivity to every project. Whenever we faced challenges outside our mobile domain, he tackled them head-on, eagerly learning and problem-solving across various areas. His proactive approach inspires others to step out of their comfort zones and tackle project challenges. During difficult moments with external stakeholders, Hossain was critical in helping us navigate and build both technical and interpersonal alignment. I truly hope we have the opportunity to work together again in the future!</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Garvan Keeley</span><br>
@@ -163,7 +320,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I have had the pleasure of working with Hossain as a Product Manager on the Kijiji Mobile team. Hossain is incredibly well respected by his peers, as his attention to detail and support for his teammates is appreciated. Hossain applies a systems thinking approach to tackling problems, and always has the customers best interests at the centre of his decisions. I wouldn't hesitate to recommend Hossain if asked.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I have had the pleasure of working with Hossain as a Product Manager on the Kijiji Mobile team. Hossain is incredibly well respected by his peers, as his attention to detail and support for his teammates is appreciated. Hossain applies a systems thinking approach to tackling problems, and always has the customers best interests at the centre of his decisions. I wouldn't hesitate to recommend Hossain if asked.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Derek Wheeler</span><br>
@@ -179,7 +336,7 @@
                                 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I worked closely with him over the span of a year on a large scale concurrent platform and product development project. Hossain's technical skills, methodical approach and constant push to make the right technical/product decisions, has made him one of the best engineers I've had the pleasure of working with over the years. One of the things that set him apart from other great engineers was his kindness and infectiously positive attitude. It uplifted the team with release pressures were high, made him a sought after mentor and eased difficult conversations clients. He would be an asset on any team he joins and I hope we get a chance to work again in the future.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I worked closely with him over the span of a year on a large scale concurrent platform and product development project. Hossain's technical skills, methodical approach and constant push to make the right technical/product decisions, has made him one of the best engineers I've had the pleasure of working with over the years. One of the things that set him apart from other great engineers was his kindness and infectiously positive attitude. It uplifted the team with release pressures were high, made him a sought after mentor and eased difficult conversations clients. He would be an asset on any team he joins and I hope we get a chance to work again in the future.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Farhan Nomani</span><br>
@@ -190,7 +347,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>As product manager, I worked very closely with Hossain on a large scale, multi-faceted project for over a year. He has deep passion for the product he works on and is a dedicated and committed professional, always willing to go the extra mile to make sure the right architectural decisions are made in the interest of the client and project. In addition to being a solid engineer, he is a terrific leader. It is his empathetic leadership style that has been the driving force for our team and elevated him above his peers. He is both loved and revered for his ability to work closely with junior engineers and give them the right guidance and mentorship. He is equally comfortable working with clients / senior engineering leadership and leading the conversations to ensure that the right goals are achieved. Hossain is irreplaceable on any team he joins, and I can't wait for the opportunity to work on the next challenge with him again!</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>As product manager, I worked very closely with Hossain on a large scale, multi-faceted project for over a year. He has deep passion for the product he works on and is a dedicated and committed professional, always willing to go the extra mile to make sure the right architectural decisions are made in the interest of the client and project. In addition to being a solid engineer, he is a terrific leader. It is his empathetic leadership style that has been the driving force for our team and elevated him above his peers. He is both loved and revered for his ability to work closely with junior engineers and give them the right guidance and mentorship. He is equally comfortable working with clients / senior engineering leadership and leading the conversations to ensure that the right goals are achieved. Hossain is irreplaceable on any team he joins, and I can't wait for the opportunity to work on the next challenge with him again!</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Shehzad Akbar</span><br>
@@ -206,7 +363,7 @@
                                 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is a hard-working Android developer capable of taking on large development tasks. He collaborates extremely well with other developers on tasks and features. He is adaptable to different challenges and soaks up changing priorities without flinching. He made my job as a manager easier, and was a pleasure to work with.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is a hard-working Android developer capable of taking on large development tasks. He collaborates extremely well with other developers on tasks and features. He is adaptable to different challenges and soaks up changing priorities without flinching. He made my job as a manager easier, and was a pleasure to work with.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Doug Doe</span><br>
@@ -217,7 +374,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain was quick and expert in developing apps and working face to face with customers to gather and clarify requirements. Hossain worked well with other team members and even with difficult customers. He was always calm and respectful and was able to quickly develop new apps with complicated features, like eMBMS, LTE-B video and file delivery, 3rd party plug-ins for DRM and custom players, as well as work on other developers' code bases to fix bugs and extend new features. Hossain wrote very clean code which other developers readily accepted and leveraged. Hossain was a good multitasked and worked on multiple projects in parallel. I believe Hossain is a great individual contributor and has potential to be a team lead and manager. I'd work with Hossain again.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain was quick and expert in developing apps and working face to face with customers to gather and clarify requirements. Hossain worked well with other team members and even with difficult customers. He was always calm and respectful and was able to quickly develop new apps with complicated features, like eMBMS, LTE-B video and file delivery, 3rd party plug-ins for DRM and custom players, as well as work on other developers' code bases to fix bugs and extend new features. Hossain wrote very clean code which other developers readily accepted and leveraged. Hossain was a good multitasked and worked on multiple projects in parallel. I believe Hossain is a great individual contributor and has potential to be a team lead and manager. I'd work with Hossain again.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Dan Witmer</span><br>
@@ -228,7 +385,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossian is a top notch developer. He somehow always knows the latest technology and the most accepted way of implementing something--in Android, JavaScript, or whatever technology he is working in. He has a strong work ethic and knows what needs to be done for the project succeed. I would work with Hossain again in a heartbeat and highly recommend him for anything he might pursue.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossian is a top notch developer. He somehow always knows the latest technology and the most accepted way of implementing something--in Android, JavaScript, or whatever technology he is working in. He has a strong work ethic and knows what needs to be done for the project succeed. I would work with Hossain again in a heartbeat and highly recommend him for anything he might pursue.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Josh Allen</span><br>
@@ -239,7 +396,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I've worked with Hossain on multiple projects and have been consistently impressed with the quality of his work, the speed with which he delivers and the professionalism he displays on a day-to-day basis. He's worked on my projects in both a Sr Dev and Team Lead capacity and has been successful in both roles. He's a very strong technical resource in general and a great asset to the organization as is evidenced by the demand for his skills. He's a key resource who can be counted on when the going gets tough. I look forward to working with Hossain in the future.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I've worked with Hossain on multiple projects and have been consistently impressed with the quality of his work, the speed with which he delivers and the professionalism he displays on a day-to-day basis. He's worked on my projects in both a Sr Dev and Team Lead capacity and has been successful in both roles. He's a very strong technical resource in general and a great asset to the organization as is evidenced by the demand for his skills. He's a key resource who can be counted on when the going gets tough. I look forward to working with Hossain in the future.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Matt Bush</span><br>
@@ -250,7 +407,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are completed in a systematic and precise way. Always maintains a very good relationship with co-workers and clients. We call the few top engineers at QuickPlay "superstars", and Hossain is one of them.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are completed in a systematic and precise way. Always maintains a very good relationship with co-workers and clients. We call the few top engineers at QuickPlay "superstars", and Hossain is one of them.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Sebastian Jakubowski</span><br>
@@ -261,7 +418,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is a very talented individual. At a professional level, he excels to make things right - very detailed and an outside-of-the-box thinker. He is a smart and very passionate technology guru, who always has time to help. As a person, Hossain has amazing communication skills that add up to the wonderful human being he is. Always trying to simplify things no matter how easy or hard they may seem, with his charts, colours and gadgets. If you need something, he may have what you are looking for. As a friend, he must have one of the greatest hearts out there. Hossain offers his hand even if you did not ask for help. Respectful, funny, sincere and honest.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is a very talented individual. At a professional level, he excels to make things right - very detailed and an outside-of-the-box thinker. He is a smart and very passionate technology guru, who always has time to help. As a person, Hossain has amazing communication skills that add up to the wonderful human being he is. Always trying to simplify things no matter how easy or hard they may seem, with his charts, colours and gadgets. If you need something, he may have what you are looking for. As a friend, he must have one of the greatest hearts out there. Hossain offers his hand even if you did not ask for help. Respectful, funny, sincere and honest.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Giancarlo Pacheco</span><br>
@@ -272,7 +429,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is a very talented professional who goes on and beyond to get things done. He has earned the respect of his peers and also the higher management as well. It is not easy to be recognized as the go-to guy, but he definitely is the person to go to when things need to be done. His programming skills, test-driven development approaches and also his willingness to learn more would be an asset to any company that needs a highly skilled developer. It's a pleasure working with you Hossain and hopefully I can continue to work with you in upcoming tasks!</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is a very talented professional who goes on and beyond to get things done. He has earned the respect of his peers and also the higher management as well. It is not easy to be recognized as the go-to guy, but he definitely is the person to go to when things need to be done. His programming skills, test-driven development approaches and also his willingness to learn more would be an asset to any company that needs a highly skilled developer. It's a pleasure working with you Hossain and hopefully I can continue to work with you in upcoming tasks!</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Steve Shin</span><br>
@@ -283,7 +440,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is one of the brightest and hard-working developer I have ever worked with. He always stays up-to-date on the latest technologies in mobile software development. It was real pleasure to work with you.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is one of the brightest and hard-working developer I have ever worked with. He always stays up-to-date on the latest technologies in mobile software development. It was real pleasure to work with you.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Vitaliy Akudovich</span><br>
@@ -294,7 +451,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>At QuickPlay, I have had the pleasure to work with Hossain on multiple Android projects. Hossain is excellent at breaking down complex problems into actionable pieces. He is reliable, detail-oriented and committed to delivering quality products that fulfill beyond the functional requirements. In the design process, he gives a lot of thought on how a product may evolve in the future, and produces an appropriate amount of useful documentation. In addition to his work ethics, Hossain brings to our team in-depth knowledge about the platform API and experience in application design. He has my full recommendation as a software engineer, in mobile development and otherwise.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>At QuickPlay, I have had the pleasure to work with Hossain on multiple Android projects. Hossain is excellent at breaking down complex problems into actionable pieces. He is reliable, detail-oriented and committed to delivering quality products that fulfill beyond the functional requirements. In the design process, he gives a lot of thought on how a product may evolve in the future, and produces an appropriate amount of useful documentation. In addition to his work ethics, Hossain brings to our team in-depth knowledge about the platform API and experience in application design. He has my full recommendation as a software engineer, in mobile development and otherwise.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Benedict Lau</span><br>
@@ -310,7 +467,7 @@
                                 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>I have had the pleasure of being both a co-worker and a friend to Hossain Employee for 1 year and a half. In and out of the office, Hossain conducts himself with integrity. He can be counted on not just to work hard, but to represent the company in a positive light. I know of numerous occasions where clients and server teams have specifically mentioned what a joy it is to work with Hossain. He is a talented Engineer with excellent communication skills and a strong moral compass. For these reasons, I have no hesitation in recommending Hossian to your company and will be a delight to work with him again.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>I have had the pleasure of being both a co-worker and a friend to Hossain Employee for 1 year and a half. In and out of the office, Hossain conducts himself with integrity. He can be counted on not just to work hard, but to represent the company in a positive light. I know of numerous occasions where clients and server teams have specifically mentioned what a joy it is to work with Hossain. He is a talented Engineer with excellent communication skills and a strong moral compass. For these reasons, I have no hesitation in recommending Hossian to your company and will be a delight to work with him again.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">David Fernandez</span><br>
@@ -321,7 +478,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is very good in following process, guidelines, best practices. He understands importance of IDE, frameworks and can develop maintaining all the crucial artifacts of a preferred solution.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is very good in following process, guidelines, best practices. He understands importance of IDE, frameworks and can develop maintaining all the crucial artifacts of a preferred solution.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Reza Khan</span><br>
@@ -332,7 +489,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is a conscientious and talented developer. He does a great job conceptualizing the project to maximize time and budget.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is a conscientious and talented developer. He does a great job conceptualizing the project to maximize time and budget.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Ryan Payne</span><br>
@@ -343,7 +500,7 @@
 
                                 <div class="item mb-4">
                                     <blockquote class="quote">
-                                        <p><i class="fas fa-quote-left"></i>Hossain is a great software developer. He is a fast learner and can find efficient solutions to a problem easily. He also has a great interpersonal skills. It was a pleasure working with him and I learned a lot from him.</p>
+                                        <p><i class="fas fa-quote-left big-quote-icon"></i>Hossain is a great software developer. He is a fast learner and can find efficient solutions to a problem easily. He also has a great interpersonal skills. It was a pleasure working with him and I learned a lot from him.</p>
                                     </blockquote>
                                     <p class="source">
                                         <span class="name">Abdullah Rubiyath</span><br>
@@ -423,6 +580,11 @@
         </div><!--//row-->
     </div><!--//sections-wrapper-->
 
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
@@ -448,6 +610,26 @@
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 
