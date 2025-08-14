@@ -1,0 +1,443 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "Hossain Khan",
+    "label": "Senior Software Engineer",
+    "image": "https://hossainkhan.com/assets/images/profile_cartoon.png",
+    "email": "hello@hossain.dev",
+    "url": "https://hossainkhan.com",
+    "summary": "Senior Software Engineer with over 15 years of experience, passionate about crafting intuitive interfaces that connect people through technology. Currently at Slack, enhancing the Android app with a focus on platform improvements like BlockKit, Workflows, and Slack Apps. Career began as a web developer and evolved into mobile technologies, thriving on tackling challenging projects and building innovative solutions.",
+    "location": {
+      "city": "Toronto",
+      "region": "Ontario",
+      "countryCode": "CA"
+    },
+    "profiles": [
+      {
+        "network": "Bluesky",
+        "username": "hossain.dev",
+        "url": "https://bsky.app/profile/hossain.dev"
+      },
+      {
+        "network": "Mastodon",
+        "username": "hossainkhan",
+        "url": "https://androiddev.social/@hossainkhan"
+      },
+      {
+        "network": "Medium",
+        "username": "hossainkhan",
+        "url": "https://medium.com/@hossainkhan"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "hossain",
+        "url": "https://www.linkedin.com/in/hossain"
+      },
+      {
+        "network": "GitHub",
+        "username": "hossain-khan",
+        "url": "https://github.com/hossain-khan"
+      },
+      {
+        "network": "Instagram",
+        "username": "hossainkhan",
+        "url": "https://www.instagram.com/hossainkhan/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Slack",
+      "position": "Senior Software Engineer | Android",
+      "url": "https://slack.com",
+      "startDate": "2021",
+      "summary": "Enhancing the Slack Android app with focus on platform improvements including BlockKit, Workflows, Slack Apps, and more.",
+      "highlights": [
+        "Improved Slack Android repository documentation and contributor experience",
+        "Set up auto-approving bot for documentation-only pull requests",
+        "Enhanced platform capabilities for mobile team",
+        "Collaborated on next generation Slack Platform development",
+        "Built technical and interpersonal alignment with external stakeholders"
+      ]
+    },
+    {
+      "name": "Kijiji Canada, eBay",
+      "position": "Platform Lead Engineer | Android",
+      "url": "https://www.kijiji.ca",
+      "startDate": "2019",
+      "endDate": "2021",
+      "summary": "Joined Kijiji Android team to accelerate mobile product development and enhance end user experience.",
+      "highlights": [
+        "Led platform engineering initiatives for Android mobile application",
+        "Accelerated mobile product development cycles",
+        "Enhanced end user experience across the platform"
+      ]
+    },
+    {
+      "name": "Connected Inc.",
+      "position": "Sr. Android Engineer / Team Lead (Consultant)",
+      "startDate": "2017",
+      "endDate": "2018",
+      "summary": "Created a complete solution for connected media device and a companion Android application to support device communication and media content discovery.",
+      "highlights": [
+        "Developed complete connected media device solution",
+        "Built companion Android application for device communication",
+        "Implemented media content discovery features",
+        "Led development team as technical lead"
+      ]
+    },
+    {
+      "name": "dubdub Inc.",
+      "position": "Platform Lead | Android",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "Led platform development and Android engineering initiatives."
+    },
+    {
+      "name": "dubdub Inc.",
+      "position": "Sr. Android Engineer | Team Lead",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "Senior Android development role with team leadership responsibilities."
+    },
+    {
+      "name": "QuickPlay Media",
+      "position": "Sr. Android Engineer",
+      "startDate": "2015",
+      "endDate": "2016",
+      "summary": "Worked with R&D android development team for current and future products.",
+      "highlights": [
+        "Contributed to R&D initiatives for next-generation products",
+        "Developed Android applications for media streaming platforms"
+      ]
+    },
+    {
+      "name": "QuickPlay Media",
+      "position": "Android Engineer",
+      "startDate": "2012",
+      "endDate": "2014",
+      "summary": "Android development for media streaming and entertainment platforms.",
+      "highlights": [
+        "Built Android applications for streaming media platforms",
+        "Worked on entertainment and media delivery solutions",
+        "Contributed to multiple client projects and platform development"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Windsor",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2005",
+      "endDate": "2008"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Associate Android Developer",
+      "issuer": "Google",
+      "date": "2017",
+      "url": "https://www.credential.net/ioqs3hze?key=f199191c462c57d8489f89be040dbea1cc82387e27e230c0d6e8ae4bd5ba4657"
+    },
+    {
+      "name": "CodementorX Certified Developer",
+      "issuer": "codementor.io",
+      "date": "2019",
+      "url": "https://www.codementor.io/@hossainkhan"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Mobile Development",
+      "level": "Expert",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Mobile Architecture",
+        "Android SDK"
+      ]
+    },
+    {
+      "name": "Software Engineering",
+      "level": "Expert",
+      "keywords": [
+        "Software Architecture",
+        "API Design",
+        "System Design",
+        "Code Review",
+        "Technical Leadership"
+      ]
+    },
+    {
+      "name": "Platform Development",
+      "level": "Advanced",
+      "keywords": [
+        "Platform Engineering",
+        "SDK Development",
+        "Developer Tools",
+        "CI/CD",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "level": "Advanced",
+      "keywords": [
+        "Kotlin",
+        "Java",
+        "Python",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Tools & Technologies",
+      "level": "Advanced",
+      "keywords": [
+        "Git",
+        "GitHub Actions",
+        "Gradle",
+        "SQLDelight",
+        "Moshi",
+        "Firebase",
+        "PostgreSQL"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Bengali",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": [
+        "Open Source",
+        "Mobile Development",
+        "Platform Engineering",
+        "Developer Experience"
+      ]
+    },
+    {
+      "name": "Photography",
+      "keywords": [
+        "Digital Photography",
+        "Travel Photography",
+        "Visual Arts"
+      ]
+    },
+    {
+      "name": "Travel",
+      "keywords": [
+        "World Travel",
+        "Road Trips",
+        "Cultural Exploration"
+      ]
+    },
+    {
+      "name": "Gaming",
+      "keywords": [
+        "Video Games",
+        "Gaming Technology"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Ambient Music",
+        "Enigma",
+        "Yanni",
+        "Instrumental"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Android TRMNL Display Mirror",
+      "description": "Mirrors existing TRMNL device display image onto your Android device. A simple Android app that connects to the TRMNL/BYOS API to fetch the current screen image and shows it on your device.",
+      "url": "https://github.com/usetrmnl/trmnl-android",
+      "startDate": "2024",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "API Integration",
+        "E-ink Display"
+      ],
+      "highlights": [
+        "Automatic display refresh scheduling",
+        "Manual 'next' update support",
+        "Custom TRMNL/BYOS server endpoint support",
+        "Refresh event logging"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Weather Alert",
+      "description": "Your no-fuss, personal weather alerter. Set it and forget it—get alerted when it matters! A simple app designed to notify you when specific weather conditions meet the thresholds you set.",
+      "url": "https://github.com/hossain-khan/android-weather-alert",
+      "startDate": "2023",
+      "keywords": [
+        "Android",
+        "Weather API",
+        "Notifications",
+        "Kotlin"
+      ],
+      "highlights": [
+        "Available on Google Play Store",
+        "Custom weather threshold alerts",
+        "Simple, no-frills design",
+        "Automated weather monitoring"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Remote Notify - Device Monitor",
+      "description": "Your personal Android device watchdog! Never let your remote devices die on you again! Monitor battery or storage levels and get alerts when thresholds are met.",
+      "url": "https://github.com/hossain-khan/android-remote-notify",
+      "startDate": "2023",
+      "keywords": [
+        "Android",
+        "Device Monitoring",
+        "Battery Management",
+        "Storage Monitoring"
+      ],
+      "highlights": [
+        "Available on Google Play Store",
+        "Multi-device monitoring support",
+        "Configurable notification methods",
+        "Battery and storage threshold alerts"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "H.K. Vision Plugin for Muzei",
+      "description": "A simple Muzei Live Wallpaper plugin for H.K. Vision photography site. Allows users to use featured photos as background wallpaper that automatically changes over time.",
+      "url": "https://play.google.com/store/apps/details?id=com.hossainkhan.vision",
+      "startDate": "2020",
+      "keywords": [
+        "Android",
+        "Muzei",
+        "Photography",
+        "Live Wallpaper"
+      ],
+      "highlights": [
+        "Available on Google Play Store",
+        "Integration with H.K. Vision photography site",
+        "Automatic wallpaper rotation",
+        "Featured photography content"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "KGeoTimeline",
+      "description": "Kotlin library for parsing Google Location History (Google Takeout). A robust solution for processing and analyzing location data from Google services.",
+      "url": "https://github.com/hossain-khan/kgeo-timeline",
+      "startDate": "2020",
+      "keywords": [
+        "Kotlin",
+        "Library",
+        "Google Takeout",
+        "Location Data",
+        "Data Processing"
+      ],
+      "highlights": [
+        "Open source Kotlin library",
+        "Google Location History parsing",
+        "Data analysis capabilities",
+        "Timeline processing features"
+      ],
+      "type": "library"
+    },
+    {
+      "name": "GitHub PR Stats",
+      "description": "Comprehensive tool for analyzing GitHub pull request statistics and patterns. Provides insights into code review processes and team collaboration metrics.",
+      "url": "https://github.com/hossain-khan/github-stats",
+      "startDate": "2020",
+      "keywords": [
+        "GitHub API",
+        "Data Analysis",
+        "Pull Requests",
+        "Statistics",
+        "Kotlin"
+      ],
+      "highlights": [
+        "Pull request analysis and statistics",
+        "Code review metrics",
+        "Team collaboration insights",
+        "GitHub API integration"
+      ],
+      "type": "tool"
+    },
+    {
+      "name": "JSON5-Kotlin",
+      "description": "A robust JSON5 parser and serializer for Kotlin that extends JSON with helpful features like comments, trailing commas, and unquoted keys while maintaining full backward compatibility with JSON.",
+      "url": "https://github.com/hossain-khan/json5-kotlin",
+      "startDate": "2023",
+      "keywords": [
+        "Kotlin",
+        "JSON5",
+        "Parser",
+        "Library",
+        "Serialization"
+      ],
+      "highlights": [
+        "JSON5 parsing and serialization",
+        "Full JSON backward compatibility",
+        "Support for comments and trailing commas",
+        "Kotlin multiplatform support"
+      ],
+      "type": "library"
+    },
+    {
+      "name": "SQLDelight 2.0 with PostgreSQL",
+      "description": "A sample project exercising PostgreSQL with SQLDelight 2.0 on JVM. Exploration of the official guide with intention of filling in missing pieces.",
+      "url": "https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample",
+      "startDate": "2023",
+      "keywords": [
+        "SQLDelight",
+        "PostgreSQL",
+        "JVM",
+        "Database",
+        "Kotlin"
+      ],
+      "highlights": [
+        "SQLDelight 2.0 implementation example",
+        "PostgreSQL integration",
+        "JVM platform targeting",
+        "Comprehensive documentation"
+      ],
+      "type": "sample"
+    }
+  ],
+  "references": [
+    {
+      "name": "Zac Sweers",
+      "reference": "Endlessly impressed with the work Hossain has done in the Slack Android repo to improve our docsite and make contributing easy. Even down to setting up an auto-approving bot for any PR that _only_ updates docs."
+    },
+    {
+      "name": "Garvan Keeley",
+      "reference": "I had the privilege of working with Hossain for 3 years at Slack on a team focused on developing the next generation of Slack's Platform. Hossain brings technical expertise, creativity, and contagious positivity to every project. His proactive approach inspires others to step out of their comfort zones and tackle project challenges."
+    },
+    {
+      "name": "Doug Doe",
+      "reference": "Hossain is a hard-working Android developer capable of taking on large development tasks. He collaborates extremely well with other developers on tasks and features. He is adaptable to different challenges and soaks up changing priorities without flinching."
+    },
+    {
+      "name": "Sebastian Jakubowski",
+      "reference": "I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are completed in a systematic and precise way. We call the few top engineers at QuickPlay 'superstars', and Hossain is one of them."
+    }
+  ],
+  "meta": {
+    "canonical": "https://hossainkhan.com/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2025-08-13T00:00:00"
+  }
+}
