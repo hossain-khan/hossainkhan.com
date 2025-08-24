@@ -1228,6 +1228,11 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     color: white;
 }
 
+/* Make Android icon slightly bigger to fill the space better */
+.artifact-thumbnail .fa-android {
+    font-size: 30px;
+}
+
 .artifact-card.placeholder .artifact-thumbnail {
     background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
     margin: 0 auto 1rem auto;
