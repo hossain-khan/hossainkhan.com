@@ -32,9 +32,23 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Back to top button click handler
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Skip the back-to-top button as it's handled separately
+            if (this.id === 'back-to-top') return;
+            
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
