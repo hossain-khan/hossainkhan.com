@@ -10,6 +10,8 @@
 /* ======= Base Styles ======= */
 html {
   scroll-behavior: smooth;
+  /* Add scroll padding to account for sticky navbar */
+  scroll-padding-top: 80px;
 }
 
 body {
