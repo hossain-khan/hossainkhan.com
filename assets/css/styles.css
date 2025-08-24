@@ -1156,7 +1156,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
-    scrollbar-color: #479FC8 transparent;
+    scrollbar-color: #3AAA64 transparent;
     padding-bottom: 0.5rem;
 }
 
@@ -1170,12 +1170,12 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 }
 
 .artifacts-container::-webkit-scrollbar-thumb {
-    background: #479FC8;
+    background: #3AAA64;
     border-radius: 3px;
 }
 
 .artifacts-container::-webkit-scrollbar-thumb:hover {
-    background: #3893bd;
+    background: #2d844e;
 }
 
 .artifact-card {
@@ -1273,7 +1273,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 }
 
 .artifact-link {
-    color: #479FC8;
+    color: #3AAA64;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
@@ -1285,7 +1285,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 }
 
 .artifact-link:hover {
-    color: #3893bd;
+    color: #2d844e;
     text-decoration: none;
 }
 
@@ -1295,7 +1295,19 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 
 /* Dark mode styles for Vibe Coded Artifacts */
 body[data-theme="dark"] .artifacts-viewport {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #1e2124 0%, #2c3e50 100%);
+}
+
+body[data-theme="dark"] .artifacts-container {
+    scrollbar-color: #53c47d transparent;
+}
+
+body[data-theme="dark"] .artifacts-container::-webkit-scrollbar-thumb {
+    background: #53c47d;
+}
+
+body[data-theme="dark"] .artifacts-container::-webkit-scrollbar-thumb:hover {
+    background: #4fb874;
 }
 
 body[data-theme="dark"] .artifact-card {
