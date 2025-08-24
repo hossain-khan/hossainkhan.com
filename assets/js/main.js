@@ -6,6 +6,85 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
+// ======= Navigation & UX Enhancements ======= //
+
+// Back to top button functionality
+window.addEventListener('DOMContentLoaded', function() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    const progressBar = document.getElementById('reading-progress');
+    
+    // Show/hide back to top button and update progress bar
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        
+        // Update progress bar
+        if (progressBar) {
+            progressBar.style.width = scrollPercent + '%';
+        }
+        
+        // Back to top button
+        if (scrollTop > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add loading animations for project cards
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.item.featured').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+    });
+    
+    // Toggle additional projects functionality
+    const toggleBtn = document.getElementById('toggleMoreProjects');
+    const additionalProjects = document.getElementById('additionalProjects');
+    
+    if (toggleBtn && additionalProjects) {
+        toggleBtn.addEventListener('click', function() {
+            const isHidden = additionalProjects.style.display === 'none';
+            
+            if (isHidden) {
+                additionalProjects.style.display = 'block';
+                this.innerHTML = '<i class="fas fa-minus"></i> Show Less Projects';
+                // Smooth scroll to show the revealed content
+                setTimeout(() => {
+                    additionalProjects.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                additionalProjects.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-plus"></i> Show More Projects';
+            }
+        });
+    }
+});
 
 /* Vanilla RSS - https://github.com/sdepold/vanilla-rss */
 

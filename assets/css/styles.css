@@ -6,6 +6,12 @@
  * Copyright: 3rd Wave Media Ltd.
  * Website: https://themes.3rdwavemedia.com/
 */
+
+/* ======= Base Styles ======= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
@@ -13,6 +19,98 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======= Navigation Styles ======= */
+.navbar {
+  background: rgba(71, 159, 200, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* ======= Reading Progress Bar ======= */
+.reading-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #54ba4e, #3AAA64);
+  transition: width 0.3s ease;
+  z-index: 1001;
+}
+
+/* ======= Back to Top Button ======= */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #479FC8;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(71, 159, 200, 0.3);
+}
+
+.back-to-top:hover {
+  background: #3893bd;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(71, 159, 200, 0.4);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ======= Project Cards Improvement ======= */
+.item.featured {
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item.featured:hover {
+  transform: translateY(-5px);
+}
+
+.item.featured .section-inner {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ======= Section Spacing ======= */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-inner {
+  padding: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {

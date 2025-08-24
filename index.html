@@ -79,10 +79,31 @@
         </div><!--//container-->
     </header><!--//header-->
 
+    <!-- ******NAVIGATION****** -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top" id="main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#latest-projects">Latest Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#open-source">Open Source</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Reading Progress Bar -->
+        <div class="reading-progress-bar" id="reading-progress"></div>
+    </nav><!--//navigation-->
+
     <div class="container sections-wrapper py-5">
         <div class="row">
             <div class="primary col-lg-8 col-12">
-                <section class="about section">
+                <section class="about section" id="about">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">About Me</h2>
                         <div class="content">
@@ -107,7 +128,7 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-                <section class="latest section">
+                <section class="latest section" id="latest-projects">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Latest Projects</h2>
                         <div class="content">
@@ -271,6 +292,13 @@
                             <hr class="divider"><!-- divider between featured and non-featured items -->
                             <!-- ========================================================================= -->
 
+                            <div class="text-center mb-4">
+                                <button class="btn btn-outline-primary" id="toggleMoreProjects" type="button">
+                                    <i class="fas fa-plus"></i> Show More Projects
+                                </button>
+                            </div>
+
+                            <div id="additionalProjects" style="display: none;">
                             <!-- Non feature item (smaller size) -->
                             <!--<div class="item row">-->
                             <!--    <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">-->
@@ -448,11 +476,13 @@
                                 </div><!--//desc-->
                             </div><!--//item-->
 
+                            </div><!--//additionalProjects-->
+
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-                <section class="projects section">
+                <section class="projects section" id="open-source">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading"><i class="fab fa-github"></i>pen-Source and Other Projects</h2>
                         <div class="content">
@@ -532,7 +562,7 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-                <section class="experience section">
+                <section class="experience section" id="experience">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Work Experience</h2>
                         <div class="content">
@@ -789,7 +819,7 @@
                     </div><!--//section-inner-->
                 </aside><!--//aside-->
 
-                <aside class="skills aside section" aria-label="Skills">
+                <aside class="skills aside section" aria-label="Skills" id="skills">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Skills</h2>
                         <div class="content">
@@ -905,7 +935,7 @@
                     </div><!--//section-inner-->
                 </aside><!--//section-->
 
-                <aside class="testimonials aside section" aria-label="Testimonials">
+                <aside class="testimonials aside section" aria-label="Testimonials" id="testimonials">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Testimonials</h2>
                         <div class="content">
@@ -1067,7 +1097,9 @@
 
             </div><!--//secondary-->
         </div><!--//row-->
-        <!--        <a href="#top" class="topbtn" aria-label="Scroll to top"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a>-->
+        <a href="#top" class="back-to-top" aria-label="Scroll to top" id="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </div><!--//masonry-->
 
     <!-- ******FOOTER****** -->
