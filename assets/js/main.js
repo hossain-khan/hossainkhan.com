@@ -52,9 +52,16 @@ window.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Calculate navbar height and add some padding
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const offset = navbarHeight + 20; // 20px extra padding
+                
+                const targetPosition = target.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });

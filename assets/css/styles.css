@@ -10,6 +10,8 @@
 /* ======= Base Styles ======= */
 html {
   scroll-behavior: smooth;
+  /* Add scroll padding to account for sticky navbar */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -1226,6 +1228,11 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifact-thumbnail i {
     font-size: 28px;
     color: white;
+}
+
+/* Make Android icon slightly bigger to fill the space better */
+.artifact-thumbnail .fa-android {
+    font-size: 30px;
 }
 
 .artifact-card.placeholder .artifact-thumbnail {
