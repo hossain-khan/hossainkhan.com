@@ -1348,6 +1348,43 @@ body[data-theme="dark"] .artifact-link:hover {
     color: #4fb874;
 }
 
+/* ======= Toggle Button Styling ======= */
+#toggleMoreProjects.btn-outline-primary {
+    color: #3AAA64 !important;
+    border-color: #3AAA64 !important;
+    background-color: transparent;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+#toggleMoreProjects.btn-outline-primary:hover,
+#toggleMoreProjects.btn-outline-primary:focus,
+#toggleMoreProjects.btn-outline-primary:active {
+    background-color: #3AAA64 !important;
+    border-color: #3AAA64 !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(58, 170, 100, 0.3);
+}
+
+/* Dark mode toggle button styles */
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary {
+    color: #4DC373 !important;
+    border-color: #4DC373 !important;
+    background-color: transparent;
+}
+
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:hover,
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:focus,
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
+    background-color: #4DC373 !important;
+    border-color: #4DC373 !important;
+    color: #1e2124 !important;
+    box-shadow: 0 4px 8px rgba(77, 195, 115, 0.3);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .artifacts-viewport {
@@ -1367,5 +1404,10 @@ body[data-theme="dark"] .artifact-link:hover {
     
     .artifact-thumbnail i {
         font-size: 24px;
+    }
+    
+    #toggleMoreProjects.btn-outline-primary {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
     }
 }
