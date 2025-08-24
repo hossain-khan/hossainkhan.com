@@ -1131,3 +1131,229 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     border-color: #3AAA64 !important;
     color: white !important;
 }
+
+/* ======= Vibe Coded Artifacts Section ======= */
+.vibe-coded-artifacts {
+    margin-bottom: 2rem;
+}
+
+.artifacts-viewport {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    padding: 1rem;
+}
+
+.artifacts-container {
+    display: flex;
+    gap: 1.5rem;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #479FC8 transparent;
+    padding-bottom: 0.5rem;
+}
+
+.artifacts-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.artifacts-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+.artifacts-container::-webkit-scrollbar-thumb {
+    background: #479FC8;
+    border-radius: 3px;
+}
+
+.artifacts-container::-webkit-scrollbar-thumb:hover {
+    background: #3893bd;
+}
+
+.artifact-card {
+    flex: 0 0 280px;
+    height: calc(100% - 1rem);
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.artifact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.artifact-card.placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px dashed #dee2e6;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.artifact-card.placeholder:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.artifact-thumbnail {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3AAA64 0%, #54ba4e 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.artifact-thumbnail i {
+    font-size: 28px;
+    color: white;
+}
+
+.artifact-card.placeholder .artifact-thumbnail {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    margin: 0 auto 1rem auto;
+}
+
+.artifact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.artifact-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.artifact-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.artifact-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background: rgba(58, 170, 100, 0.1);
+    color: #2d844e;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(58, 170, 100, 0.2);
+}
+
+.artifact-link {
+    color: #479FC8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+.artifact-link:hover {
+    color: #3893bd;
+    text-decoration: none;
+}
+
+.artifact-link i {
+    font-size: 0.8rem;
+}
+
+/* Dark mode styles for Vibe Coded Artifacts */
+body[data-theme="dark"] .artifacts-viewport {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+body[data-theme="dark"] .artifact-card {
+    background: #1e2124;
+    border-color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.9);
+}
+
+body[data-theme="dark"] .artifact-card:hover {
+    background: #242831;
+}
+
+body[data-theme="dark"] .artifact-card.placeholder {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+}
+
+body[data-theme="dark"] .artifact-title {
+    color: rgba(255,255,255,0.9);
+}
+
+body[data-theme="dark"] .artifact-description {
+    color: rgba(255,255,255,0.7);
+}
+
+body[data-theme="dark"] .tech-tag {
+    background: rgba(83, 196, 125, 0.2);
+    color: #53c47d;
+    border-color: rgba(83, 196, 125, 0.3);
+}
+
+body[data-theme="dark"] .artifact-link {
+    color: #53c47d;
+}
+
+body[data-theme="dark"] .artifact-link:hover {
+    color: #4fb874;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .artifacts-viewport {
+        aspect-ratio: 4/3;
+        padding: 0.75rem;
+    }
+    
+    .artifact-card {
+        flex: 0 0 240px;
+        padding: 1rem;
+    }
+    
+    .artifact-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .artifact-thumbnail i {
+        font-size: 24px;
+    }
+}
