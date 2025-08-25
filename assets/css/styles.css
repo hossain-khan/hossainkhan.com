@@ -1212,7 +1212,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifact-card {
     flex: 0 0 280px;
     height: calc(100% - 1rem);
-    min-height: 240px;
+    min-height: 320px;
     background: white;
     border-radius: 12px;
     padding: 1.25rem;
@@ -1432,7 +1432,7 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
     .artifact-card {
         flex: 0 0 240px;
         padding: 1rem;
-        min-height: 200px;
+        min-height: 280px;
     }
     
     .artifact-thumbnail {
