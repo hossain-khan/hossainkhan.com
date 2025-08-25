@@ -1171,7 +1171,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifacts-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9;
+    min-height: 400px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
     overflow: hidden;
@@ -1182,7 +1182,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifacts-container {
     display: flex;
     gap: 1.5rem;
-    height: 100%;
+    min-height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -1211,7 +1211,6 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 
 .artifact-card {
     flex: 0 0 280px;
-    height: calc(100% - 1rem);
     min-height: 320px;
     background: white;
     border-radius: 12px;
@@ -1425,7 +1424,7 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .artifacts-viewport {
-        aspect-ratio: 4/3;
+        min-height: 350px;
         padding: 0.75rem;
     }
     
