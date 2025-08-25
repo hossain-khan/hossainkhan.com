@@ -50,6 +50,19 @@ window.addEventListener('DOMContentLoaded', function() {
             if (this.id === 'back-to-top') return;
             
             e.preventDefault();
+            
+            // Auto-collapse navbar on mobile after clicking nav link
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse && !navbarToggler.classList.contains('collapsed')) {
+                // Check if we're on mobile (Bootstrap's collapse is active)
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            }
+            
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 // Calculate navbar height and add some padding
@@ -63,6 +76,20 @@ window.addEventListener('DOMContentLoaded', function() {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+            }
+        });
+    });
+    
+    // Additional handler specifically for navbar links to ensure auto-collapse works
+    document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(navLink => {
+        navLink.addEventListener('click', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            // Auto-collapse navbar on mobile when clicking navigation links
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                bsCollapse.hide();
             }
         });
     });

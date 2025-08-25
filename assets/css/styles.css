@@ -47,6 +47,22 @@ body {
   border-radius: 4px;
 }
 
+/* Navbar toggler styles for better visibility */
+.navbar-toggler {
+  border: 1px solid rgba(67, 67, 67, 0.3) !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(58, 170, 100, 0.25) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2867, 67, 67, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 /* Dark mode navbar styles */
 body[data-theme="dark"] .navbar {
   background: rgba(30, 33, 36, 0.95) !important;
@@ -61,6 +77,19 @@ body[data-theme="dark"] .navbar .nav-link:hover,
 body[data-theme="dark"] .navbar .nav-link:focus {
   color: #53c47d !important;
   background-color: rgba(83, 196, 125, 0.1);
+}
+
+/* Dark mode navbar toggler styles */
+body[data-theme="dark"] .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body[data-theme="dark"] .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(83, 196, 125, 0.25) !important;
+}
+
+body[data-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* ======= Reading Progress Bar ======= */
@@ -1142,7 +1171,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifacts-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9;
+    min-height: 400px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
     overflow: hidden;
@@ -1153,7 +1182,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 .artifacts-container {
     display: flex;
     gap: 1.5rem;
-    height: 100%;
+    min-height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -1182,7 +1211,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 
 .artifact-card {
     flex: 0 0 280px;
-    height: calc(100% - 1rem);
+    min-height: 320px;
     background: white;
     border-radius: 12px;
     padding: 1.25rem;
@@ -1395,13 +1424,14 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .artifacts-viewport {
-        aspect-ratio: 4/3;
+        min-height: 350px;
         padding: 0.75rem;
     }
     
     .artifact-card {
         flex: 0 0 240px;
         padding: 1rem;
+        min-height: 280px;
     }
     
     .artifact-thumbnail {
