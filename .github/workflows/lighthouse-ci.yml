@@ -119,21 +119,30 @@ jobs:
           const results = JSON.parse(fs.readFileSync(lighthouseFiles[0], 'utf8'));
           
           console.log('🎯 Checking performance against baseline budget...');
+          console.log('🔍 Results structure keys:', Object.keys(results));
           
-          const score = results.lhr.categories.performance.score * 100;
-          const fcp = results.lhr.audits['first-contentful-paint'].numericValue;
-          const lcp = results.lhr.audits['largest-contentful-paint'].numericValue;
-          const cls = results.lhr.audits['cumulative-layout-shift'].numericValue;
-          const tbt = results.lhr.audits['total-blocking-time'].numericValue;
-          const si = results.lhr.audits['speed-index'].numericValue;
+          // Handle different possible JSON structures
+          let lhr = results.lhr || results;
+          if (!lhr.categories) {
+            console.log('⚠️ Unexpected results structure, available keys:', Object.keys(lhr));
+            console.log('📋 First few characters of file:', JSON.stringify(results).substring(0, 200));
+            process.exit(1);
+          }
           
-          console.log(`📈 Current Performance:
-          - Performance Score: \${score}/100
-          - First Contentful Paint: \${Math.round(fcp)}ms
-          - Largest Contentful Paint: \${Math.round(lcp)}ms
-          - Cumulative Layout Shift: \${cls.toFixed(3)}
-          - Total Blocking Time: \${Math.round(tbt)}ms
-          - Speed Index: \${Math.round(si)}ms`);
+          const score = lhr.categories.performance.score * 100;
+          const fcp = lhr.audits['first-contentful-paint'].numericValue;
+          const lcp = lhr.audits['largest-contentful-paint'].numericValue;
+          const cls = lhr.audits['cumulative-layout-shift'].numericValue;
+          const tbt = lhr.audits['total-blocking-time'].numericValue;
+          const si = lhr.audits['speed-index'].numericValue;
+          
+          console.log('📈 Current Performance:');
+          console.log('- Performance Score: ' + Math.round(score) + '/100');
+          console.log('- First Contentful Paint: ' + Math.round(fcp) + 'ms');
+          console.log('- Largest Contentful Paint: ' + Math.round(lcp) + 'ms');
+          console.log('- Cumulative Layout Shift: ' + cls.toFixed(3));
+          console.log('- Total Blocking Time: ' + Math.round(tbt) + 'ms');
+          console.log('- Speed Index: ' + Math.round(si) + 'ms');
           
           // Check against baseline budget (loose thresholds during optimization)
           const baseline = budget.baseline;
@@ -141,19 +150,19 @@ jobs:
           let issues = [];
           
           if (score < baseline.performance_score * 100) {
-            issues.push(`Performance score \${score} below baseline \${baseline.performance_score * 100}`);
+            issues.push('Performance score ' + Math.round(score) + ' below baseline ' + (baseline.performance_score * 100));
             passed = false;
           }
           if (fcp > baseline.first_contentful_paint) {
-            issues.push(`FCP \${Math.round(fcp)}ms above baseline \${baseline.first_contentful_paint}ms`);
+            issues.push('FCP ' + Math.round(fcp) + 'ms above baseline ' + baseline.first_contentful_paint + 'ms');
             passed = false;
           }
           if (lcp > baseline.largest_contentful_paint) {
-            issues.push(`LCP \${Math.round(lcp)}ms above baseline \${baseline.largest_contentful_paint}ms`);
+            issues.push('LCP ' + Math.round(lcp) + 'ms above baseline ' + baseline.largest_contentful_paint + 'ms');
             passed = false;
           }
           if (cls > baseline.cumulative_layout_shift) {
-            issues.push(`CLS \${cls.toFixed(3)} above baseline \${baseline.cumulative_layout_shift}`);
+            issues.push('CLS ' + cls.toFixed(3) + ' above baseline ' + baseline.cumulative_layout_shift);
             passed = false;
           }
           
@@ -161,7 +170,7 @@ jobs:
             console.log('✅ Performance meets baseline budget!');
           } else {
             console.log('⚠️  Performance issues (within expected baseline):');
-            issues.forEach(issue => console.log(`  - \${issue}`));
+            issues.forEach(issue => console.log('  - ' + issue));
             console.log('');
             console.log('ℹ️  This is expected during optimization phase. See PERFORMANCE.md for improvement plan.');
           }
