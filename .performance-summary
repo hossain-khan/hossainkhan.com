@@ -1,0 +1,38 @@
+# 🚀 Performance Quick Reference
+
+## Current Status
+- **Score**: 57/100 🚨
+- **Size**: 9.2MB 🚨  
+- **LCP**: 39.5s 🚨
+
+## CI Status
+✅ **Baseline thresholds set** - CI won't fail during optimization
+⚠️  **Thresholds are intentionally loose** - Will tighten after Phase 1
+
+## Priority Fixes
+1. **FontAwesome**: 1.6MB → 50KB (-1.55MB)
+2. **Images**: Convert to WebP (-4-5MB)
+3. **Compression**: Enable gzip (-7.9s load time)
+4. **Lazy Loading**: Below-fold images (-0.6s)
+
+## Commands
+```bash
+# Audit performance
+npm run perf:audit
+
+# Check budget
+npm run perf:budget  
+
+# Full check
+npm run perf:full
+```
+
+## Targets
+- **Phase 1**: Score 75, Size 2.1MB, LCP 4.2s
+- **Phase 2**: Score 85, Size 1.5MB, LCP 2.8s  
+- **Phase 3**: Score 95, Size 1.2MB, LCP 1.5s
+
+## Next Steps
+1. After Phase 1 optimizations: Update CI thresholds to error level
+2. See `CI-BASELINE.md` for threshold progression plan
+3. See `PERFORMANCE.md` for detailed roadmap

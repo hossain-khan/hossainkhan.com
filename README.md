@@ -1,4 +1,5 @@
 [![Validated HTML5 and CSS](https://github.com/hossain-khan/hossainkhan.com/workflows/Validate/badge.svg)](https://github.com/hossain-khan/hossainkhan.com/actions)
+[![Lighthouse CI](https://github.com/hossain-khan/hossainkhan.com/workflows/Lighthouse%20Performance%20Audit/badge.svg)](https://github.com/hossain-khan/hossainkhan.com/actions)
 
 # hossainkhan.com
 Static site for [hossainkhan.com](http://hossainkhan.com/)
@@ -32,6 +33,24 @@ Alternative universal way to run it from Windows, MacOS or Linux using npm modul
 npm install --global http-server
 http-server ./ -a 127.0.0.1 --port 80 --cors
 ```
+
+----
+
+## 📊 Performance Monitoring
+
+This site includes comprehensive performance monitoring and optimization:
+
+- **🚀 Lighthouse CI**: Automated performance audits on every push/PR
+- **📈 Performance Budget**: Tracks metrics against baseline and target thresholds  
+- **⚡ Current Score**: 57/100 (baseline) → Target: 95/100
+- **🎯 Optimization Plan**: 3-phase improvement roadmap
+
+**Key Performance Files:**
+- [`PERFORMANCE.md`](./PERFORMANCE.md) - Complete optimization guide and roadmap
+- [`performance-budget.json`](./performance-budget.json) - Performance budgets and thresholds
+- [`.github/workflows/lighthouse-ci.yml`](./.github/workflows/lighthouse-ci.yml) - CI automation
+
+See [PERFORMANCE.md](./PERFORMANCE.md) for detailed optimization plan and current metrics.
 
 ----
 

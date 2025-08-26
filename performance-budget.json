@@ -1,0 +1,100 @@
+{
+  "baseline": {
+    "date": "2025-08-25",
+    "performanceScore": 57,
+    "totalSize": "9.2MB",
+    "imageSize": "7.5MB",
+    "jsSize": "1.6MB",
+    "cssSize": "350KB",
+    "fontSize": "0KB",
+    "firstContentfulPaint": "3.9s",
+    "largestContentfulPaint": "39.5s",
+    "speedIndex": "16.0s",
+    "cumulativeLayoutShift": 0.006,
+    "totalBlockingTime": "0ms"
+  },
+  "budget": {
+    "totalSize": "2.5MB",
+    "imageSize": "1.5MB",
+    "jsSize": "300KB",
+    "cssSize": "100KB",
+    "fontSize": "50KB",
+    "firstContentfulPaint": "2.5s",
+    "largestContentfulPaint": "4.0s",
+    "speedIndex": "3.5s",
+    "cumulativeLayoutShift": 0.1,
+    "totalBlockingTime": "500ms"
+  },
+  "targets": {
+    "totalSize": "1.5MB",
+    "imageSize": "800KB", 
+    "jsSize": "200KB",
+    "cssSize": "80KB",
+    "fontSize": "30KB",
+    "firstContentfulPaint": "1.5s",
+    "largestContentfulPaint": "2.5s",
+    "speedIndex": "2.0s",
+    "cumulativeLayoutShift": 0.05,
+    "totalBlockingTime": "200ms"
+  },
+  "major_issues": {
+    "critical": [
+      "FontAwesome all.js (1.6MB) - Only load required icons",
+      "android-muzei-plugin-feature-graphic-v3.png (1.5MB) - Convert to WebP/AVIF",
+      "android-weather-alert-app-screenshot-array-small.png (1MB) - Already 'small', needs further compression",
+      "keep-alive-banner-art.png (900KB) - Convert to WebP", 
+      "github-stats-alt-banner.png (858KB) - Convert to WebP"
+    ],
+    "high": [
+      "Bootstrap CSS (228KB) - Use only required components",
+      "Multiple large project images - Implement lazy loading",
+      "No text compression - Enable gzip/brotli",
+      "No image optimization - Missing WebP/AVIF formats",
+      "Render blocking resources - Defer non-critical CSS/JS"
+    ]
+  },
+  "optimization_roadmap": {
+    "phase_1_quick_wins": [
+      "Enable gzip compression (7.9s savings)",
+      "Convert largest images to WebP (8.8s savings)", 
+      "Properly size images (8.6s savings)",
+      "Lazy load offscreen images (0.6s savings)"
+    ],
+    "phase_2_medium_effort": [
+      "Tree-shake FontAwesome icons (reduce 1.6MB to ~50KB)",
+      "Remove unused Bootstrap CSS (reduce 228KB to ~80KB)",
+      "Eliminate render-blocking resources (2.5s savings)",
+      "Implement critical CSS inlining"
+    ],
+    "phase_3_advanced": [
+      "Service worker caching strategy",
+      "Resource hints (preconnect, dns-prefetch)",
+      "Code splitting and async loading",
+      "CDN deployment with edge caching"
+    ]
+  },
+  "monitoring": {
+    "lighthouse_ci": true,
+    "github_actions": true,
+    "baseline_strategy": {
+      "note": "CI thresholds set to current baseline to prevent failures during optimization work",
+      "current_ci_thresholds": {
+        "performance_score": ">=0.3 (warn)",
+        "first_contentful_paint": "<=15000ms (warn)",
+        "largest_contentful_paint": "<=45000ms (warn)",
+        "speed_index": "<=20000ms (warn)"
+      },
+      "post_phase1_thresholds": {
+        "performance_score": ">=0.75 (error)",
+        "first_contentful_paint": "<=2000ms (error)",
+        "largest_contentful_paint": "<=4000ms (error)",
+        "speed_index": "<=4000ms (error)"
+      }
+    },
+    "alerts": {
+      "performance_score_threshold": 80,
+      "lcp_threshold": "4.0s",
+      "fcp_threshold": "2.5s"
+    }
+  }
+}

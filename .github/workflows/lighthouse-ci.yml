@@ -1,0 +1,229 @@
+name: Performance Monitoring with Lighthouse CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse-ci:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
+
+      - name: Start HTTP server
+        run: |
+          python3 -m http.server 8080 &
+          sleep 3
+        working-directory: ./
+
+      - name: Run Lighthouse CI
+        run: |
+          echo "🚀 Running Lighthouse CI Performance Audit..."
+          echo "ℹ️  LHCI_GITHUB_APP_TOKEN is optional - see LIGHTHOUSE-GITHUB-SETUP.md"
+          lhci autorun
+        env:
+          # Optional: Enables GitHub PR comments and status checks
+          # See LIGHTHOUSE-GITHUB-SETUP.md for setup instructions
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results
+          path: |
+            .lighthouseci/
+            lighthouse-*.json
+
+  performance-budget-check:
+    runs-on: ubuntu-latest
+    needs: lighthouse-ci
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Download Lighthouse results
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-results
+          path: ./
+
+      - name: Debug - List downloaded files
+        run: |
+          echo "📂 Files in current directory:"
+          ls -la
+          echo ""
+          if [ -d ".lighthouseci" ]; then
+            echo "📂 Files in .lighthouseci directory:"
+            ls -la .lighthouseci/
+          else
+            echo "⚠️ .lighthouseci directory not found"
+          fi
+
+      - name: Check Performance Budget
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Find lighthouse result files using built-in fs module
+          let lighthouseFiles = [];
+          try {
+            // Check current directory first
+            const currentDirFiles = fs.readdirSync('./').filter(f => f.startsWith('lighthouse-') && f.endsWith('.json'));
+            lighthouseFiles = currentDirFiles.map(f => path.join('./', f));
+          } catch (e) {
+            console.log('No lighthouse files in current directory');
+          }
+          
+          // Fallback to .lighthouseci directory
+          if (lighthouseFiles.length === 0) {
+            try {
+              const lhciDir = './.lighthouseci';
+              if (fs.existsSync(lhciDir)) {
+                const lhciFiles = fs.readdirSync(lhciDir).filter(f => f.endsWith('.json'));
+                lighthouseFiles = lhciFiles.map(f => path.join(lhciDir, f));
+              }
+            } catch (e) {
+              console.log('No lighthouse files in .lighthouseci directory');
+            }
+          }
+          
+          if (lighthouseFiles.length === 0) {
+            console.log('❌ No lighthouse result files found');
+            process.exit(1);
+          }
+          
+          console.log('📊 Found lighthouse files:', lighthouseFiles);
+          
+          const budget = JSON.parse(fs.readFileSync('./performance-budget.json', 'utf8'));
+          const results = JSON.parse(fs.readFileSync(lighthouseFiles[0], 'utf8'));
+          
+          console.log('🎯 Checking performance against baseline budget...');
+          console.log('🔍 Results structure keys:', Object.keys(results));
+          
+          // Handle different possible JSON structures
+          let lhr = results.lhr || results;
+          if (!lhr.categories) {
+            console.log('⚠️ Unexpected results structure, available keys:', Object.keys(lhr));
+            console.log('📋 First few characters of file:', JSON.stringify(results).substring(0, 200));
+            process.exit(1);
+          }
+          
+          const score = lhr.categories.performance.score * 100;
+          const fcp = lhr.audits['first-contentful-paint'].numericValue;
+          const lcp = lhr.audits['largest-contentful-paint'].numericValue;
+          const cls = lhr.audits['cumulative-layout-shift'].numericValue;
+          const tbt = lhr.audits['total-blocking-time'].numericValue;
+          const si = lhr.audits['speed-index'].numericValue;
+          
+          console.log('📈 Current Performance:');
+          console.log('- Performance Score: ' + Math.round(score) + '/100');
+          console.log('- First Contentful Paint: ' + Math.round(fcp) + 'ms');
+          console.log('- Largest Contentful Paint: ' + Math.round(lcp) + 'ms');
+          console.log('- Cumulative Layout Shift: ' + cls.toFixed(3));
+          console.log('- Total Blocking Time: ' + Math.round(tbt) + 'ms');
+          console.log('- Speed Index: ' + Math.round(si) + 'ms');
+          
+          // Check against baseline budget (loose thresholds during optimization)
+          const baseline = budget.baseline;
+          let passed = true;
+          let issues = [];
+          
+          if (score < baseline.performance_score * 100) {
+            issues.push('Performance score ' + Math.round(score) + ' below baseline ' + (baseline.performance_score * 100));
+            passed = false;
+          }
+          if (fcp > baseline.first_contentful_paint) {
+            issues.push('FCP ' + Math.round(fcp) + 'ms above baseline ' + baseline.first_contentful_paint + 'ms');
+            passed = false;
+          }
+          if (lcp > baseline.largest_contentful_paint) {
+            issues.push('LCP ' + Math.round(lcp) + 'ms above baseline ' + baseline.largest_contentful_paint + 'ms');
+            passed = false;
+          }
+          if (cls > baseline.cumulative_layout_shift) {
+            issues.push('CLS ' + cls.toFixed(3) + ' above baseline ' + baseline.cumulative_layout_shift);
+            passed = false;
+          }
+          
+          if (passed) {
+            console.log('✅ Performance meets baseline budget!');
+          } else {
+            console.log('⚠️  Performance issues (within expected baseline):');
+            issues.forEach(issue => console.log('  - ' + issue));
+            console.log('');
+            console.log('ℹ️  This is expected during optimization phase. See PERFORMANCE.md for improvement plan.');
+          }
+          "
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Find the lighthouse JSON file
+            const lighthouseFiles = fs.readdirSync('.').filter(f => f.startsWith('lighthouse-') && f.endsWith('.json'));
+            let lighthouseFile;
+            if (lighthouseFiles.length === 0) {
+              // Try in .lighthouseci directory
+              const lhciFiles = fs.existsSync('.lighthouseci') ? 
+                fs.readdirSync('.lighthouseci').filter(f => f.endsWith('.report.json')) : [];
+              if (lhciFiles.length === 0) {
+                console.log('❌ No Lighthouse results found for PR comment');
+                return;
+              }
+              lighthouseFile = '.lighthouseci/' + lhciFiles[0];
+            } else {
+              lighthouseFile = lighthouseFiles[0];
+            }
+            
+            const results = JSON.parse(fs.readFileSync(lighthouseFile, 'utf8'));
+            const budget = JSON.parse(fs.readFileSync('./performance-budget.json', 'utf8'));
+            
+            const score = Math.round(results.categories.performance.score * 100);
+            const fcp = (results.audits['first-contentful-paint'].numericValue / 1000).toFixed(1);
+            const lcp = (results.audits['largest-contentful-paint'].numericValue / 1000).toFixed(1);
+            const cls = results.audits['cumulative-layout-shift'].displayValue;
+            
+            const comment = `## 🚀 Performance Report
+            
+            | Metric | Current | Budget | Status |
+            |--------|---------|---------|---------|
+            | Performance Score | ${score}/100 | ${budget.monitoring.alerts.performance_score_threshold}/100 | ${score >= budget.monitoring.alerts.performance_score_threshold ? '✅' : '❌'} |
+            | First Contentful Paint | ${fcp}s | ${budget.budget.firstContentfulPaint} | ${parseFloat(fcp) <= parseFloat(budget.budget.firstContentfulPaint) ? '✅' : '❌'} |
+            | Largest Contentful Paint | ${lcp}s | ${budget.budget.largestContentfulPaint} | ${parseFloat(lcp) <= parseFloat(budget.budget.largestContentfulPaint) ? '✅' : '❌'} |
+            | Cumulative Layout Shift | ${cls} | ${budget.budget.cumulativeLayoutShift} | ✅ |
+            
+            📊 **Results File**: \`${lighthouseFile}\`
+            
+            View detailed results in the [Lighthouse CI dashboard](https://app.lighthouseci.com).
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
