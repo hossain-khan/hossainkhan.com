@@ -29,8 +29,13 @@ jobs:
         working-directory: ./
 
       - name: Run Lighthouse CI
-        run: lhci autorun
+        run: |
+          echo "🚀 Running Lighthouse CI Performance Audit..."
+          echo "ℹ️  LHCI_GITHUB_APP_TOKEN is optional - see LIGHTHOUSE-GITHUB-SETUP.md"
+          lhci autorun
         env:
+          # Optional: Enables GitHub PR comments and status checks
+          # See LIGHTHOUSE-GITHUB-SETUP.md for setup instructions
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       - name: Upload Lighthouse results
