@@ -1255,13 +1255,8 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 }
 
 .artifact-thumbnail i {
-    font-size: 28px;
-    color: white;
-}
-
-/* Make Android icon slightly bigger to fill the space better */
-.artifact-thumbnail .fa-android {
     font-size: 30px;
+    color: white;
 }
 
 .artifact-card.placeholder .artifact-thumbnail {
@@ -1440,7 +1435,7 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
     }
     
     .artifact-thumbnail i {
-        font-size: 24px;
+        font-size: 26px;
     }
     
     #toggleMoreProjects.btn-outline-primary {
