@@ -1255,7 +1255,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
 }
 
 .artifact-thumbnail i {
-    font-size: 30px;
+    font-size: 36px;
     color: white;
 }
 
@@ -1435,7 +1435,7 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
     }
     
     .artifact-thumbnail i {
-        font-size: 26px;
+        font-size: 32px;
     }
     
     #toggleMoreProjects.btn-outline-primary {
