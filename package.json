@@ -1,0 +1,19 @@
+{
+  "name": "hossainkhan-portfolio",
+  "version": "1.0.0",
+  "description": "Performance monitoring and optimization tools for Hossain Khan's portfolio site",
+  "scripts": {
+    "perf:audit": "lighthouse http://localhost:8080 --output=json --output-path=./lighthouse-current.json --chrome-flags='--headless' --only-categories=performance",
+    "perf:budget": "node scripts/check-budget.js",
+    "perf:serve": "python3 -m http.server 8080",
+    "perf:full": "npm run perf:serve & sleep 3 && npm run perf:audit && npm run perf:budget && pkill -f 'python3 -m http.server'",
+    "lighthouse:ci": "lhci autorun"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.12.0",
+    "lighthouse": "^11.0.0"
+  },
+  "keywords": ["performance", "lighthouse", "web-vitals", "optimization"],
+  "author": "Hossain Khan",
+  "license": "MIT"
+}

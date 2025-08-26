@@ -1,0 +1,128 @@
+name: Performance Monitoring with Lighthouse CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse-ci:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
+
+      - name: Start HTTP server
+        run: |
+          python3 -m http.server 8080 &
+          sleep 3
+        working-directory: ./
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results
+          path: |
+            .lighthouseci/
+            lighthouse-*.json
+
+  performance-budget-check:
+    runs-on: ubuntu-latest
+    needs: lighthouse-ci
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Download Lighthouse results
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-results
+          path: ./
+
+      - name: Check Performance Budget
+        run: |
+          node -e "
+          const budget = JSON.parse(require('fs').readFileSync('./performance-budget.json', 'utf8'));
+          const results = JSON.parse(require('fs').readFileSync('./lighthouse-*.json', 'utf8'));
+          
+          console.log('🎯 PERFORMANCE BUDGET CHECK');
+          console.log('============================');
+          
+          const score = Math.round(results.categories.performance.score * 100);
+          const budgetScore = budget.monitoring.alerts.performance_score_threshold;
+          
+          console.log('Performance Score:', score + '/100', score >= budgetScore ? '✅' : '❌');
+          
+          const fcp = parseFloat(results.audits['first-contentful-paint'].numericValue);
+          const budgetFcp = parseFloat(budget.budget.firstContentfulPaint.replace('s', '')) * 1000;
+          console.log('FCP:', (fcp/1000).toFixed(1) + 's', fcp <= budgetFcp ? '✅' : '❌');
+          
+          const lcp = parseFloat(results.audits['largest-contentful-paint'].numericValue);  
+          const budgetLcp = parseFloat(budget.budget.largestContentfulPaint.replace('s', '')) * 1000;
+          console.log('LCP:', (lcp/1000).toFixed(1) + 's', lcp <= budgetLcp ? '✅' : '❌');
+          
+          if (score < budgetScore || fcp > budgetFcp || lcp > budgetLcp) {
+            console.log('');
+            console.log('❌ Performance budget exceeded!');
+            process.exit(1);
+          } else {
+            console.log('');
+            console.log('✅ Performance budget met!');
+          }
+          "
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('./lighthouse-*.json', 'utf8'));
+            const budget = JSON.parse(fs.readFileSync('./performance-budget.json', 'utf8'));
+            
+            const score = Math.round(results.categories.performance.score * 100);
+            const fcp = (results.audits['first-contentful-paint'].numericValue / 1000).toFixed(1);
+            const lcp = (results.audits['largest-contentful-paint'].numericValue / 1000).toFixed(1);
+            const cls = results.audits['cumulative-layout-shift'].displayValue;
+            
+            const comment = `## 🚀 Performance Report
+            
+            | Metric | Current | Budget | Status |
+            |--------|---------|---------|---------|
+            | Performance Score | ${score}/100 | ${budget.monitoring.alerts.performance_score_threshold}/100 | ${score >= budget.monitoring.alerts.performance_score_threshold ? '✅' : '❌'} |
+            | First Contentful Paint | ${fcp}s | ${budget.budget.firstContentfulPaint} | ${parseFloat(fcp) <= parseFloat(budget.budget.firstContentfulPaint) ? '✅' : '❌'} |
+            | Largest Contentful Paint | ${lcp}s | ${budget.budget.largestContentfulPaint} | ${parseFloat(lcp) <= parseFloat(budget.budget.largestContentfulPaint) ? '✅' : '❌'} |
+            | Cumulative Layout Shift | ${cls} | ${budget.budget.cumulativeLayoutShift} | ✅ |
+            
+            View detailed results in the [Lighthouse CI dashboard](https://app.lighthouseci.com).
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
