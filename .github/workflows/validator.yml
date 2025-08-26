@@ -15,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 22.x
 
       - name: Cache node modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -32,16 +32,57 @@ jobs:
 
       - run: npm -v
 
+      - name: Configure npm for authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Configure npm for better rate limiting
+        run: |
+          # Configure npm with longer timeout and retries
+          npm config set fetch-timeout 60000
+          npm config set fetch-retry-mintimeout 10000
+          npm config set fetch-retry-maxtimeout 60000
+          npm config set fetch-retries 5
+
       # https://www.npmjs.com/package/html-validate
-      - name: Install HTML Validator
-        run: npm install -g html-validate@8.21.0
+      - name: Install HTML Validator (with retry)
+        run: |
+          set +e
+          for i in {1..3}; do
+            echo "Attempt $i: Installing html-validate..."
+            npm install -g html-validate@8.21.0
+            if [ $? -eq 0 ]; then
+              echo "Successfully installed html-validate"
+              break
+            else
+              echo "Installation failed, retrying in 10 seconds..."
+              sleep 10
+            fi
+          done
+          set -e
+          # Verify installation
+          html-validate --version
       
       - name: Validate HTML Files
         run: html-validate index.html _template.html
 
       # https://www.npmjs.com/package/csstree-validator
-      - name: Install CSS Validator
-        run: npm install -g csstree-validator@3.0.0
+      - name: Install CSS Validator (with retry)
+        run: |
+          set +e
+          for i in {1..3}; do
+            echo "Attempt $i: Installing csstree-validator..."
+            npm install -g csstree-validator@3.0.0
+            if [ $? -eq 0 ]; then
+              echo "Successfully installed csstree-validator"
+              break
+            else
+              echo "Installation failed, retrying in 10 seconds..."
+              sleep 10
+            fi
+          done
+          set -e
+          # Verify installation
+          csstree-validator --version
       
       - name: Validate CSS Files
         run: csstree-validator assets/css/
