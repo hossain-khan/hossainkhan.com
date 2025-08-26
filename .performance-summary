@@ -5,6 +5,10 @@
 - **Size**: 9.2MB 🚨  
 - **LCP**: 39.5s 🚨
 
+## CI Status
+✅ **Baseline thresholds set** - CI won't fail during optimization
+⚠️  **Thresholds are intentionally loose** - Will tighten after Phase 1
+
 ## Priority Fixes
 1. **FontAwesome**: 1.6MB → 50KB (-1.55MB)
 2. **Images**: Convert to WebP (-4-5MB)
@@ -28,4 +32,7 @@ npm run perf:full
 - **Phase 2**: Score 85, Size 1.5MB, LCP 2.8s  
 - **Phase 3**: Score 95, Size 1.2MB, LCP 1.5s
 
-See `PERFORMANCE.md` for detailed roadmap.
+## Next Steps
+1. After Phase 1 optimizations: Update CI thresholds to error level
+2. See `CI-BASELINE.md` for threshold progression plan
+3. See `PERFORMANCE.md` for detailed roadmap
