@@ -67,11 +67,45 @@ jobs:
           name: lighthouse-results
           path: ./
 
+      - name: Debug - List downloaded files
+        run: |
+          echo "📂 Files in current directory:"
+          ls -la
+          echo ""
+          if [ -d ".lighthouseci" ]; then
+            echo "📂 Files in .lighthouseci directory:"
+            ls -la .lighthouseci/
+          else
+            echo "⚠️ .lighthouseci directory not found"
+          fi
+
       - name: Check Performance Budget
         run: |
           node -e "
-          const budget = JSON.parse(require('fs').readFileSync('./performance-budget.json', 'utf8'));
-          const results = JSON.parse(require('fs').readFileSync('./lighthouse-*.json', 'utf8'));
+          const fs = require('fs');
+          const glob = require('glob');
+          
+          // Find the lighthouse JSON file
+          const lighthouseFiles = fs.readdirSync('.').filter(f => f.startsWith('lighthouse-') && f.endsWith('.json'));
+          if (lighthouseFiles.length === 0) {
+            // Try in .lighthouseci directory
+            const lhciFiles = fs.existsSync('.lighthouseci') ? 
+              fs.readdirSync('.lighthouseci').filter(f => f.endsWith('.report.json')) : [];
+            if (lhciFiles.length === 0) {
+              console.log('❌ No Lighthouse results found');
+              console.log('Available files:', fs.readdirSync('.').join(', '));
+              process.exit(1);
+            }
+            // Use the first LHCI report file
+            var lighthouseFile = '.lighthouseci/' + lhciFiles[0];
+          } else {
+            var lighthouseFile = lighthouseFiles[0];
+          }
+          
+          console.log('📊 Reading Lighthouse results from:', lighthouseFile);
+          
+          const budget = JSON.parse(fs.readFileSync('./performance-budget.json', 'utf8'));
+          const results = JSON.parse(fs.readFileSync(lighthouseFile, 'utf8'));
           
           console.log('🎯 PERFORMANCE BUDGET CHECK');
           console.log('============================');
@@ -105,7 +139,24 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const results = JSON.parse(fs.readFileSync('./lighthouse-*.json', 'utf8'));
+            
+            // Find the lighthouse JSON file
+            const lighthouseFiles = fs.readdirSync('.').filter(f => f.startsWith('lighthouse-') && f.endsWith('.json'));
+            let lighthouseFile;
+            if (lighthouseFiles.length === 0) {
+              // Try in .lighthouseci directory
+              const lhciFiles = fs.existsSync('.lighthouseci') ? 
+                fs.readdirSync('.lighthouseci').filter(f => f.endsWith('.report.json')) : [];
+              if (lhciFiles.length === 0) {
+                console.log('❌ No Lighthouse results found for PR comment');
+                return;
+              }
+              lighthouseFile = '.lighthouseci/' + lhciFiles[0];
+            } else {
+              lighthouseFile = lighthouseFiles[0];
+            }
+            
+            const results = JSON.parse(fs.readFileSync(lighthouseFile, 'utf8'));
             const budget = JSON.parse(fs.readFileSync('./performance-budget.json', 'utf8'));
             
             const score = Math.round(results.categories.performance.score * 100);
@@ -121,6 +172,8 @@ jobs:
             | First Contentful Paint | ${fcp}s | ${budget.budget.firstContentfulPaint} | ${parseFloat(fcp) <= parseFloat(budget.budget.firstContentfulPaint) ? '✅' : '❌'} |
             | Largest Contentful Paint | ${lcp}s | ${budget.budget.largestContentfulPaint} | ${parseFloat(lcp) <= parseFloat(budget.budget.largestContentfulPaint) ? '✅' : '❌'} |
             | Cumulative Layout Shift | ${cls} | ${budget.budget.cumulativeLayoutShift} | ✅ |
+            
+            📊 **Results File**: \`${lighthouseFile}\`
             
             View detailed results in the [Lighthouse CI dashboard](https://app.lighthouseci.com).
             `;
