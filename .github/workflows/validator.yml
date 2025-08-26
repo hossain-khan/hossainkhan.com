@@ -33,6 +33,9 @@ jobs:
 
       - run: npm -v
 
+      - name: Configure npm for authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Configure npm for better rate limiting
         run: |
           # Configure npm with longer timeout and retries
