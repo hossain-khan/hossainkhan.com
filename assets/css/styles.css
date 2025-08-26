@@ -1254,8 +1254,10 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     flex-shrink: 0;
 }
 
-.artifact-thumbnail i {
+.artifact-thumbnail svg.svg-inline--fa {
     font-size: 36px;
+    width: 36px;
+    height: 36px;
     color: white;
 }
 
@@ -1434,8 +1436,10 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
         height: 50px;
     }
     
-    .artifact-thumbnail i {
+    .artifact-thumbnail svg.svg-inline--fa {
         font-size: 32px;
+        width: 32px;
+        height: 32px;
     }
     
     #toggleMoreProjects.btn-outline-primary {
