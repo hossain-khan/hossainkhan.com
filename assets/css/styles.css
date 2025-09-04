@@ -1254,7 +1254,7 @@ body[data-theme="dark"] .skills .skillset .level-bar {
     flex-shrink: 0;
 }
 
-.artifact-thumbnail svg.svg-inline--fa, .artifact-thumbnail i {
+.artifact-thumbnail svg.svg-inline--fa, .artifact-thumbnail svg, .artifact-thumbnail i {
     font-size: 30px;
     width: 30px;
     height: 30px;
@@ -1436,7 +1436,7 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
         height: 50px;
     }
 
-    .artifact-thumbnail svg.svg-inline--fa, .artifact-thumbnail i {
+    .artifact-thumbnail svg.svg-inline--fa, .artifact-thumbnail svg, .artifact-thumbnail i {
         font-size: 26px;
         width: 26px;
         height: 26px;
