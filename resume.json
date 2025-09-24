@@ -30,8 +30,8 @@
       },
       {
         "network": "LinkedIn",
-        "username": "hossain",
-        "url": "https://www.linkedin.com/in/hossain"
+        "username": "hossainkhan",
+        "url": "https://www.linkedin.com/in/hossainkhan"
       },
       {
         "network": "GitHub",
@@ -85,13 +85,6 @@
         "Implemented media content discovery features",
         "Led development team as technical lead"
       ]
-    },
-    {
-      "name": "dubdub Inc.",
-      "position": "Platform Lead | Android",
-      "startDate": "2016",
-      "endDate": "2017",
-      "summary": "Led platform development and Android engineering initiatives."
     },
     {
       "name": "dubdub Inc.",
