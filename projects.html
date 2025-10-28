@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects | Hossain Khan Portfolio</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete portfolio of projects by Hossain Khan - Android apps, open source libraries, AI-assisted development, and more">
+    <meta name="keywords" content="Hossain Khan Projects, Android Apps, Open Source, GitHub, Portfolio, AI Development, Mobile Apps">
+    <meta name="author" content="Hossain Khan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#78909c">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hossainkhan.com/projects.html">
+    <meta property="og:title" content="Projects | Hossain Khan Portfolio">
+    <meta property="og:description" content="Explore the complete portfolio of projects - Android apps, AI-assisted development, open source libraries, and innovative solutions">
+    <meta property="og:image" content="https://hossainkhan.com/assets/images/hk-social-share-banner.webp">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- FontAwesome JS -->
+    <script defer src="/assets/fontawesome/js/all.js"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1394009-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1394009-14');
+    </script>
+
+    <style>
+        .projects-page .project-category {
+            margin-bottom: 3rem;
+        }
+        
+        .projects-page .category-header {
+            border-bottom: 3px solid var(--primary-color, #3AAA64);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .projects-page .category-header h2 {
+            color: var(--heading-color, #778492);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .projects-page .category-description {
+            color: var(--text-secondary, #999);
+            font-size: 1.1rem;
+        }
+        
+        .projects-page .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .projects-page .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+        }
+        
+        .projects-page .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .projects-page .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary, #f5f5f5);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-color, #666);
+        }
+        
+        body[data-theme="dark"] .projects-page .stat-badge {
+            background: rgba(255,255,255,0.1);
+            color: #ccc;
+        }
+        
+        .projects-page .filter-buttons {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .projects-page .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color, #3AAA64);
+            background: transparent;
+            color: var(--primary-color, #3AAA64);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .projects-page .filter-btn:hover,
+        .projects-page .filter-btn.active {
+            background: var(--primary-color, #3AAA64);
+            color: white;
+        }
+        
+        .quick-stats {
+            background: linear-gradient(135deg, var(--primary-color, #3AAA64) 0%, #2d8a52 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-stats .stat-item {
+            text-align: center;
+        }
+        
+        .quick-stats .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-stats .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="projects-page">
+    <!-- ******HEADER****** -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <img class="profile-image img-fluid float-start rounded-circle" src="/assets/images/profile_cartoon.png" alt="Hossain Khan - Portrait">
+                    <div class="profile-content">
+                        <h1 class="name">Hossain Khan</h1>
+                        <h2 class="desc">Software Engineer</h2>
+                        <ul class="social list-inline">
+                            <li class="list-inline-item"><a href="https://bsky.app/profile/hossain.dev" target="_blank" aria-label="Bluesky 🦋 Profile"><i class="fa-brands fa-bluesky"></i></a></li>
+                            <li class="list-inline-item"><a href="https://androiddev.social/@hossainkhan" target="_blank" aria-label="Mastodon Profile"><i class="fab fa-mastodon"></i></a></li>
+                            <li class="list-inline-item"><a href="https://medium.com/@hossainkhan" target="_blank" aria-label="Blog on Medium.com"><i class="fab fa-medium"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hossain" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/hossain-khan" target="_blank" aria-label="Github Profile"><i class="fab fa-github-alt"></i></a></li>
+                            <li class="list-inline-item last-item"><a href="https://www.instagram.com/hossainkhan/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div><!--//profile-->
+                </div><!--//col-->
+                <div class="col-12 col-md-auto">
+                    <div class="dark-mode-switch d-flex">
+                        <div class="form-check form-switch mx-auto mx-md-0">
+                            <input type="checkbox" class="form-check-input me-2" id="darkSwitch">
+                            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                        </div>
+                    </div><!--//dark-mode-switch-->
+                    <a class="btn btn-cta-primary" href="mailto:hello@hossain.dev?Subject=Hello%20Hossain"><i class="far fa-paper-plane"></i> Say Hello!</a>
+                </div><!--//col-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </header><!--//header-->
+
+    <div class="container sections-wrapper py-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-4">
+                    <a class="btn btn-outline-primary" href="/index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                </div>
+                
+                <section class="intro-section mb-5">
+                    <div class="section-inner shadow-sm rounded p-4">
+                        <h1 class="display-4 mb-3"><i class="fas fa-code-branch"></i> All Projects</h1>
+                        <p class="lead">A comprehensive showcase of my work spanning mobile development, AI-assisted coding, open source contributions, and innovative solutions.</p>
+                        
+                        <!-- Quick Stats -->
+                        <div class="quick-stats shadow-sm">
+                            <div class="row">
+                                <div class="col-md-3 col-6">
+                                    <div class="stat-item">
+                                        <div class="stat-number">25+</div>
+                                        <div class="stat-label">Total Projects</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="stat-item">
+                                        <div class="stat-number">15+</div>
+                                        <div class="stat-label">Android Apps</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="stat-item">
+                                        <div class="stat-number">8</div>
+                                        <div class="stat-label">AI-Assisted Projects</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="stat-item">
+                                        <div class="stat-number">10+</div>
+                                        <div class="stat-label">Open Source</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Latest Mobile Projects -->
+                <section class="project-category">
+                    <div class="category-header">
+                        <h2><i class="fab fa-android"></i> Latest Mobile Projects</h2>
+                        <p class="category-description">Recent Android applications available on Google Play</p>
+                    </div>
+
+                    <!-- TRMNL Android Buddy -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/trmnl-buddy-banner.png" alt="TRMNL Android Buddy">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-tag"></i> New</span>
+                                    <span class="stat-badge"><i class="fab fa-google-play"></i> Published</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://github.com/hossain-khan/trmnl-android-buddy" target="_blank"><i class="fab fa-android"></i> TRMNL Android Buddy</a></h3>
+                                <p class="text-muted">Your companion app to monitor and manage your TRMNL e-ink displays on the go.</p>
+                                <p><strong>TRMNL Android Buddy</strong> is the essential companion app for managing your TRMNL e-ink display devices. Monitor device health, track battery life over time, and stay on top of your displays' status—all from your Android phone.</p>
+                                <ul>
+                                    <li>📊 Device Monitoring - View all your TRMNL devices with real-time battery level and WiFi signal strength</li>
+                                    <li>🔋 Battery Health Tracking - Automatic weekly battery data collection with historical charts</li>
+                                    <li>📱 Device Details - Comprehensive information including voltage readings and signal strength</li>
+                                    <li>🖼️ Device Preview - View current screen content for configured devices</li>
+                                    <li>📰 Content Feed - Stay updated with announcements and blog posts from TRMNL</li>
+                                    <li>🎨 Material You Design - Dynamic theming support (Android 12+)</li>
+                                    <li>🔐 Privacy-First - Obfuscated sensitive information with biometric authentication</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://play.google.com/store/apps/details?id=ink.trmnl.android.buddy&pcampaignid=web_share" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://github.com/hossain-khan/trmnl-android-buddy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android TRMNL Display Mirror -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/android-trmnl-mirror-banner.png" alt="Android TRMNL Display Mirror">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-github"></i> Open Source</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://github.com/usetrmnl/trmnl-android" target="_blank"><i class="fab fa-android"></i> Android TRMNL Display Mirror</a></h3>
+                                <p class="text-muted">Mirrors existing TRMNL device display image onto your Android device.</p>
+                                <p><strong>TRMNL</strong> is an e-ink companion that helps you stay focused. This Android app mirrors the content of a TRMNL e-ink display on your phone or tablet, connecting to the TRMNL/BYOS API to fetch the current screen image.</p>
+                                <ul>
+                                    <li>Automatic periodic screen updates with adaptive refresh intervals</li>
+                                    <li>Manual refresh and "next image" controls for on-demand updates</li>
+                                    <li>Support for custom TRMNL or BYOS server URLs</li>
+                                    <li>Refresh history logging for monitoring and verification</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://github.com/usetrmnl/trmnl-android" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://usetrmnl.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Get TRMNL</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weather Alert -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/android-weather-alert-app-screenshot-array-small.png" alt="Weather Alert">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-google-play"></i> Published</span>
+                                    <span class="stat-badge"><i class="fas fa-cloud"></i> Weather</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://github.com/hossain-khan/android-weather-alert" target="_blank"><i class="fab fa-android"></i> Weather Alert</a></h3>
+                                <p class="text-muted">Your no-fuss, personal weather alerter.</p>
+                                <p>Set it and forget it—get alerted when it matters! Weather Alert is a simple, no-frills app designed to notify you when specific weather conditions meet the thresholds you set.</p>
+                                <ul>
+                                    <li>🌨 Custom Alerts for Specific Weather Conditions</li>
+                                    <li>🌐 Choose Your Data Source & Add Your Own API Key</li>
+                                    <li>⏰ Set Your Alert Frequency</li>
+                                    <li>🛠 Minimalist Interface</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://play.google.com/store/apps/details?id=dev.hossain.weatheralert&pcampaignid=web_share" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://github.com/hossain-khan/android-weather-alert" target="_blank"><i class="fab fa-github"></i> Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Remote Notify -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/remote-notify-banner-large.png" alt="Remote Notify">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-google-play"></i> Published</span>
+                                    <span class="stat-badge"><i class="fas fa-mobile-alt"></i> Monitoring</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://github.com/hossain-khan/android-remote-notify" target="_blank"><i class="fab fa-android"></i> Remote Notify - Device Monitor</a></h3>
+                                <p class="text-muted">Your personal Android device watchdog!</p>
+                                <p>Never let your remote devices die on you again! Whether you're managing one device or many, stay alert when battery or storage levels drop too low.</p>
+                                <ul>
+                                    <li>🔋 Real-time Monitoring: Track battery and storage levels</li>
+                                    <li>📲 Custom Alerts: Set triggers for battery (%) or storage (GB)</li>
+                                    <li>🛡️ Multiple Notification Methods: Email, Twilio (SMS), Telegram, REST webhooks</li>
+                                    <li>⚙️ Flexible Settings: Choose check intervals like 30 mins or custom schedule</li>
+                                    <li>📊 Detailed Stats: View notification history and level changes</li>
+                                    <li>💡 Dark & Light Mode: Modern Material 3 design in both themes</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://play.google.com/store/apps/details?id=dev.hossain.remotenotify" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://github.com/hossain-khan/android-remote-notify" target="_blank"><i class="fab fa-github"></i> Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android Keep Alive -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/keep-alive-banner-art.png" alt="Android Keep Alive">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-flask"></i> Experimental</span>
+                                    <span class="stat-badge"><i class="fas fa-code-branch"></i> Alpha</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://github.com/hossain-khan/android-keep-alive" target="_blank"><i class="fab fa-android"></i> Android Keep Alive</a> <em>(Experimental)</em></h3>
+                                <p class="text-muted">A simple app to keep specific apps alive by checking if they are running.</p>
+                                <p>This app is designed with a very specific use case in mind - keeping applications running in the foreground continuously.</p>
+                                <ul>
+                                    <li>Designed to be always running in the foreground to watch and restart applications</li>
+                                    <li>NOT optimized for battery - causes high battery drain</li>
+                                    <li>Best used on secondary phones plugged into power 24/7</li>
+                                    <li>Includes Remote Logging and Heartbeat features</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://github.com/hossain-khan/android-keep-alive/releases" target="_blank"><i class="fas fa-download"></i> Test Drive</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://github.com/hossain-khan/android-keep-alive" target="_blank"><i class="fab fa-github"></i> Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- H.K. Vision Plugin for Muzei -->
+                    <div class="project-card shadow-sm rounded p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-fluid rounded" src="assets/images/projects/android-muzei-plugin-feature-graphic-v3.png" alt="H.K. Vision Muzei Plugin">
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-google-play"></i> Published</span>
+                                    <span class="stat-badge"><i class="fas fa-image"></i> Photography</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3><a href="https://play.google.com/store/apps/details?id=com.hossainkhan.vision" target="_blank"><i class="fas fa-tv"></i> H.K. Vision Plugin for Muzei</a></h3>
+                                <p class="text-muted">A simple Muzei Live Wallpaper plugin for my H.K. Vision photography site.</p>
+                                <p>Vision Muzei Plugin is an Android plugin for my H.K. Vision photography site that allows users to use featured photos as background wallpaper that automatically changes over time.</p>
+                                <p>Requires the Muzei Live Wallpaper app. Once installed, H.K. Vision featured photos will show as a "source" inside the Muzei app.</p>
+                                <div class="mt-3">
+                                    <a class="btn btn-cta-secondary me-2 mb-2" href="https://play.google.com/store/apps/details?id=com.hossainkhan.vision" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                                    <a class="btn btn-cta-secondary mb-2" href="https://medium.com/@hossainkhan/hackathon-creating-the-simplest-muzei-wallpaper-plugin-for-android-9d080dbb4bf" target="_blank"><i class="fas fa-book"></i> Read on Medium</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI-Assisted Development / Vibe Coded Artifacts -->
+                <section class="project-category">
+                    <div class="category-header">
+                        <h2><i class="fas fa-magic"></i> Vibe Coded Artifacts</h2>
+                        <p class="category-description">Projects built with AI-assisted development and modern vibe coding techniques</p>
+                    </div>
+
+                    <div class="row">
+                        <!-- Android Keep Alive (also in AI section) -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-heartbeat"></i> Android Keep Alive</h4>
+                                <p class="text-muted small">App watchdog that keeps specific apps alive by automatically restarting them</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-android"></i> Android</span>
+                                    <span class="stat-badge"><i class="fas fa-flask"></i> Kotlin</span>
+                                </div>
+                                <a href="https://github.com/hossain-khan/android-keep-alive" target="_blank" class="btn btn-sm btn-outline-primary mt-3">View Project</a>
+                            </div>
+                        </div>
+
+                        <!-- Android Device Catalog -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fab fa-android"></i> Android Device Catalog</h4>
+                                <p class="text-muted small">Interactive browser for exploring Android devices from the official Device Catalog</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-react"></i> React</span>
+                                    <span class="stat-badge"><i class="fab fa-js"></i> TypeScript</span>
+                                </div>
+                                <a href="https://android-device.gohk.xyz/" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Live Demo</a>
+                            </div>
+                        </div>
+
+                        <!-- JSON5-Kotlin -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-code"></i> JSON5-Kotlin</h4>
+                                <p class="text-muted small">Robust JSON5 parser and serializer for Kotlin with modern architecture</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-book"></i> Kotlin</span>
+                                    <span class="stat-badge"><i class="fas fa-code"></i> Library</span>
+                                </div>
+                                <a href="https://hossain-khan.github.io/json5-kotlin/" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Documentation</a>
+                            </div>
+                        </div>
+
+                        <!-- Canadian Mortgage Accelerator -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-calculator"></i> Canadian Mortgage Accelerator</h4>
+                                <p class="text-muted small">Interactive mortgage calculator with acceleration strategies</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-react"></i> React</span>
+                                    <span class="stat-badge"><i class="fas fa-chart-line"></i> Finance</span>
+                                </div>
+                                <a href="https://mortgage.gohk.xyz/" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Try Calculator</a>
+                            </div>
+                        </div>
+
+                        <!-- Social Sync -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-sync-alt"></i> Social Sync</h4>
+                                <p class="text-muted small">Automatically sync posts from Bluesky to Mastodon with GitHub Actions</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-python"></i> Python</span>
+                                    <span class="stat-badge"><i class="fab fa-github"></i> Actions</span>
+                                </div>
+                                <a href="https://github.com/hossain-khan/social-sync" target="_blank" class="btn btn-sm btn-outline-primary mt-3">View on GitHub</a>
+                            </div>
+                        </div>
+
+                        <!-- Kids Math Adventure -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-graduation-cap"></i> Kids Math Adventure</h4>
+                                <p class="text-muted small">Interactive educational game making math fun through adventure-based gameplay</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-react"></i> React</span>
+                                    <span class="stat-badge"><i class="fas fa-gamepad"></i> Educational</span>
+                                </div>
+                                <a href="https://kids-math.gohk.xyz/" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Play Game</a>
+                            </div>
+                        </div>
+
+                        <!-- Camp Mate -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fas fa-campground"></i> Camp Mate</h4>
+                                <p class="text-muted small">Plan, pack, and coordinate camping trips with collaborative checklists</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-react"></i> React</span>
+                                    <span class="stat-badge"><i class="fas fa-users"></i> Collaboration</span>
+                                </div>
+                                <a href="https://camping.gohk.xyz/" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Start Planning</a>
+                            </div>
+                        </div>
+
+                        <!-- TRMNL Buddy -->
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3 h-100">
+                                <h4><i class="fab fa-android"></i> TRMNL Buddy</h4>
+                                <p class="text-muted small">Companion app to monitor TRMNL e-ink displays with battery tracking</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-android"></i> Android</span>
+                                    <span class="stat-badge"><i class="fas fa-mobile-alt"></i> Jetpack Compose</span>
+                                </div>
+                                <a href="https://play.google.com/store/apps/details?id=ink.trmnl.android.buddy" target="_blank" class="btn btn-sm btn-outline-primary mt-3">Get on Play Store</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Open Source Libraries & Tools -->
+                <section class="project-category">
+                    <div class="category-header">
+                        <h2><i class="fab fa-github"></i> Open Source Libraries & Tools</h2>
+                        <p class="category-description">Contributions to the developer community</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3">
+                                <h4><a href="https://github.com/hossain-khan/kgeo-timeline" target="_blank"><i class="fas fa-map-marker-alt"></i> KGeoTimeline</a></h4>
+                                <p class="text-muted small">Kotlin library for parsing Google Location History (Timeline) data</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-book"></i> Library</span>
+                                    <span class="stat-badge"><i class="fab fa-github"></i> Open Source</span>
+                                </div>
+                                <a href="https://hossain-khan.github.io/kgeo-timeline/" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Documentation</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3">
+                                <h4><a href="https://github.com/hossain-khan/github-stats" target="_blank"><i class="fab fa-github-alt"></i> GitHub PR Stats</a></h4>
+                                <p class="text-muted small">Experimentation using GitHub APIs to visualize PR stats</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-chart-bar"></i> Analytics</span>
+                                    <span class="stat-badge"><i class="fas fa-flask"></i> Experimental</span>
+                                </div>
+                                <a href="https://github.com/hossain-khan/github-stats" target="_blank" class="btn btn-sm btn-outline-primary mt-2">View on GitHub</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3">
+                                <h4><a href="https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample" target="_blank">SQLDelight 2.0 with PostgreSQL</a></h4>
+                                <p class="text-muted small">Sample project exercising PostgreSQL with SQLDelight 2.0 on JVM</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fas fa-database"></i> Database</span>
+                                    <span class="stat-badge"><i class="fas fa-graduation-cap"></i> Sample</span>
+                                </div>
+                                <a href="https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample" target="_blank" class="btn btn-sm btn-outline-primary mt-2">View Sample</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card shadow-sm rounded p-3">
+                                <h4><a href="https://github.com/hossain-khan/android-syntax-highlighter" target="_blank">YNAASH</a></h4>
+                                <p class="text-muted small">Yet NOT Another Android Syntax Highlighter - web-based syntax highlighting for Android</p>
+                                <div class="project-stats">
+                                    <span class="stat-badge"><i class="fab fa-android"></i> Android</span>
+                                    <span class="stat-badge"><i class="fas fa-code"></i> Utility</span>
+                                </div>
+                                <a href="https://github.com/hossain-khan/android-syntax-highlighter" target="_blank" class="btn btn-sm btn-outline-primary mt-2">See Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Legacy & Archive Projects -->
+                <section class="project-category">
+                    <div class="category-header">
+                        <h2><i class="fas fa-archive"></i> Legacy Projects</h2>
+                        <p class="category-description">Earlier work and archived projects</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>📱 Android Barebone App</h5>
+                                <p class="small text-muted">MVVM Android project template with essential tools</p>
+                                <a href="https://github.com/hossain-khan/android-barebone" target="_blank" class="btn btn-sm btn-outline-secondary">View</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>📐 ConstraintLayout Demo</h5>
+                                <p class="small text-muted">Demo app for Android ConstraintLayout with sample code</p>
+                                <a href="https://github.com/hossain-khan/android-constraint-layout-cheatsheet" target="_blank" class="btn btn-sm btn-outline-secondary">View</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>📰 Daily Headlines</h5>
+                                <p class="small text-muted">Android TV app for checking daily news headlines</p>
+                                <a href="https://github.com/hossain-khan/android-daily-headlines" target="_blank" class="btn btn-sm btn-outline-secondary">View</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>🎬 HOOQ TV</h5>
+                                <p class="small text-muted">Video on demand streaming service for Southeast Asia</p>
+                                <span class="badge bg-secondary">Archived</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>📺 Optik TV</h5>
+                                <p class="small text-muted">Live and On Demand shows and movies streaming app</p>
+                                <span class="badge bg-secondary">Archived</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="project-card shadow-sm rounded p-3 mb-3">
+                                <h5>🛍️ dubcandy</h5>
+                                <p class="small text-muted">Shoppable videos companion app for video influencers</p>
+                                <span class="badge bg-secondary">Offline</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="cta-section text-center mb-5">
+                    <div class="section-inner shadow-sm rounded p-5" style="background: linear-gradient(135deg, #3AAA64 0%, #2d8a52 100%); color: white;">
+                        <h2 class="mb-3">Interested in Collaboration?</h2>
+                        <p class="lead mb-4">I'm always excited to work on innovative projects and explore new technologies.</p>
+                        <div>
+                            <a class="btn btn-light btn-lg me-2 mb-2" href="mailto:hello@hossain.dev?Subject=Project%20Collaboration"><i class="far fa-paper-plane"></i> Get in Touch</a>
+                            <a class="btn btn-outline-light btn-lg mb-2" href="https://github.com/hossain-khan" target="_blank"><i class="fab fa-github"></i> View More on GitHub</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="back-to-top" aria-label="Scroll to top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Javascript -->
+    <script src="/assets/plugins/popper.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Smooth scroll for back to top
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
