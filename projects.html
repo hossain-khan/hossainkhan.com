@@ -147,6 +147,64 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
+
+        /* Dark mode text contrast improvements */
+        body.projects-page[data-theme="dark"] .text-muted {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        body.projects-page[data-theme="dark"] p {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        body.projects-page[data-theme="dark"] li {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        body.projects-page[data-theme="dark"] .category-description {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        body.projects-page[data-theme="dark"] h1,
+        body.projects-page[data-theme="dark"] h2,
+        body.projects-page[data-theme="dark"] h3,
+        body.projects-page[data-theme="dark"] h4,
+        body.projects-page[data-theme="dark"] h5,
+        body.projects-page[data-theme="dark"] h6 {
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        body.projects-page[data-theme="dark"] .lead {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        /* Button styling - match site theme */
+        .projects-page .btn-outline-primary {
+            color: #3AAA64 !important;
+            border-color: #3AAA64 !important;
+        }
+
+        .projects-page .btn-outline-primary:hover,
+        .projects-page .btn-outline-primary:focus,
+        .projects-page .btn-outline-primary:active {
+            background-color: #3AAA64 !important;
+            border-color: #3AAA64 !important;
+            color: white !important;
+        }
+
+        /* Dark mode button styling */
+        body.projects-page[data-theme="dark"] .btn-outline-primary {
+            color: #53c47d !important;
+            border-color: #53c47d !important;
+        }
+
+        body.projects-page[data-theme="dark"] .btn-outline-primary:hover,
+        body.projects-page[data-theme="dark"] .btn-outline-primary:focus,
+        body.projects-page[data-theme="dark"] .btn-outline-primary:active {
+            background-color: #53c47d !important;
+            border-color: #53c47d !important;
+            color: #1e2124 !important;
+        }
     </style>
 </head>
 

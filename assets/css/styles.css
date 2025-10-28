@@ -5,6 +5,7 @@
  * Twitter: @3rdwave_themes
  * Copyright: 3rd Wave Media Ltd.
  * Website: https://themes.3rdwavemedia.com/
+ * DARK MODE TEXT CONTRAST UPDATE: 2025-01-27
 */
 
 /* ======= Base Styles ======= */
@@ -957,7 +958,33 @@ body[data-theme="dark"] .border, body[data-theme="dark"] .contrib-column {
 }
 
 body[data-theme="dark"] .text-muted {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Enhanced dark mode text contrast for projects page */
+body[data-theme="dark"] p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body[data-theme="dark"] li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body[data-theme="dark"] .category-description {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body[data-theme="dark"] .lead {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 body[data-theme="dark"] .skills .skillset .level-bar {
