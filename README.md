@@ -2,7 +2,7 @@
 [![Lighthouse CI](https://github.com/hossain-khan/hossainkhan.com/actions/workflows/lighthouse-ci.yml/badge.svg)](https://github.com/hossain-khan/hossainkhan.com/actions/workflows/lighthouse-ci.yml)
 
 # hossainkhan.com
-Static site for [hossainkhan.com](http://hossainkhan.com/)
+Static site for [hossainkhan.com](https://hossainkhan.com/)
 
 ## Site Theme Credits
 Xiaoying Riley at 3rd Wave Media (http://themes.3rdwavemedia.com/)
@@ -15,11 +15,9 @@ Here is a quick writeup I did on how you can use custom domain for your Github p
 
 
 ## Tip
-Use following to run local server for development from macOS.
+Use following to run local server for development.
 ```
-python -m SimpleHTTPServer 8000
-
-# On new MacOS with Python 3
+# Run with Python 3
 python3 -m http.server
 
 Then visit: http://localhost:8000/
