@@ -38,4 +38,8 @@ http-server ./ -a 127.0.0.1 --port 80 --cors
 
 This is a snapshot of the website showcasing light and dark mode :last_quarter_moon:
 
-![hk-website-screenshot](archive/hk.com-snapshot/snapshot-2025-02-small.jpg)
+| 🌕 Light Mode | 🌑 Dark Mode |
+|------------|-----------|
+| ![hk-website-screenshot-light](archive/hk.com-snapshot/hossainkhan.com_light_2025_11_26.png) | ![hk-website-screenshot-dark](archive/hk.com-snapshot/hossainkhan.com_dark_2025_11_26.png) |
+
+<!-- ![hk-website-screenshot](archive/hk.com-snapshot/snapshot-2025-02-small.jpg) -->
