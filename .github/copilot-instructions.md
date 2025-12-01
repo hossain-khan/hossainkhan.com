@@ -27,9 +27,10 @@ This installs Lighthouse CI and related devDependencies. Only needed for perform
 ### HTML Validation (CI-enforced)
 ```bash
 npm install -g html-validate@8.21.0
-html-validate index.html testimonials.html
+html-validate index.html
 ```
-- Validates `index.html` and `testimonials.html` (the main site files)
+- CI validates `index.html` (primary file)
+- The CI workflow also references `_template.html` but it doesn't exist in root
 - Exit code 0 means success (no output on success)
 - Configuration: `.htmlvalidate.json`
 
@@ -94,7 +95,7 @@ Requires local server running on port 8080.
 ### 1. Validate Workflow (`validator.yml`)
 Runs on: `push` and `pull_request` to `main`
 - Installs `html-validate@8.21.0` and `csstree-validator@3.0.0`
-- Validates: `index.html` (and `_template.html` if it exists)
+- Validates HTML: `index.html` (CI also references `_template.html` but it doesn't exist)
 - Validates CSS: `assets/css/`
 
 ### 2. Lighthouse CI Workflow (`lighthouse-ci.yml`)
@@ -113,6 +114,10 @@ Runs on: `push` (any branch)
 ## Key Development Rules
 
 1. **Always validate HTML/CSS before committing:**
+   ```bash
+   html-validate index.html && csstree-validator assets/css/
+   ```
+   For comprehensive validation, also check `testimonials.html`:
    ```bash
    html-validate index.html testimonials.html && csstree-validator assets/css/
    ```
