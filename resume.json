@@ -6,7 +6,7 @@
     "image": "https://hossainkhan.com/assets/images/profile_cartoon.png",
     "email": "hello@hossain.dev",
     "url": "https://hossainkhan.com",
-    "summary": "Senior Software Engineer with over 15 years of experience, passionate about crafting intuitive interfaces that connect people through technology. Currently at Slack, enhancing the Android app with a focus on platform improvements like BlockKit, Workflows, and Slack Apps. Career began as a web developer and evolved into mobile technologies, thriving on tackling challenging projects and building innovative solutions.",
+    "summary": "Senior Software Engineer with 15+ years of experience, passionate about crafting intuitive interfaces that connect people through technology. Currently at Slack, enhancing the Android app with a focus on Slack's platform improvements like BlockKit, Workflows, Slack Apps, and more. Career began as a web developer and has since evolved into mobile technologies, where I thrive on tackling challenging projects. Recently investing heavily in learning AI tools and development workflows, exploring platforms like Claude Code, Gemini CLI, Cursor, GitHub Copilot, and GitHub Spark.",
     "location": {
       "city": "Toronto",
       "region": "Ontario",
@@ -47,17 +47,21 @@
   },
   "work": [
     {
-      "name": "Slack",
+      "name": "Slack Technologies, Inc.",
       "position": "Senior Software Engineer | Android",
       "url": "https://slack.com",
       "startDate": "2021",
-      "summary": "Enhancing the Slack Android app with focus on platform improvements including BlockKit, Workflows, Slack Apps, and more.",
+      "summary": "Joined Slack's Platform Team to help make working life simpler, more pleasant, and more productive for millions of users worldwide. Led multiple high-impact initiatives spanning infrastructure tooling, architectural modernization, and feature delivery while maintaining a strong focus on code quality and developer experience. Working with the Slack Platform Team serving over 1 million developers and 750,000+ apps used daily by millions.",
       "highlights": [
-        "Improved Slack Android repository documentation and contributor experience",
-        "Set up auto-approving bot for documentation-only pull requests",
-        "Enhanced platform capabilities for mobile team",
-        "Collaborated on next generation Slack Platform development",
-        "Built technical and interpersonal alignment with external stakeholders"
+        "Block Kit Playground: Built comprehensive testing and visualization tool for all BlockKit components, benefiting entire organization across all pillars and accelerating modernization efforts through rapid prototyping and debugging capabilities",
+        "Android Docsite Initiative: Led org-wide documentation portal launch with automated PR approval workflow, saving engineering time across 100+ Android engineers",
+        "Block Kit Modernization Leadership: Spearheaded multi-quarter initiative to modernize UI toolkit architecture, transitioning from Android Views to Jetpack Compose. Exceeded Q4 goals and drove architectural improvements impacting developer productivity organization-wide",
+        "Code Health Champion: Ranked #1 on Q3 2024 leaderboard for improving Android org health score through systematic removal of technical debt and stale feature flags",
+        "Workflow Builder: Mentions in Form Dropdown: Delivered cross-platform feature unblocking ~400 customers and Workflow Builder V1 EOL, resolving 230+ Zendesk tickets",
+        "Edge-to-Edge Migration: Led Platform team contributions with 18/19 completed tickets, created AI-assisted migration guide, and provided cross-pillar support",
+        "Platform 2.0 Link Triggers & Shortcuts: Developed link trigger and shortcut implementation allowing customers to easily share and run 2.0 workflows from anywhere",
+        "File Input Block: Delivered highly requested file input block feature for Block Kit, enabling users to use files as input in Block Kit forms",
+        "Team Collaboration & Knowledge Sharing: Organized recurring team mob programming sessions to improve code-base health and share knowledge among team members"
       ]
     },
     {
@@ -68,9 +72,19 @@
       "endDate": "2021",
       "summary": "Joined Kijiji Android team to accelerate mobile product development and enhance end user experience.",
       "highlights": [
-        "Led platform engineering initiatives for Android mobile application",
-        "Accelerated mobile product development cycles",
-        "Enhanced end user experience across the platform"
+        "Launched feature allowing users to review their buying or selling experience on Kijiji",
+        "Built feature that allows Ad-ops to run campaigns for different periods of time",
+        "Improved application crash free user session rate from 97.81% to 99.92%",
+        "Created proof of concept for adding dark mode support to the app",
+        "Enabled lint checks on CI build after creating a baseline",
+        "Enabled Kotlin code formatting lint checks on CI build",
+        "Resurrected UI Unit test on Firebase Test Lab and Jenkins using Android emulator",
+        "Added new Jenkins job to distribute CI builds using Firebase App Distribution",
+        "Introduced proper code dependency injection using Dagger2 library",
+        "Introduced MVVM architecture pattern into project that allows engineers to use latest lifecycle aware AndroidX libraries",
+        "Led team to migrate app's API target level to Android 10 and Android 11",
+        "Participated in company-wide hackathon and was placed 3rd",
+        "Won world-wide eBay Classifieds hackathon competing with 10 other teams from 8+ countries during COVID-19"
       ]
     },
     {
@@ -80,10 +94,15 @@
       "endDate": "2018",
       "summary": "Created a complete solution for connected media device and a companion Android application to support device communication and media content discovery.",
       "highlights": [
-        "Developed complete connected media device solution",
-        "Built companion Android application for device communication",
-        "Implemented media content discovery features",
-        "Led development team as technical lead"
+        "Used Kotlin & MVVM architecture to implement application features",
+        "Added Realm for data caching and offline support",
+        "Planned weekly sprint items and assigned resources among team",
+        "On boarded new hires and paired with them to ramp up on the project",
+        "Worked with Product Manager to plan and execute monthly releases to Google Play store",
+        "Successfully launched the feature complete companion Android app on time",
+        "Improved crash free user session from 92% to 99.2% by constantly analyzing data from Crashlytics",
+        "Reduced application size by 15% by using vector images and lightweight WebP image assets",
+        "Reduced 8% background battery consumption on the application by using Android platform's JobScheduler"
       ]
     },
     {
@@ -91,14 +110,29 @@
       "position": "Platform Lead | Android",
       "startDate": "2016",
       "endDate": "2017",
-      "summary": "Led platform development and Android engineering initiatives."
+      "summary": "Led platform development and Android engineering initiatives for dubcandy - companion app for video influencers.",
+      "highlights": [
+        "Worked with management to set priorities for upcoming releases",
+        "Initiated weekly app improvement brainstorming meeting with the team",
+        "Added automation script to reduce manual tasks that were required during day-to-day development",
+        "Improved code coverage by 7% for core components"
+      ]
     },
     {
       "name": "dubdub Inc.",
       "position": "Sr. Android Engineer | Team Lead",
       "startDate": "2016",
       "endDate": "2017",
-      "summary": "Senior Android development role with team leadership responsibilities."
+      "summary": "Senior Android development role with team leadership responsibilities for dubcandy app.",
+      "highlights": [
+        "Architected the Android app using the modern MVP pattern recommended by Google engineers",
+        "Designed API and translated API specification using OpenAPI Specification standard (Swagger 2.0)",
+        "Set up continuous integration using BuddyBuild for each pull-request",
+        "Used APK analyzer to optimize large image assets using WebP reducing the size by 19mb, resulting in over 58% savings on APK size",
+        "Ran android lint tool, and reduced 36% of critical lint warning and errors for the project",
+        "Maintained unit tests and improved code-coverage by 8% for newly added features",
+        "Developed fully functional proof-of-concept Android TV app that uses same API and services"
+      ]
     },
     {
       "name": "QuickPlay Media",
@@ -107,8 +141,10 @@
       "endDate": "2016",
       "summary": "Worked with R&D android development team for current and future products.",
       "highlights": [
-        "Contributed to R&D initiatives for next-generation products",
-        "Developed Android applications for media streaming platforms"
+        "Refactor and enhance existing library features, provide better solution where necessary",
+        "Provide and update documentation with each release",
+        "Build and maintain a sample Android application to showcase supported features",
+        "Write unit tests, review peer-code and provide input if applicable"
       ]
     },
     {
@@ -118,9 +154,12 @@
       "endDate": "2014",
       "summary": "Android development for media streaming and entertainment platforms.",
       "highlights": [
-        "Built Android applications for streaming media platforms",
-        "Worked on entertainment and media delivery solutions",
-        "Contributed to multiple client projects and platform development"
+        "Released android app for major Canadian carrier which has support for LIVE and VOD video streaming (100,000 - 500,000 installs on Google Play store)",
+        "Built live streaming application using proprietary technology for a closed group of people",
+        "Managed, helped and guided team members to achieve sprint & project goals",
+        "Improved code-base by constantly refactoring or re-using established open-source software",
+        "Trained new hires to work on existing projects",
+        "Documented project standards and process in wiki"
       ]
     }
   ],
@@ -149,36 +188,51 @@
   ],
   "skills": [
     {
-      "name": "Mobile Development",
+      "name": "Android Development",
       "level": "Expert",
       "keywords": [
         "Android",
         "Kotlin",
         "Java",
-        "Mobile Architecture",
-        "Android SDK"
+        "Material Design",
+        "Android SDK",
+        "Data Binding",
+        "Dagger",
+        "Retrofit",
+        "Room"
       ]
     },
     {
-      "name": "Software Engineering",
-      "level": "Expert",
-      "keywords": [
-        "Software Architecture",
-        "API Design",
-        "System Design",
-        "Code Review",
-        "Technical Leadership"
-      ]
-    },
-    {
-      "name": "Platform Development",
+      "name": "Android Architectures",
       "level": "Advanced",
       "keywords": [
-        "Platform Engineering",
-        "SDK Development",
-        "Developer Tools",
-        "CI/CD",
-        "DevOps"
+        "MVVM",
+        "MVP",
+        "Clean Architecture",
+        "Design Patterns"
+      ]
+    },
+    {
+      "name": "Android Jetpack",
+      "level": "Advanced",
+      "keywords": [
+        "AppCompat",
+        "Android KTX",
+        "ViewModel",
+        "LiveData",
+        "Room",
+        "Navigation",
+        "Paging",
+        "WorkManager"
+      ]
+    },
+    {
+      "name": "Jetpack Compose",
+      "level": "Intermediate",
+      "keywords": [
+        "Jetpack Compose",
+        "Declarative UI",
+        "Modern Android UI"
       ]
     },
     {
@@ -189,31 +243,55 @@
         "Java",
         "Python",
         "JavaScript",
-        "SQL"
+        "TypeScript",
+        "Go"
       ]
     },
     {
-      "name": "Tools & Technologies",
+      "name": "AI Tools & Coding Agents",
+      "level": "Intermediate",
+      "keywords": [
+        "Cursor AI",
+        "GitHub Copilot",
+        "Claude Code",
+        "Gemini CLI",
+        "GitHub Spark",
+        "AI-Assisted Development"
+      ]
+    },
+    {
+      "name": "Tools & IDEs",
+      "level": "Expert",
+      "keywords": [
+        "Android Studio",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Charles Proxy",
+        "Debugger"
+      ]
+    },
+    {
+      "name": "CI/CD",
       "level": "Advanced",
       "keywords": [
-        "Git",
+        "Jenkins",
         "GitHub Actions",
-        "Gradle",
-        "SQLDelight",
-        "Moshi",
-        "Firebase",
-        "PostgreSQL"
+        "Circle CI",
+        "Travis CI",
+        "Firebase App Distribution",
+        "Microsoft AppCenter"
       ]
     }
   ],
   "languages": [
     {
-      "language": "English",
-      "fluency": "Native"
+      "language": "Bengali",
+      "fluency": "Native Speaker"
     },
     {
-      "language": "Bengali",
-      "fluency": "Native"
+      "language": "English",
+      "fluency": "Professional Proficiency"
     }
   ],
   "interests": [
@@ -222,6 +300,7 @@
       "keywords": [
         "Open Source",
         "Mobile Development",
+        "AI-Assisted Development",
         "Platform Engineering",
         "Developer Experience"
       ]
@@ -230,23 +309,16 @@
       "name": "Photography",
       "keywords": [
         "Digital Photography",
-        "Travel Photography",
-        "Visual Arts"
+        "Travel Photography"
       ]
     },
     {
-      "name": "Travel",
+      "name": "Travel & Activities",
       "keywords": [
         "World Travel",
         "Road Trips",
-        "Cultural Exploration"
-      ]
-    },
-    {
-      "name": "Gaming",
-      "keywords": [
         "Video Games",
-        "Gaming Technology"
+        "Food Discovery"
       ]
     },
     {
@@ -254,28 +326,54 @@
       "keywords": [
         "Ambient Music",
         "Enigma",
+        "Eguana",
         "Yanni",
-        "Instrumental"
+        "Max Payne Theme"
       ]
     }
   ],
   "projects": [
     {
+      "name": "TRMNL Android Buddy",
+      "description": "Your companion app to monitor and manage your TRMNL e-ink displays on the go. Essential companion app for managing TRMNL e-ink display devices with device monitoring, battery health tracking, and comprehensive device information.",
+      "url": "https://github.com/hossain-khan/trmnl-android-buddy",
+      "startDate": "2024",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "Jetpack Compose",
+        "Material You",
+        "E-ink Display"
+      ],
+      "highlights": [
+        "Available on Google Play Store",
+        "Device Monitoring with real-time battery level and WiFi signal strength",
+        "Battery Health Tracking with automatic weekly data collection and historical charts",
+        "Device Details with comprehensive information including voltage readings",
+        "Device Preview of current screen content",
+        "Content Feed with TRMNL announcements and blog posts",
+        "Material You Design with dynamic theming support",
+        "Privacy-First with obfuscated sensitive information and biometric authentication"
+      ],
+      "type": "application"
+    },
+    {
       "name": "Android TRMNL Display Mirror",
-      "description": "Mirrors existing TRMNL device display image onto your Android device. A simple Android app that connects to the TRMNL/BYOS API to fetch the current screen image and shows it on your device.",
+      "description": "Mirrors existing TRMNL device display image onto your Android device. A simple Android app that connects to the TRMNL/BYOS API to fetch the current screen image and shows it on your device with automatic refresh scheduling.",
       "url": "https://github.com/usetrmnl/trmnl-android",
       "startDate": "2024",
       "keywords": [
         "Android",
         "Kotlin",
         "API Integration",
-        "E-ink Display"
+        "E-ink Display",
+        "TRMNL"
       ],
       "highlights": [
-        "Automatic display refresh scheduling",
-        "Manual 'next' update support",
-        "Custom TRMNL/BYOS server endpoint support",
-        "Refresh event logging"
+        "Automatic periodic screen updates with adaptive refresh intervals",
+        "Manual refresh and next image controls for on-demand updates",
+        "Support for custom TRMNL/BYOS server URLs for self-hosted setups",
+        "Refresh history logging for monitoring and verification"
       ],
       "type": "application"
     },
@@ -286,15 +384,17 @@
       "startDate": "2023",
       "keywords": [
         "Android",
+        "Kotlin",
         "Weather API",
         "Notifications",
-        "Kotlin"
+        "Material 3"
       ],
       "highlights": [
         "Available on Google Play Store",
-        "Custom weather threshold alerts",
-        "Simple, no-frills design",
-        "Automated weather monitoring"
+        "Custom Alerts for Specific Weather Conditions",
+        "Choose Your Data Source & Add Your Own API Key",
+        "Set Your Alert Frequency",
+        "Minimalist Interface"
       ],
       "type": "application"
     },
@@ -305,15 +405,39 @@
       "startDate": "2023",
       "keywords": [
         "Android",
+        "Kotlin",
         "Device Monitoring",
         "Battery Management",
-        "Storage Monitoring"
+        "Material 3"
       ],
       "highlights": [
         "Available on Google Play Store",
-        "Multi-device monitoring support",
-        "Configurable notification methods",
-        "Battery and storage threshold alerts"
+        "Real-time Monitoring of battery and storage levels",
+        "Custom Alerts with triggers for battery percentage or storage GB",
+        "Multiple Notification Methods: Email, Twilio (SMS), Telegram, REST webhooks",
+        "Flexible Settings with custom check intervals",
+        "Detailed Stats with notification history and level changes",
+        "Dark & Light Mode with Material 3 design"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Android Keep Alive",
+      "description": "A simple app to keep specific apps alive by checking if they are running. If not, they will be started for you. Designed for always-running foreground service to watch and restart applications.",
+      "url": "https://github.com/hossain-khan/android-keep-alive",
+      "startDate": "2023",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "Services",
+        "Foreground Service",
+        "Device Management"
+      ],
+      "highlights": [
+        "Always running in foreground to watch and restart applications",
+        "Remote Logging and Heartbeat features",
+        "Designed for secondary phone plugged into power 24/7",
+        "Experimental project with specific use case"
       ],
       "type": "application"
     },
@@ -324,6 +448,7 @@
       "startDate": "2020",
       "keywords": [
         "Android",
+        "Kotlin",
         "Muzei",
         "Photography",
         "Live Wallpaper"
@@ -332,13 +457,14 @@
         "Available on Google Play Store",
         "Integration with H.K. Vision photography site",
         "Automatic wallpaper rotation",
-        "Featured photography content"
+        "Featured photography content",
+        "Open source on GitHub"
       ],
       "type": "application"
     },
     {
       "name": "KGeoTimeline",
-      "description": "Kotlin library for parsing Google Location History (Google Takeout). A robust solution for processing and analyzing location data from Google services.",
+      "description": "Kotlin library for parsing Google Location History (Timeline) data. The library allows you to parse and analyze Google Location History data with a sample app to demonstrate its capabilities.",
       "url": "https://github.com/hossain-khan/kgeo-timeline",
       "startDate": "2020",
       "keywords": [
@@ -352,26 +478,27 @@
         "Open source Kotlin library",
         "Google Location History parsing",
         "Data analysis capabilities",
-        "Timeline processing features"
+        "Timeline processing features",
+        "API Documentation available"
       ],
       "type": "library"
     },
     {
       "name": "GitHub PR Stats",
-      "description": "Comprehensive tool for analyzing GitHub pull request statistics and patterns. Provides insights into code review processes and team collaboration metrics.",
+      "description": "An experimentation using GitHub APIs to visualize PR stats for individual contributor and other team members. The stats tool is created using Kotlin and leverages different GitHub API to collect information about Pull-Request made by author or PRs reviewed by the reviewer.",
       "url": "https://github.com/hossain-khan/github-stats",
       "startDate": "2020",
       "keywords": [
+        "Kotlin",
         "GitHub API",
         "Data Analysis",
         "Pull Requests",
-        "Statistics",
-        "Kotlin"
+        "Statistics"
       ],
       "highlights": [
-        "Pull request analysis and statistics",
-        "Code review metrics",
-        "Team collaboration insights",
+        "Show PR statistics for PRs created by specific author/contributor",
+        "Generate CSV for the PR stats for use in Google Sheets",
+        "Experimental project",
         "GitHub API integration"
       ],
       "type": "tool"
@@ -392,9 +519,28 @@
         "JSON5 parsing and serialization",
         "Full JSON backward compatibility",
         "Support for comments and trailing commas",
-        "Kotlin multiplatform support"
+        "Unquoted keys support",
+        "Modern architecture with type safety"
       ],
       "type": "library"
+    },
+    {
+      "name": "2020 Police Brutality Incidents",
+      "description": "An Android app that allows users to browse reported police brutality incidents during the protests of 2020 following the murder of George Floyd. Created to share awareness of #BlackLivesMatter and #JusticeForGeorgeFloyd.",
+      "url": "https://github.com/hossain-khan/android-police-brutality-incidents",
+      "startDate": "2020",
+      "keywords": [
+        "Android",
+        "Social Justice",
+        "Community Data",
+        "BlackLivesMatter"
+      ],
+      "highlights": [
+        "Browse community-reported incidents during 2020 protests",
+        "Data collected via 2020PB/police-brutality GitHub repository",
+        "Community driven by r/2020PoliceBrutality/ Reddit community"
+      ],
+      "type": "application"
     },
     {
       "name": "SQLDelight 2.0 with PostgreSQL",
@@ -402,11 +548,11 @@
       "url": "https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample",
       "startDate": "2023",
       "keywords": [
+        "Kotlin",
         "SQLDelight",
         "PostgreSQL",
         "JVM",
-        "Database",
-        "Kotlin"
+        "Database"
       ],
       "highlights": [
         "SQLDelight 2.0 implementation example",
@@ -415,29 +561,244 @@
         "Comprehensive documentation"
       ],
       "type": "sample"
+    },
+    {
+      "name": "Android Device Catalog Browser",
+      "description": "Interactive browser for exploring and analyzing Android devices from the official Device Catalog. Built with AI-assisted development.",
+      "url": "https://android-device.gohk.xyz/",
+      "startDate": "2024",
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Android",
+        "Device Catalog"
+      ],
+      "highlights": [
+        "Interactive device catalog browser",
+        "Analysis of Android devices",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Canadian Mortgage Accelerator Calculator",
+      "description": "Interactive mortgage calculator with acceleration strategies to help Canadian homeowners pay off mortgages faster. Built with AI-assisted development.",
+      "url": "https://mortgage.gohk.xyz/",
+      "startDate": "2024",
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Charts",
+        "Financial Tools"
+      ],
+      "highlights": [
+        "Interactive mortgage calculator",
+        "Acceleration strategies visualization",
+        "Canadian mortgage-specific calculations",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Social Sync",
+      "description": "Python-based tool to automatically sync posts from Bluesky to Mastodon with GitHub Actions automation.",
+      "url": "https://github.com/hossain-khan/social-sync",
+      "startDate": "2024",
+      "keywords": [
+        "Python",
+        "API",
+        "Automation",
+        "GitHub Actions",
+        "Social Media"
+      ],
+      "highlights": [
+        "Automatic post synchronization between Bluesky and Mastodon",
+        "GitHub Actions automation",
+        "Python-based implementation",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "tool"
+    },
+    {
+      "name": "Kids Math Adventure",
+      "description": "Interactive educational game that makes learning math fun and engaging for children through adventure-based gameplay. Built with AI-assisted development.",
+      "url": "https://kids-math.gohk.xyz/",
+      "startDate": "2024",
+      "keywords": [
+        "React",
+        "JavaScript",
+        "Education",
+        "Game Development"
+      ],
+      "highlights": [
+        "Adventure-based math learning game",
+        "Engaging gameplay for children",
+        "Educational focus",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Camp Mate",
+      "description": "Plan, pack, and coordinate camping trips with friends. Collaborative checklists, food planning, and real-time synchronization. Built with AI-assisted development.",
+      "url": "https://camping.gohk.xyz/",
+      "startDate": "2024",
+      "keywords": [
+        "React",
+        "Collaboration",
+        "Planning",
+        "Real-time Sync"
+      ],
+      "highlights": [
+        "Collaborative camping trip planning",
+        "Shared checklists and food planning",
+        "Real-time synchronization",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "TRMNL Next Pickup Plugin",
+      "description": "TRMNL private plugin displaying next waste collection pickup day for Durham Region with visual bin indicators. Built with AI-assisted development.",
+      "url": "https://github.com/hossain-khan/trmnl-next-pickup-plugin",
+      "startDate": "2024",
+      "keywords": [
+        "TRMNL",
+        "Liquid",
+        "Plugin",
+        "E-ink Display"
+      ],
+      "highlights": [
+        "Waste collection pickup display",
+        "Visual bin indicators",
+        "Durham Region specific",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "tool"
+    },
+    {
+      "name": "Android Barebone App",
+      "description": "A barebone MVVM Android project with some essential tools configured the right way for 2019.",
+      "url": "https://github.com/hossain-khan/android-barebone",
+      "startDate": "2019",
+      "keywords": [
+        "Android",
+        "MVVM",
+        "Architecture",
+        "Template"
+      ],
+      "highlights": [
+        "Open source barebone MVVM Android project",
+        "Essential tools configured",
+        "Clean architecture template"
+      ],
+      "type": "sample"
+    },
+    {
+      "name": "ConstraintLayout Demo",
+      "description": "A demo application for Android ConstraintLayout with various usage with sample code.",
+      "url": "https://play.google.com/store/apps/details?id=com.hossainkhan.android.constraintlayout",
+      "startDate": "2019",
+      "keywords": [
+        "Android",
+        "ConstraintLayout",
+        "UI",
+        "Demo"
+      ],
+      "highlights": [
+        "Available on Google Play Store (BETA Channel)",
+        "Open source on GitHub",
+        "Comprehensive ConstraintLayout examples"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Daily Headlines",
+      "description": "Daily Headlines was created to check daily news headlines on TV rather than watching video clips from YouTube. Personal experiment on creating Android TV application.",
+      "url": "https://play.google.com/store/apps/details?id=info.hossainkhan.dailynewsheadlines",
+      "startDate": "2018",
+      "keywords": [
+        "Android TV",
+        "News",
+        "Headlines"
+      ],
+      "highlights": [
+        "Android TV application",
+        "Daily news headlines viewer",
+        "Open source (Archived Project)"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Yet NOT Another Android Syntax Highlighter",
+      "description": "Explore well established web based syntax highlighter like PrismJS and highlight.js, and showcase technique on how anybody can quickly incorporate these into their Android project.",
+      "url": "https://github.com/hossain-khan/android-syntax-highlighter",
+      "startDate": "2020",
+      "keywords": [
+        "Android",
+        "Syntax Highlighting",
+        "WebView",
+        "PrismJS"
+      ],
+      "highlights": [
+        "Integration guide for web-based syntax highlighters in Android",
+        "PrismJS and highlight.js examples",
+        "Sample implementation provided"
+      ],
+      "type": "library"
+    },
+    {
+      "name": "Hangouts.json Parser - Kotlin",
+      "description": "Kotlin based JSON parser for Google Takeout dump of Hangouts chats. Uses Moshi JSON library and SQLDelight library to insert parsed database into SQLite database for further analysis.",
+      "url": "https://github.com/hossain-khan/kotlin-google-hangouts-parser",
+      "startDate": "2019",
+      "keywords": [
+        "Kotlin",
+        "JSON Parser",
+        "Google Takeout",
+        "Moshi",
+        "SQLDelight"
+      ],
+      "highlights": [
+        "Parse Google Hangouts data from Takeout",
+        "Moshi JSON library integration",
+        "SQLDelight for database operations"
+      ],
+      "type": "tool"
+    },
+    {
+      "name": "Medium.com API Specification",
+      "description": "API spec for medium.com using OpenAPI Specification (aka Swagger 2.0). Generates PHP, Java, Python, Go, Android, Objective-C and many more client SDK.",
+      "url": "https://github.com/hossain-khan/medium-api-specification",
+      "startDate": "2018",
+      "keywords": [
+        "OpenAPI",
+        "Swagger",
+        "API Specification",
+        "Medium"
+      ],
+      "highlights": [
+        "OpenAPI Specification for Medium.com API",
+        "Client SDK generation for multiple languages",
+        "Swagger 2.0 based"
+      ],
+      "type": "specification"
     }
   ],
   "references": [
     {
-      "name": "Zac Sweers",
-      "reference": "Endlessly impressed with the work Hossain has done in the Slack Android repo to improve our docsite and make contributing easy. Even down to setting up an auto-approving bot for any PR that _only_ updates docs."
-    },
-    {
-      "name": "Garvan Keeley",
-      "reference": "I had the privilege of working with Hossain for 3 years at Slack on a team focused on developing the next generation of Slack's Platform. Hossain brings technical expertise, creativity, and contagious positivity to every project. His proactive approach inspires others to step out of their comfort zones and tackle project challenges."
-    },
-    {
       "name": "Doug Doe",
-      "reference": "Hossain is a hard-working Android developer capable of taking on large development tasks. He collaborates extremely well with other developers on tasks and features. He is adaptable to different challenges and soaks up changing priorities without flinching."
+      "reference": "Hossain is a hard-working Android developer capable of taking on large development tasks. He collaborates extremely well with other developers on tasks and features. He is adaptable to different challenges and soaks up changing priorities without flinching. He made my job as a manager easier, and was a pleasure to work with."
     },
     {
       "name": "Sebastian Jakubowski",
-      "reference": "I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are completed in a systematic and precise way. We call the few top engineers at QuickPlay 'superstars', and Hossain is one of them."
+      "reference": "I had the pleasure of working with Hossain on multiple projects at QuickPlay. Hossain is an experienced and creative developer, a person you can trust when you want to be sure that important tasks are completed in a systematic and precise way. Always maintains a very good relationship with co-workers and clients. We call the few top engineers at QuickPlay 'superstars', and Hossain is one of them."
     }
   ],
   "meta": {
     "canonical": "https://hossainkhan.com/resume.json",
-    "version": "v1.0.0",
-    "lastModified": "2025-08-13T00:00:00"
+    "version": "v2.0.0",
+    "lastModified": "2025-12-01T16:22:00Z"
   }
 }
