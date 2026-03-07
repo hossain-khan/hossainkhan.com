@@ -1,0 +1,36 @@
+# Hossain Khan - Engineering Portfolio
+
+> Personal portfolio website of Hossain Khan, a Senior Software Engineer based in Toronto, Ontario, Canada with 15+ years of experience in Android development, mobile technologies, and AI-assisted coding. Currently working at Slack on platform improvements including BlockKit, Workflows, and Slack Apps.
+
+## Pages
+
+- [Portfolio & Projects](https://hossainkhan.com/): Main portfolio page showcasing latest Android projects, open-source contributions, vibe coded artifacts, and work experience
+- [Testimonials](https://hossainkhan.com/testimonials.html): 21 professional recommendations from colleagues across 12 different companies spanning 15+ years of experience
+- [Resume (JSON)](https://hossainkhan.com/resume.json): Structured career data in JSON Resume format
+
+## Key Projects
+
+- [Kids Math Pup Tutor](https://play.google.com/store/apps/details?id=dev.hossain.mathtutor&pcampaignid=web_share): Android app for kids math learning
+- [TRMNL Android Buddy](https://github.com/hossain-khan/trmnl-android-buddy): Android companion app for TRMNL e-ink displays
+- [Android TRMNL Display Mirror](https://github.com/usetrmnl/trmnl-android): Display TRMNL content on Android devices
+- [Weather Alert](https://github.com/hossain-khan/android-weather-alert): Android weather alert application
+- [Remote Notify](https://github.com/hossain-khan/android-remote-notify): Android device monitor for remote notifications
+- [Android Keep Alive](https://github.com/hossain-khan/android-keep-alive): Experimental Android app for device keep-alive functionality
+- [GitHub PR Stats](https://github.com/hossain-khan/github-stats): Kotlin-based tool to analyze GitHub pull request statistics
+- [KGeoTimeline](https://github.com/hossain-khan/kgeo-timeline): Kotlin library for geographic timeline data
+
+## Open Source
+
+- [SQLDelight PostgreSQL](https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample): SQLDelight 2.0 with PostgreSQL sample project
+- [JSON5-Kotlin](https://github.com/hossain-khan/json5-kotlin): JSON5 parser for Kotlin
+- [Android Syntax Highlighter](https://github.com/hossain-khan/android-syntax-highlighter): Syntax highlighting library for Android
+- [Hangouts Parser](https://github.com/hossain-khan/kotlin-google-hangouts-parser): Google Hangouts JSON parser in Kotlin
+- [Medium API Specification](https://github.com/hossain-khan/medium-api-specification): API specification for Medium.com
+
+## Profiles
+
+- [GitHub](https://github.com/hossain-khan)
+- [LinkedIn](https://linkedin.com/in/hossain)
+- [Bluesky](https://bsky.app/profile/hossain.dev)
+- [Mastodon](https://androiddev.social/@hossainkhan)
+- [Medium](https://medium.com/@hossainkhan)
