@@ -139,7 +139,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	const rss = new RSS(
 	    document.querySelector("#rss-feeds"),
 	    //Change this to your own rss feeds
-        "https://medium.com/feed/@hossainkhan",
+        "https://hossain.dev/rss.xml",
 	    {
 		     // how many entries do you want?
 		    // default: 4
