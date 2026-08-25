@@ -640,6 +640,26 @@
       "type": "application"
     },
     {
+      "name": "CodeMateX (Android Code with AI)",
+      "description": "On-device AI coding tutor for Android leveraging Google's LiteRT-LM runtime and Gemma models for 100% offline, private coding assistance. Built with AI-assisted development.",
+      "url": "https://github.com/hossain-khan/android-code-with-ai",
+      "startDate": "2025",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "LiteRT-LM",
+        "Gemma",
+        "Jetpack Compose",
+        "On-Device AI"
+      ],
+      "highlights": [
+        "On-device LLM inference using LiteRT-LM and Gemma models",
+        "100% offline and private coding tutor",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
       "name": "Camp Mate",
       "description": "Plan, pack, and coordinate camping trips with friends. Collaborative checklists, food planning, and real-time synchronization. Built with AI-assisted development.",
       "url": "https://camping.gohk.xyz/",

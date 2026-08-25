@@ -18,6 +18,7 @@
 - [Android Keep Alive](https://github.com/hossain-khan/android-keep-alive): Experimental Android app for device keep-alive functionality
 - [GitHub PR Stats](https://github.com/hossain-khan/github-stats): Kotlin-based tool to analyze GitHub pull request statistics
 - [KGeoTimeline](https://github.com/hossain-khan/kgeo-timeline): Kotlin library for geographic timeline data
+- [CodeMateX](https://github.com/hossain-khan/android-code-with-ai): On-device AI coding tutor app for Android using LiteRT-LM and Gemma models
 
 ## Open Source
 
