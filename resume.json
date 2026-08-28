@@ -642,7 +642,7 @@
     {
       "name": "CodeMateX (Android Code with AI)",
       "description": "On-device AI coding tutor for Android leveraging Google's LiteRT-LM runtime and Gemma models for 100% offline, private coding assistance. Built with AI-assisted development.",
-      "url": "https://github.com/hossain-khan/android-code-with-ai",
+      "url": "https://play.google.com/store/apps/details?id=dev.hossain.codematex&pcampaignid=web_share",
       "startDate": "2025",
       "keywords": [
         "Android",
@@ -653,6 +653,7 @@
         "On-Device AI"
       ],
       "highlights": [
+        "Available on Google Play Store",
         "On-device LLM inference using LiteRT-LM and Gemma models",
         "100% offline and private coding tutor",
         "Built with AI-assisted development (Vibe Coded)"
