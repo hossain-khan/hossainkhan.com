@@ -1418,6 +1418,39 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
     box-shadow: 0 4px 8px rgba(77, 195, 115, 0.3);
 }
 
+/* Badge inside Show More Projects button */
+#toggleMoreProjects .more-projects-badge {
+    display: inline-block;
+    background-color: rgba(58, 170, 100, 0.15);
+    color: #3AAA64;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 50rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+#toggleMoreProjects.btn-outline-primary:hover .more-projects-badge,
+#toggleMoreProjects.btn-outline-primary:focus .more-projects-badge,
+#toggleMoreProjects.btn-outline-primary:active .more-projects-badge {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+body[data-theme="dark"] #toggleMoreProjects .more-projects-badge {
+    background-color: rgba(77, 195, 115, 0.2);
+    color: #4DC373;
+}
+
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:hover .more-projects-badge,
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:focus .more-projects-badge,
+body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active .more-projects-badge {
+    background-color: rgba(30, 33, 36, 0.25);
+    color: #1e2124;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .artifacts-viewport {

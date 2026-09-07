@@ -116,19 +116,34 @@ window.addEventListener('DOMContentLoaded', function() {
     const additionalProjects = document.getElementById('additionalProjects');
     
     if (toggleBtn && additionalProjects) {
+        // Count the number of project items inside additionalProjects container
+        const count = additionalProjects.querySelectorAll('.item').length;
+        
+        const updateButtonText = (isExpanded) => {
+            if (isExpanded) {
+                toggleBtn.innerHTML = '<i class="fas fa-minus"></i> Show Less Projects';
+            } else {
+                const countBadge = count > 0 ? ` <span class="more-projects-badge">${count}</span>` : '';
+                toggleBtn.innerHTML = `<i class="fas fa-plus"></i> Show More Projects${countBadge}`;
+            }
+        };
+
+        // Initialize button with count
+        updateButtonText(false);
+
         toggleBtn.addEventListener('click', function() {
             const isHidden = additionalProjects.style.display === 'none';
             
             if (isHidden) {
                 additionalProjects.style.display = 'block';
-                this.innerHTML = '<i class="fas fa-minus"></i> Show Less Projects';
+                updateButtonText(true);
                 // Smooth scroll to show the revealed content
                 setTimeout(() => {
                     additionalProjects.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }, 100);
             } else {
                 additionalProjects.style.display = 'none';
-                this.innerHTML = '<i class="fas fa-plus"></i> Show More Projects';
+                updateButtonText(false);
             }
         });
     }
