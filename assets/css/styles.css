@@ -1382,13 +1382,22 @@ body[data-theme="dark"] .artifact-link:hover {
 }
 
 /* ======= Projects Catalog Banner Strip ======= */
+.latest .divider {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .projects-catalog-section {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .projects-catalog-title {
     font-size: 1.25rem;
     font-weight: 700;
+}
+
+.projects-catalog-title .text-theme {
+    color: #3AAA64;
 }
 
 .projects-catalog-title .badge {
@@ -1617,6 +1626,10 @@ body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-thumb:hover {
 body[data-theme="dark"] .project-banner-card {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .projects-catalog-title .text-theme {
+    color: #4DC373;
 }
 
 body[data-theme="dark"] .projects-catalog-title .badge {
