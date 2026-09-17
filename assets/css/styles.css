@@ -1381,78 +1381,242 @@ body[data-theme="dark"] .artifact-link:hover {
     color: #4fb874;
 }
 
-/* ======= Toggle Button Styling ======= */
-#toggleMoreProjects.btn-outline-primary {
-    color: #3AAA64 !important;
-    border-color: #3AAA64 !important;
-    background-color: transparent;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-width: 2px;
-    transition: all 0.3s ease;
+/* ======= Projects Catalog Banner Strip ======= */
+.projects-catalog-section {
+    margin-top: 1.5rem;
 }
 
-#toggleMoreProjects.btn-outline-primary:hover,
-#toggleMoreProjects.btn-outline-primary:focus,
-#toggleMoreProjects.btn-outline-primary:active {
-    background-color: #3AAA64 !important;
-    border-color: #3AAA64 !important;
-    color: white !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(58, 170, 100, 0.3);
-}
-
-/* Dark mode toggle button styles */
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary {
-    color: #4DC373 !important;
-    border-color: #4DC373 !important;
-    background-color: transparent;
-}
-
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:hover,
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:focus,
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active {
-    background-color: #4DC373 !important;
-    border-color: #4DC373 !important;
-    color: #1e2124 !important;
-    box-shadow: 0 4px 8px rgba(77, 195, 115, 0.3);
-}
-
-/* Badge inside Show More Projects button */
-#toggleMoreProjects .more-projects-badge {
-    display: inline-block;
-    background-color: rgba(58, 170, 100, 0.15);
-    color: #3AAA64;
-    font-size: 0.8rem;
+.projects-catalog-title {
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 0.15rem 0.55rem;
-    border-radius: 50rem;
-    margin-left: 0.4rem;
+}
+
+.projects-catalog-title .badge {
+    font-size: 0.75rem;
     vertical-align: middle;
-    transition: all 0.3s ease;
+    margin-left: 0.35rem;
 }
 
-#toggleMoreProjects.btn-outline-primary:hover .more-projects-badge,
-#toggleMoreProjects.btn-outline-primary:focus .more-projects-badge,
-#toggleMoreProjects.btn-outline-primary:active .more-projects-badge {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: white;
+.projects-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: #3AAA64;
+    border-color: rgba(58, 170, 100, 0.4);
+    background-color: transparent;
+    transition: all 0.2s ease;
 }
 
-body[data-theme="dark"] #toggleMoreProjects .more-projects-badge {
-    background-color: rgba(77, 195, 115, 0.2);
+.projects-nav-btn:hover:not(:disabled) {
+    background-color: #3AAA64;
+    border-color: #3AAA64;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.projects-nav-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.projects-strip-wrapper {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.projects-banner-strip {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #3AAA64 transparent;
+    padding: 0.5rem 0.25rem 1rem 0.25rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.projects-banner-strip::-webkit-scrollbar {
+    height: 6px;
+}
+
+.projects-banner-strip::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+}
+
+.projects-banner-strip::-webkit-scrollbar-thumb {
+    background: #3AAA64;
+    border-radius: 3px;
+}
+
+.projects-banner-strip::-webkit-scrollbar-thumb:hover {
+    background: #2d844e;
+}
+
+.project-banner-card {
+    flex: 0 0 310px;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    background: #111;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.project-banner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.project-banner-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.project-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-banner-card:hover .project-banner-img {
+    transform: scale(1.04);
+}
+
+.project-banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.92) 100%);
+    padding: 0.85rem;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.project-banner-card:hover .project-banner-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.96) 100%);
+}
+
+.project-banner-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-banner-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.project-banner-card:hover .project-banner-details,
+.project-banner-card:focus-within .project-banner-details {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 0.4rem;
+}
+
+.project-banner-desc {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 0.45rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-banner-actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.project-banner-actions .btn {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    font-weight: 600;
+}
+
+.project-banner-actions .btn-primary {
+    background-color: #3AAA64;
+    border-color: #3AAA64;
+    color: #fff;
+}
+
+.project-banner-actions .btn-primary:hover {
+    background-color: #2d844e;
+    border-color: #2d844e;
+}
+
+/* Dark mode adjustments for catalog strip */
+body[data-theme="dark"] .projects-nav-btn {
     color: #4DC373;
+    border-color: rgba(77, 195, 115, 0.4);
 }
 
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:hover .more-projects-badge,
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:focus .more-projects-badge,
-body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active .more-projects-badge {
-    background-color: rgba(30, 33, 36, 0.25);
+body[data-theme="dark"] .projects-nav-btn:hover:not(:disabled) {
+    background-color: #4DC373;
+    border-color: #4DC373;
     color: #1e2124;
+}
+
+body[data-theme="dark"] .projects-banner-strip {
+    scrollbar-color: #53c47d transparent;
+}
+
+body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-thumb {
+    background: #53c47d;
+}
+
+body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-thumb:hover {
+    background: #4fb874;
+}
+
+body[data-theme="dark"] .project-banner-card {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .projects-catalog-title .badge {
+    background-color: #2c3e50 !important;
+    color: #4DC373 !important;
+    border-color: rgba(77, 195, 115, 0.3) !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .project-banner-card {
+        flex: 0 0 260px;
+    }
+    
+    .project-banner-details {
+        max-height: 120px;
+        opacity: 1;
+        margin-top: 0.35rem;
+    }
+    
     .artifacts-viewport {
         min-height: 350px;
         padding: 0.75rem;
@@ -1473,10 +1637,5 @@ body[data-theme="dark"] #toggleMoreProjects.btn-outline-primary:active .more-pro
         font-size: 26px;
         width: 26px;
         height: 26px;
-    }
-    
-    #toggleMoreProjects.btn-outline-primary {
-        padding: 0.65rem 1.25rem;
-        font-size: 0.9rem;
     }
 }

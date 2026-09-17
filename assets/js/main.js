@@ -111,41 +111,35 @@ window.addEventListener('DOMContentLoaded', function() {
         observer.observe(item);
     });
     
-    // Toggle additional projects functionality
-    const toggleBtn = document.getElementById('toggleMoreProjects');
-    const additionalProjects = document.getElementById('additionalProjects');
-    
-    if (toggleBtn && additionalProjects) {
-        // Count the number of project items inside additionalProjects container
-        const count = additionalProjects.querySelectorAll('.item').length;
-        
-        const updateButtonText = (isExpanded) => {
-            if (isExpanded) {
-                toggleBtn.innerHTML = '<i class="fas fa-minus"></i> Show Less Projects';
-            } else {
-                const countBadge = count > 0 ? ` <span class="more-projects-badge">${count}</span>` : '';
-                toggleBtn.innerHTML = `<i class="fas fa-plus"></i> Show More Projects${countBadge}`;
-            }
+    // Horizontal scroll controls for Projects Banner Strip
+    const strip = document.getElementById('projectsBannerStrip');
+    const scrollLeftBtn = document.getElementById('projectsScrollLeft');
+    const scrollRightBtn = document.getElementById('projectsScrollRight');
+
+    if (strip && scrollLeftBtn && scrollRightBtn) {
+        const updateNavButtons = () => {
+            const maxScrollLeft = strip.scrollWidth - strip.clientWidth - 5;
+            scrollLeftBtn.disabled = strip.scrollLeft <= 5;
+            scrollRightBtn.disabled = strip.scrollLeft >= maxScrollLeft;
         };
 
-        // Initialize button with count
-        updateButtonText(false);
+        // Scroll step = card width (310px) + gap (20px) = 330px
+        const getScrollStep = () => {
+            const card = strip.querySelector('.project-banner-card');
+            return card ? card.offsetWidth + 20 : 330;
+        };
 
-        toggleBtn.addEventListener('click', function() {
-            const isHidden = additionalProjects.style.display === 'none';
-            
-            if (isHidden) {
-                additionalProjects.style.display = 'block';
-                updateButtonText(true);
-                // Smooth scroll to show the revealed content
-                setTimeout(() => {
-                    additionalProjects.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 100);
-            } else {
-                additionalProjects.style.display = 'none';
-                updateButtonText(false);
-            }
+        scrollLeftBtn.addEventListener('click', function() {
+            strip.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
         });
+
+        scrollRightBtn.addEventListener('click', function() {
+            strip.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        strip.addEventListener('scroll', updateNavButtons, { passive: true });
+        window.addEventListener('resize', updateNavButtons);
+        updateNavButtons();
     }
 });
 
