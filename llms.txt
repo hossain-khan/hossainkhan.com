@@ -22,6 +22,7 @@
 
 ## Open Source
 
+- [Android Compose Highlight](https://hossain-khan.github.io/android-compose-highlight/): Jetpack Compose library for syntax highlighting powered by Highlight.js
 - [SQLDelight PostgreSQL](https://github.com/hossain-khan/SQLDelight-PostgreSQL-JVM-sample): SQLDelight 2.0 with PostgreSQL sample project
 - [JSON5-Kotlin](https://github.com/hossain-khan/json5-kotlin): JSON5 parser for Kotlin
 - [Android Syntax Highlighter](https://github.com/hossain-khan/android-syntax-highlighter): Syntax highlighting library for Android
