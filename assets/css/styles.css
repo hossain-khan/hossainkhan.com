@@ -1398,29 +1398,37 @@ body[data-theme="dark"] .artifact-link:hover {
 }
 
 .projects-nav-btn {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     color: #3AAA64;
-    border-color: rgba(58, 170, 100, 0.4);
-    background-color: transparent;
+    border: 1.5px solid rgba(58, 170, 100, 0.5);
+    background-color: rgba(58, 170, 100, 0.05);
     transition: all 0.2s ease;
+}
+
+.projects-nav-btn .svg-inline--fa {
+    margin-right: 0 !important;
+    top: 0 !important;
+    font-size: 0.85rem;
 }
 
 .projects-nav-btn:hover:not(:disabled) {
     background-color: #3AAA64;
     border-color: #3AAA64;
     color: #fff;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .projects-nav-btn:disabled {
-    opacity: 0.35;
+    opacity: 0.25;
     cursor: not-allowed;
+    border-color: rgba(150, 150, 150, 0.3);
+    color: #888;
 }
 
 .projects-strip-wrapper {
@@ -1436,27 +1444,28 @@ body[data-theme="dark"] .artifact-link:hover {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #3AAA64 transparent;
-    padding: 0.5rem 0.25rem 1rem 0.25rem;
+    scrollbar-color: rgba(58, 170, 100, 0.5) transparent;
+    padding: 0.5rem 0.25rem 0.75rem 0.25rem;
     -webkit-overflow-scrolling: touch;
 }
 
 .projects-banner-strip::-webkit-scrollbar {
-    height: 6px;
+    height: 5px;
 }
 
 .projects-banner-strip::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.06);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 3px;
+    margin: 0 1rem;
 }
 
 .projects-banner-strip::-webkit-scrollbar-thumb {
-    background: #3AAA64;
+    background: rgba(58, 170, 100, 0.6);
     border-radius: 3px;
 }
 
 .projects-banner-strip::-webkit-scrollbar-thumb:hover {
-    background: #2d844e;
+    background: #3AAA64;
 }
 
 .project-banner-card {
@@ -1507,7 +1516,7 @@ body[data-theme="dark"] .artifact-link:hover {
 }
 
 .project-banner-card:hover .project-banner-overlay {
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.96) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.98) 100%);
 }
 
 .project-banner-name {
@@ -1531,7 +1540,7 @@ body[data-theme="dark"] .artifact-link:hover {
 
 .project-banner-card:hover .project-banner-details,
 .project-banner-card:focus-within .project-banner-details {
-    max-height: 120px;
+    max-height: 130px;
     opacity: 1;
     margin-top: 0.4rem;
 }
@@ -1573,7 +1582,8 @@ body[data-theme="dark"] .artifact-link:hover {
 /* Dark mode adjustments for catalog strip */
 body[data-theme="dark"] .projects-nav-btn {
     color: #4DC373;
-    border-color: rgba(77, 195, 115, 0.4);
+    border: 1.5px solid rgba(77, 195, 115, 0.4);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 body[data-theme="dark"] .projects-nav-btn:hover:not(:disabled) {
@@ -1582,16 +1592,26 @@ body[data-theme="dark"] .projects-nav-btn:hover:not(:disabled) {
     color: #1e2124;
 }
 
+body[data-theme="dark"] .projects-nav-btn:disabled {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+}
+
 body[data-theme="dark"] .projects-banner-strip {
-    scrollbar-color: #53c47d transparent;
+    scrollbar-color: rgba(83, 196, 125, 0.4) transparent;
+}
+
+body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-thumb {
-    background: #53c47d;
+    background: rgba(83, 196, 125, 0.4);
 }
 
 body[data-theme="dark"] .projects-banner-strip::-webkit-scrollbar-thumb:hover {
-    background: #4fb874;
+    background: #53c47d;
 }
 
 body[data-theme="dark"] .project-banner-card {
