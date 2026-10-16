@@ -19,6 +19,7 @@
 - [GitHub PR Stats](https://github.com/hossain-khan/github-stats): Kotlin-based tool to analyze GitHub pull request statistics
 - [KGeoTimeline](https://github.com/hossain-khan/kgeo-timeline): Kotlin library for geographic timeline data
 - [CodeMateX](https://play.google.com/store/apps/details?id=dev.hossain.codematex&pcampaignid=web_share): On-device AI coding tutor app for Android using LiteRT-LM and Gemma models
+- [Snippet](https://play.google.com/store/apps/details?id=dev.hossain.codesnippet&pcampaignid=web_share): Personal code notebook and compose-highlight showcase for Android
 
 ## Open Source
 
