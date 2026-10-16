@@ -640,6 +640,26 @@
       "type": "application"
     },
     {
+      "name": "Snippet — Code Notebook & AI",
+      "description": "Personal code notebook for Android and official showcase for compose-highlight with offline-first storage, syntax theme gallery, and AI code assistance. Built with AI-assisted development.",
+      "url": "https://liquidlabs.ca/android/snippet/index.html",
+      "startDate": "2025",
+      "keywords": [
+        "Android",
+        "Jetpack Compose",
+        "Syntax Highlighting",
+        "SQLite FTS4",
+        "AI Assistant"
+      ],
+      "highlights": [
+        "Available on Google Play Store",
+        "Official showcase app for compose-highlight Jetpack Compose library",
+        "Offline-first code notebook with SQLite FTS4 search and theme gallery",
+        "Built with AI-assisted development (Vibe Coded)"
+      ],
+      "type": "application"
+    },
+    {
       "name": "CodeMateX (Android Code with AI)",
       "description": "On-device AI coding tutor for Android leveraging Google's LiteRT-LM runtime and Gemma models for 100% offline, private coding assistance. Built with AI-assisted development.",
       "url": "https://play.google.com/store/apps/details?id=dev.hossain.codematex&pcampaignid=web_share",
